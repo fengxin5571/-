@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" href="../../css/api.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <style>
+    /*考核详细*/
+        html,body{
+            background: #f5f5f5;
+            position: relative;
+        }
+        .stock_box_zn{
+            background: linear-gradient(to right, #268ce9,#64c0ea);
+            height:.88rem;
+            width:100%;
+            position:fixed;
+            top:0;
+            left:0;
+        }
+        .stock_zn{
+            color:#fff;
+            font-size: .3rem;
+            height:100%;
+            line-height: .88rem;
+            text-align: center;
+        }
+        .icon_zn{
+            width: 0.29rem;
+            height: 0.43rem;
+            position: absolute;
+            left: 0.15rem;
+            top: 0.25rem;
+            background: url("../../image/product_sxy/return_sxy_03.png") no-repeat;
+            background-size: cover;
+        }
+        .review_detail_man_zn{
+            width:6rem;
+            height:1.3rem;
+            background: #fff;
+            margin:0 auto;
+            margin-top:1.2rem;
+            overflow: hidden;
+            box-sizing: border-box;
+            border-radius: 0.1rem;
+        }
+        .man_detail_zn{
+            width:4.6rem;
+            height:100%;
+            float:left;
+            box-sizing: border-box;
+            margin-left:0.25rem;
+        }
+        .man_name_zn{
+            height:0.28rem;
+            line-height:0.28rem;
+            color:#333;
+            font-size:0.28rem;
+            float:left;
+        }
+        .man_phone_zn{
+            height:0.5rem;
+            width:100%;
+            line-height:0.5rem;
+            font-size:0.2rem;
+            color:#999;
+        }
+        .wait_for_manager{
+            font-size:0.24rem;
+            color:#2493f7;
+            height:0.3rem;
+            line-height:0.3rem;
+            width:100%;
+        }
+        .man_pic_zn{
+            float:left;
+            display: block;
+            width:0.85rem;
+            height:0.85rem;
+            margin-top:0.2rem;
+        }
+        .review_con_zn{
+            width:6rem;
+            height:auto;
+            margin:0 auto;
+            margin-top:0.2rem;
+            background: #fff;
+            overflow: hidden;
+            border-radius: 0.1rem;
+        }
+        .review_title_zn{
+            margin-left:0.25rem;
+            width:5.6rem;
+            height:0.3rem;
+            margin-top:0.2rem;
+        }
+        .review_title_man{
+            display: block;
+            float:left;
+            width:1.25rem;
+            height:0.3rem;
+            line-height:0.3rem;
+            color:#333;
+            font-size:0.3rem;
+            margin-right:0.1rem;
+        }
+        .review_man{
+            display: block;
+            float:left;
+            height:0.3rem;
+            line-height:0.3rem;
+            font-size:0.24rem;
+            color:#999;
+        }
+        .review_con{
+            width:auto;
+            height:auto;
+            margin-left:0.25rem;
+            margin-top:0.25rem;
+            overflow: hidden;
+        }
+        .review_con_title{
+            display: block;
+            float:left;
+            width:1.25rem;
+            height:0.4rem;
+            line-height:0.4rem;
+            color:#333;
+            font-size:0.3rem;
+            margin-right:0.1rem;
+        }
+        .review_con_box{
+            float:left;
+            height:auto;
+            width:4.4rem;
+        }
+        .product_con_zn{
+            height:auto;
+            width:4.4rem;
+        }
+        .product_list_zn{
+            line-height:0.45rem;
+            height:0.45rem;
+            width:auto;
+        }
+        .product_list_zn span{
+            float:left;
+            display: block;
+            height:0.4rem;
+            line-height:0.4rem;
+            font-size:0.24rem;
+            color:#999;
+        }
+        .product_list_zn span:first-child{
+            width:2rem;
+        }
+        .product_list_zn span:nth-child(2){
+            width:1rem;
+        }
+        .present_zn{
+            height:0.5rem;
+            line-height:0.5rem;
+            font-size:0.3rem;
+        }
+        .real_price_zn{
+            color:#2493f7;
+            font-size:0.28rem;
+            line-height:0.4rem;
+            height:0.4rem;
+            margin-bottom:0.1rem;
+        }
+        .time_zn{
+            height:0.6rem;
+            line-height:0.6rem;
+            width:auto;
+            margin-left:0.25rem;
+            margin-top:0.1rem;
+        }
+        .wait_for_man{
+            width:6rem;
+            height:auto;
+            overflow: hidden;
+            margin:0 auto;
+            margin-top:0.2rem;
+            margin-bottom:0.2rem;
+            background: #fff;
+            border-radius: 0.1rem;
+            box-sizing: border-box;
+        }
+        .wait_for_list{
+            width:5.4rem;
+            height:1.26rem;
+            border-bottom:0.01rem dotted#f5f5f5;
+            margin:0 auto;
+            box-sizing: border-box;
+        }
+        .wait_for_list img{
+            display: block;
+            width:0.85rem;
+            height:0.85rem;
+            float:left;
+            margin-top:0.2rem;
+        }
+        .man_review_zn{
+            float:left;
+            width:3.7rem;
+            height:1.26rem;
+            line-height:1.26rem;
+            font-size:0.24rem;
+            color:#333;
+            margin-left:0.35rem;
+        }
+        .preview_con_zn{
+            float:left;
+            margin-top:0.4rem;
+            width:0.4rem;
+            height:0.4rem;
+            background: url('../../image/image_zn/duigou_zn.png');
+            background-size:cover;
+        }
+        .hide_zn{
+            display: none;
+        }
+        .clearNamebox_qty{
+            width: 0.7rem;
+            height: 0.28rem;
+            float: left;
+            background: #2493f7;
+           box-sizing: border-box;
+            font-size: 0.22rem;
+            color: #fff;
+            border-radius: 0.2rem;
+            line-height: 0.28rem;
+            text-align: center;
+            margin-left:0.2rem;
+        }
+        .man_information_box{
+            width:100%;
+            height:0.4rem;
+            overflow: hidden;
+            margin-top:0.3rem;
+        }
+    </style>
+</head>
+<body>
+<div class="stock_box_zn">
+    <div class="stock_zn">审核详情</div>
+    <div class="icon_zn" onclick="api.closeWin()"></div>
+</div>
+<div class="review_detail_man_zn">
+    <div class="man_detail_zn">
+        <div class="man_information_box">
+            <p class="man_name_zn">大康康</p>
+            <div class="clearNamebox_qty">实习</div>
+        </div>
+        <p class="man_phone_zn">13659462586</p>
+        <!--<p class="wait_for_manager">等待店长审批</p>-->
+    </div>
+    <img src="../../image/image_zn/man_pic_01_zn.png" alt="" class="man_pic_zn">
+</div>
+
+<script type="text/javascript" src="../../script/api.js"></script>
+<script>
+    var vid;
+    var uid;
+    var type;
+
+    function get_data() {
+        apiready = function() {
+            vid = api.pageParam.vid;
+            api.ajax({
+                url: 'http://appapi.duyiwang.cn/index.php?action=verify&dir=work&do=show_i_verify',
+                method: 'post',
+                data: {
+                    values: {vid: vid}
+                },
+                dataType: 'text'
+            }, function (ret, err) {
+                $("body").append(ret);
+            });
+            uid = api.getPrefs({sync: true, key: 'uid'});
+            type = api.getPrefs({sync: true, key: 'type'});
+            api.ajax({
+                url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=userinfo',
+                method: 'post',
+                data: {
+                    values: {uid: uid, type: type}
+                },
+                dataType: 'json'
+            }, function (ret, err) {
+                var name=ret.userinfo.name;
+                var phone=ret.userinfo.mobile;
+                var roleid=ret.userinfo.roleid;
+                if(roleid==5){
+                    $('.clearNamebox_qty').html('店员');
+                }
+                if(roleid==3){
+                    $('.clearNamebox_qty').html('店长');
+                }
+                $(".man_name_zn").html(name);
+                $(".man_phone_zn").html(phone);
+            });
+        };
+    }
+    get_data()
+</script>
+</body>
+</html>

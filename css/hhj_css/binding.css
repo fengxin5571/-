@@ -1,0 +1,151 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    background-image:url('../../image/register_wx/bg.png');
+    background-size: cover;
+}
+
+.head {
+    width: 100%;
+    height: 0.88rem;
+    background: linear-gradient(to right, #268ce9,#64c0ea);
+    text-align: center;
+    color: #fff;
+    line-height: 0.88rem;
+    font-size: 0.34rem;
+    position: relative;
+}
+.head section{
+    width: 0.88rem;
+    height: 0.88rem;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top:0;
+}
+.arrowLeft_qty{
+    width: 0.15rem;
+    height: 0.28rem;
+    background-image: url(../../image/img_qty/arrowLeft_06.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 0.2rem;
+}
+.top_qty {
+    width: 5.5rem;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.loginInput_qty {
+    width: 5.5rem;
+    height: 0.64rem;
+    border-bottom: 1px solid #bbbbbb;
+    margin-top: 0.1rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.iphoneImg_qty, .iphoneImg_qty_qty {
+    width: 0.21rem;
+    height: 0.3rem;
+    float: left;
+    margin-top: 0.17rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 0.1rem;
+}
+
+.iphoneImg_qty {
+    background-image: url(../../image/img_qty/ipone_03.png);
+}
+
+.iphoneImg_qty_qty {
+    width: 0.24rem;
+    background-image: url(../../image/img_qty/key_03.png);
+}
+
+.input_qty {
+    width: 4rem;
+    height: 0.4rem;
+    font-size: 0.24rem;
+    margin-top: 0.12rem;
+    outline: none;
+    float: left;
+}
+
+.chacha_qty {
+    width: 0.2rem;
+    height: 0.2rem;
+    background-image: url(../../image/img_qty/cuo_07.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 0.22rem;
+    float: left;
+    display: none;
+}
+
+.chacha {
+    font-size: 0.24rem;
+    color: #1f89d4;
+    line-height: 0.64rem;
+    font-weight: bold;
+}
+
+.dibu_box {
+    width: 5.5rem;
+    height: 0.64rem;
+    line-height: 0.64rem;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0.2rem;
+}
+
+.yuedu {
+    font-size: 0.22rem;
+    color: #aaa;
+    line-height: 0.64rem;
+}
+
+.tiaokuan {
+    font-size: 0.22rem;
+    color: #1f89d4;
+    line-height: 0.64rem;
+    margin-left: 0.1rem;
+}
+
+.danxuan {
+    width: 0.3rem;
+    height: 0.3rem;
+    font-size: 0.3rem;
+    line-height: 0.64rem;
+    margin-top: 0.17rem;
+    margin-right: 0.1rem;
+}
+
+.bott {
+    width: 5.5rem;
+    margin: auto;
+    background: linear-gradient(to right, #64c0ea, #268ce9);
+    font-size: 0.3rem;
+    color: #fff;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.bangding {
+    font-size: 0.24rem;
+    color: #adadad;
+    display: flex;
+    justify-content: center;
+    width: 4rem;
+    height: 0.5rem;
+    margin: 0 auto;
+    margin-top: 0.4rem;
+}

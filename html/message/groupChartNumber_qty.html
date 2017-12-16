@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" href="../../css/api.css">
+    <link rel="stylesheet" href="../../css/ChartNumber_qty.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <style>
+        body,html{
+            background: #f6f6f6;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+        }
+        .voice_jumpgif{
+            width: 2.2rem;
+            height: 2.2rem;
+            position: absolute;
+            top:50%;
+            left:50%;
+            margin-top: -1.1rem;
+            margin-left: -1.1rem;
+            display: none;
+            z-index: 9999;
+        }
+        .voice_jumpgif img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="header_qty">群聊
+    </div>
+    <div class="arrow_qty" onclick="closeW_yyt()">
+        <div class="arrowLeft_qty"></div>
+    </div>
+    <div class="person_qty" onclick="open_personList()"></div>
+    <div class="gg_qty">群公告</div>
+    <div class="secret_chat_zn">
+        <div class="voice_jumpgif">
+            <img src="../../image/yuying.gif" alt="">
+        </div>
+        <div class="wait_effect_zn">
+            <img src="../../image/image_zn/wait_effect_zn.png" alt=""/>
+        </div>
+        <div class="secret_chat_con_zn">
+        <!-- 群聊信息内容区域-->
+            <!-- <div class="secret_chat_right_mc">
+                <div class="icon_img_right">
+                    <img src="../../image/img_qty/leftper.png" alt="">
+                    <p>王小二</p>
+                </div>
+                <div class="icon_chat_right_img">
+                    <div class='mask_sxy'>
+                        <img src='../../image/product_sxy/mask_.png' alt=''>
+                        <p class='progress'>90%</p>
+                    </div>
+                    <img src="../../image/img_qty/person.png" alt="">
+                </div>
+            </div> -->
+
+            <!-- <div class="secret_chat_left_mc">
+                <div class="icon_img_left">
+                    <img src="../../image/img_qty/rightper.png" alt="">
+                    <p>王小二</p>
+                </div>
+                <div class="icon_chat_left_img">
+                    <div class="mask_sxy">
+                        <img src="../../image/product_sxy/mask_.png" alt="">
+                        <p class="progress">90%</p>
+                    </div>
+                    <img src="../../image/img_qty/person.png" alt="">
+                </div>
+            </div> -->
+
+            <!-- 左边 -->
+            <!-- <div class="secret_chat_left" xid="3455">
+                <div class="icon_img">
+                    <img src="http://static.duyiwang.cn/image/20171205/20171205173320_89596.jpg" alt="" class="press_on_zn" uid="452" onerror="javascript:this.src='../../image/header_picture/tc_log.png'">
+                    <p style="text-align: center;">冯鑫</p>
+                </div>
+                <div class="voice_box">
+                    <div class="voice_player">
+                        <div class="play_button">
+                            <div class="voice_but play_voice"></div>
+                        </div>
+                        <div class="voice_time">
+                            <div class="total_tiao"></div>
+                            <div class="played"></div>
+                            <div class="circle"></div>
+                        </div>
+                        <div class="show_time">1:22:01</div>
+                    </div>
+                    <div class="voice_gif">
+                        <img src="../../image/voice_play.gif" alt="">
+                    </div>
+                </div>
+            </div> -->
+            <!-- 右边 -->
+            <!-- <div class="secret_chat_left" xid="3455">
+                <div class="icon_img_right">
+                    <img src="http://static.duyiwang.cn/image/20171205/20171205173320_89596.jpg" alt="" class="press_on_zn" uid="452" onerror="javascript:this.src='../../image/header_picture/tc_log.png'">
+                    <p style="text-align: center;">冯鑫</p>
+                </div>
+                <div class="voice_box self_left">
+                    <div class="voice_gif">
+                        <img src="../../image/voice_play.gif" alt="">
+                    </div>
+                    <div class="voice_player">
+                        <div class="play_button">
+                            <div class='voice_but play_voice'></div>
+                        </div>
+                        <div class="voice_time">
+                            <div class="total_tiao"></div>
+                            <div class="played"></div>
+                            <div class="circle"></div>
+                        </div>
+                        <div class="show_time">1:22:01</div>
+                    </div>
+                </div>
+            </div> -->
+
+
+        </div>
+    </div>
+    <div class="chat_input_zn">
+        <img src="../../image/image_zn/make_zn.png" alt="" class="yuyin_con_zn">
+        <span class="pic_zn" onclick="open_picture()"></span>
+        <input type="text" class="click_import_zn">
+        <span class="click_send_zn" onclick="send_data()">发送</span>
+        <button class="yuyin_icon">按住说话</button>
+    </div>
+</div>
+<video controls='controls' autoplay='autoplay' class='video_yyt' style='visibility: hidden' src=''></video>
+<div class="copy_zhezhao_yyt">
+    <div class="copy_word_yyt">复制</div>
+    <div class="delete_word_zn">撤回</div>
+</div>
+<div class="notice_zn">
+    <div class="notice_box_zn">
+        <div class="notice_title_zn"></div>
+        <p class="chat_title_zn">群公告</p>
+        <img src="../../image/image_zn/horn_zn.png" alt="" class="horn_zn">
+        <div class="notice_con_box">
+            <p class="notice_con_name"></p>
+            <p class="notice_time_zn"></p>
+            <hr class="part_line_zn">
+            <div class="notice_con_zn">
+                <!--群公告内容区域 -->
+            </div>
+            <span class="i_got_it">我知道了</span>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript" src="../../script/message/common.js"></script><!--公用js-->
+<script type="text/javascript" src="../../script/message/Ite.js"></script><!--@功能js -->
+<script type="text/javascript" src="../../script/message/voice.js"></script><!--@语音相关js -->
+<script type="text/javascript" src="../../script/message/picture_operate.js"></script><!-- 图片操作js-->
+<script type="text/javascript" src="../../script/message/copy_message.js"></script>
+<script>
+    var that;
+    var xid;
+    var uid;//用户id
+    var gid;//群组id
+    var text;
+    var num_voice = 0;
+    var myName,head_img;//我的名字，用户头像
+    var page=1;//分页页数
+    var total;//总页数
+    var height_zn;
+    var height_zn_zn;
+    var height_zn_sure;
+    var chat_img=0;
+    var photoBrowser_flag = false;//判断是否关闭图片查看器或是窗口
+    var img_url;//头像地址
+    var audioRecorder;//录音模块变量
+    var record_path;//录音文件保存路劲
+    var covert_path;//转换路径
+    var record_num=0;
+
+    recall_voice_zn();//语音撤回事件
+    function window_zishiying() {
+        $('.secret_chat_con_zn').scrollTop( $('.secret_chat_con_zn')[0].scrollHeight );
+        var height = $(this).height();
+        var a = $(".header_qty").height();
+        var b = $(".chat_input_zn").height();
+        var newH = height - a - b;
+        $(".secret_chat_zn").css("height", newH);
+        $(window).resize(function () {
+            var height = $(this).height();
+            var a = $(".header_qty").height();
+            var b = $(".chat_input_zn").height();
+            var newH = height - a - b;
+            $(".secret_chat_zn").css("height", newH);
+            $('.secret_chat_con_zn').scrollTop( $('.secret_chat_con_zn')[0].scrollHeight);
+        })
+    }
+    window_zishiying();
+    /*
+    *获取群聊信息，群组信息
+    */
+    function getdata() {
+        apiready=function () {
+            uid = api.getPrefs({sync: true, key: 'uid'});
+            gid = api.pageParam.gid;
+            api.ajax({
+                url: 'http://appapi.duyiwang.cn/index.php?action=user_groups&dir=groups&do=qldhxx',
+                method: 'post',
+                data: {
+                    values: {uid: uid, gid: gid}
+                },
+                dataType: 'json'
+            }, function (ret, err) {
+                head_img=ret.userinfo.head_img;
+                myName=ret.userinfo.name;
+                total=parseInt(ret.total)+1;
+                if (ret.groups_info.ug_name == "未命名"){
+                    ret.groups_info.ug_name = "群聊"
+                }
+                $(".header_qty").html(ret.groups_info.ug_name+"("+ret.groups_users_count+")");
+                if((ret.groups_info.ug_notice=='')||(ret.groups_info.ug_notice==null)){
+                    $('.notice_con_zn').html('暂无公告');
+                    $('.notice_con_name').html('');
+                    $('.notice_time_zn').html('');
+                }else{
+                    $(".gg_qty").html("公告："+ret.groups_info.ug_notice);
+                    $('.notice_con_zn').html(ret.groups_info.ug_notice);
+                    $('.notice_con_name').html(ret.groups_info.ug_notice_username);
+                    $('.notice_time_zn').html(ret.groups_info.ug_notice_time);
+                }
+                api.ajax({
+                    url: 'http://appapi.duyiwang.cn/index.php?action=user_groups&dir=groups&do=qldhk',
+                    method: 'post',
+                    data: {
+                        values: {uid: uid, gid: gid,page:page}
+                    },
+                    dataType: 'text'
+                }, function (ret, err) {
+                    $(".secret_chat_con_zn").append(ret);
+                    var imgNum=$('.secret_chat_con_zn img').length;
+                    chat_img=imgNum;
+                    $('.secret_chat_con_zn img').load(function(){
+                        if(!--imgNum){
+                            $('.secret_chat_con_zn').scrollTop($('.secret_chat_con_zn')[0].scrollHeight);
+                        }
+                    });
+                    $('.secret_chat_con_zn').scrollTop($('.secret_chat_con_zn')[0].scrollHeight);
+                    page++;
+                });
+            });
+            $(".secret_chat_con_zn").on('scroll',function(){
+                height_zn=parseInt($('.secret_chat_con_zn')[0].scrollHeight);
+                if ($(this).scrollTop() == 0) {
+                    if (total == page) {
+                        $(".secret_chat_con_zn").prop('disabled', true);
+                    } else {
+                        $('.wait_effect_zn').css('display', 'block');
+                        api.ajax({
+                            url: 'http://appapi.duyiwang.cn/index.php?action=user_groups&dir=groups&do=qldhk',
+                            method: 'post',
+                            data: {
+                                values: {uid: uid, gid: gid, page: page}
+                            },
+                            dataType: 'text'
+                        }, function (ret, err) {
+                            $(".secret_chat_con_zn").prepend(ret);
+                            page++;
+                            $('.wait_effect_zn').css('display', 'none');
+                            var imgNum=$('.secret_chat_con_zn img').length-chat_img;
+                            chat_img=$('.secret_chat_con_zn img').length;
+                            $('.secret_chat_con_zn img').load(function(){
+                                if(!--imgNum){
+                                    height_zn_zn=parseInt($('.secret_chat_con_zn')[0].scrollHeight);
+                                    height_zn_sure=height_zn_zn-height_zn;
+                                    $('.secret_chat_con_zn').scrollTop(height_zn_sure+30);
+                                }
+                            });
+                        });
+                    }
+                }
+
+            })
+            /*
+            *监听返回事件关闭图片查看器或聊天窗口
+            */
+            api.addEventListener({
+                name: 'keyback'
+            }, function (ret, err) {
+                if (photoBrowser_flag == true){
+                    photoBrowser_flag = false;
+                    var photoBrowser = api.require('photoBrowser');
+                    photoBrowser.close();
+                }else if (photoBrowser_flag == false){
+                    closeW_yyt()
+                    photoBrowser_flag = true;
+                }
+            });
+        }
+    }
+    getdata();
+    /*
+    *重写群聊对话框名称
+    */
+    function get_name() {
+        api.ajax({
+            url: 'http://appapi.duyiwang.cn/index.php?action=user_groups&dir=groups&do=qldhxx',
+            method: 'post',
+            data: {
+                values: {uid: uid, gid: gid}
+            },
+            dataType: 'json'
+        }, function (ret, err) {
+            $(".header_qty").html(ret.groups_info.ug_name+"("+ret.groups_users_count+")");
+        });
+    }
+    /*
+    *重新填写群公告
+    */
+    function get_gg(a,b,c) {
+        $(".gg_qty").html("公告："+a);
+        $('.notice_con_zn').html(a);
+        $('.notice_time_zn').html(b);
+        $('.notice_con_name').html(c);
+
+    }
+    function send_data() {
+        $(".click_import_zn").focus();
+        text = $(".click_import_zn").val();
+        if (text == ""){
+            return
+        }
+        function unique(arr){
+            // 遍历arr，把元素分别放入tmp数组(不存在才放)
+            var tmp = new Array();
+            for(var i in arr){
+                //该元素在tmp内部不存在才允许追加
+                if(tmp.indexOf(arr[i])==-1){
+                    tmp.push(arr[i]);
+                }
+            }
+            return tmp;
+        }
+        user_list= unique(user_list);
+        send_text(user_list);//发送文本信息
+    }
+    /*
+    *发送文本信息事件
+    *param #user_list//被@的用户数组
+    */
+    function send_text(user_list){
+      user_list=user_list||[];
+      api.ajax({
+          url: 'http://appapi.duyiwang.cn/index.php?action=user_groups&dir=groups&do=fasixin',
+          method: 'post',
+          data: {
+              values: {uid: uid, gid: gid, groups_room: "groups_" + gid, txt: text,at_user_ids:user_list}
+          },
+          dataType: 'json'
+      }, function (ret, err) {
+          if (ret.code = 200) {
+              $(".click_import_zn").val("");
+              user_list=[];
+              if($('.click_import_zn').getCursorPosition()==0){
+                  a='';
+              }
+              if (ret.head_img.slice(0,4)=='http') {
+                  img_url=ret.head_img;
+              } else{
+                  img_url='../../image/header_picture/tc_log.png';
+              }
+              var aa = "<div class='secret_chat_right' xid=" + ret.xid+ "><div class='icon_img_right'><img src='" + img_url + "'  alt=''><p>" + ret.send_name + "</p></div><div class='icon_chat_right'>" + text + "</div></div>"
+              $(".secret_chat_con_zn").append(aa);
+              $('.secret_chat_con_zn').scrollTop($('.secret_chat_con_zn')[0].scrollHeight);
+          }
+      });
+    }
+    function delete_zn(xid){
+        var msga = eval('('+xid+')');
+        var xid_zn=String(msga.xid);
+        $("[xid="+xid_zn+"]").remove();
+    }
+    /*
+    *群聊回调
+    */
+    function jieshou(msg) {
+        var msga = eval('('+msg+')');
+        if(msga.groups_room=="groups_"+gid) {
+            if (msga.from_id != uid) {
+                var head_img_src="../../image/header_picture/tc_log.png";
+                if(msga.head_img.slice(0,4) == 'http'){
+                    head_img_src=msga.head_img;
+                }else{
+                    head_img_src='../../image/header_picture/'+msga.head_img;
+                }
+                if (msga.lx == 0) {//文本信息
+                    var html_ = "<div class='secret_chat_left' xid=" + msga.xid + "><div class='icon_img'><img src='"+head_img_src+"' alt=''><p>" + msga.send_name + "</p> </div><div class='icon_chat'>" + msga.nr + "</div>"
+                } else if (msga.lx == 1) {//图片
+                    if (msga.thumb_pic) {
+                        var html_ = "<div class='secret_chat_left_mc'><div class='icon_img_left'><img src='"+head_img_src+"' alt=''><p>" + msga.send_name + "</p></div><div class='icon_chat_left_img'><img path=" + msga.thumb_pic + " src=" + msga.nr + " alt=''></div></div>"
+                    }
+                }
+                else if (msga.lx == 2) {//语音
+                    var html_="<div class='secret_chat_left' xid="+msga.xid+">"+"<div class='icon_img'><img src="+head_img_src+"><p>"+ msga.send_name +"</p></div>"+
+                    "<div class='voice_box'>"+"<div class='voice_player' record_url='"+ msga.nr +"' id='voice_player_" + msga.xid+"'>"+
+                    "<div class='play_button' onclick='palay_record("+msga.xid+","+msga.time_length+")'  id='play_key_"+msga.xid+
+                    "'><div class='voice_but play_voice'></div></div>"+
+                    "<div class='voice_time'><div class='total_tiao'></div><div class='played' id="+msga.xid+"></div></div>"+
+                    "<div class='show_time'>"+msga.send_length+"</div></div>"+
+                    "<div class='voice_gif'><img src='../../image/voice_play.gif'></div></div>"
+                }
+                $(".secret_chat_con_zn").append(html_);
+                $('.secret_chat_con_zn').scrollTop($('.secret_chat_con_zn')[0].scrollHeight);
+            }
+        }
+    }
+    /*
+    *关闭群聊对话框
+    */
+    function closeW_yyt() {
+        api.execScript({
+            name: 'main',
+            frameName: 'info_qty',
+            script: 'chat_list_yyt()'
+        });
+        api.ajax({
+            url: 'http://appapi.duyiwang.cn/index.php?action=user_groups&dir=groups&do=update_openwin',
+            method: 'post',
+            data: {
+                values: {uid: uid}
+            },
+            dataType: 'json'
+        }, function (ret, err) {
+            api.closeToWin({
+              name: 'main',
+              animation:{
+                type:"none",                //动画类型（详见动画类型常量）
+                duration:0
+              }
+             });
+        });
+    }
+    $(".secret_chat_con_zn").on("touchstart",function () {
+        $(".click_import_zn").blur();
+    })
+</script>
+</html>

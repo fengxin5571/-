@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/api.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('../../modules/icon/iconfont.eot');
+            src: url('../../modules/icon/iconfont.eot?#iefix') format('embedded-opentype'),
+            url('../../modules/icon/iconfont.woff') format('woff'),
+            url('../../modules/icon/iconfont.ttf') format('truetype'),
+            url('../../modules/icon/iconfont.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:0.4rem;font-style:normal;
+            color: #1b8bef;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body,html{
+            background-color: #f5f5f5;
+        }
+        /*header*/
+        .header_sxy{
+            width: 100%;
+            height: 0.88rem;
+            background: linear-gradient(to right, #268ce9,#64c0ea);
+            text-align: center;
+            font-size: 0.34rem;
+            color: #fff;
+            line-height: 0.88rem;
+            float: left;
+            position: fixed;
+            top: 0rem;
+            left: 0rem;
+            z-index: 999;
+        }
+        .arrow_qty{
+            width: 1.2rem;
+            height: 0.88rem;
+            position: fixed;
+            left: 0rem;
+            top: 0rem;
+            z-index: 9991;
+        }
+        .arrowLeft_qty{
+            width: 0.15rem;
+            height: 0.28rem;
+            float: left;
+            background-image: url(../../image/img_qty/arrowLeft_06.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 0.3rem;
+            margin-left: 0.2rem;
+        }
+        /*中间内容部分*/
+        .content_sxy{
+            width: 100%;
+            padding: 0 0.4rem;
+            box-sizing: border-box;
+            padding-top: 1.32rem;
+            padding-bottom: 1.7rem;
+        }
+        /*没有进货单*/
+        .noOrder_sxy{
+            width: 5.6rem;
+            height:3.24rem;
+            background-color: #fff;
+            border-radius: 0.05rem;
+            box-shadow:0px 0px 0.14rem #d2d2cc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .noOrder_img{
+            width:2.46rem;
+            height: 2.46rem;
+        }
+        .noOrder_sxy p{
+            font-size: 0.24rem;
+            color: #393939;
+            margin-top: 0.1rem;
+        }
+        /*添加进货门店*/
+        .addShop_sxy{
+            width:5.6rem;
+            height: 1rem;
+            background-color: #fff;
+            border-radius: 0.05rem;
+            margin-top: 0.38rem;
+            display: flex;
+            align-items: center;
+        }
+        .addShop_sxy i{
+            font-size: 0.36rem;
+            color: #49bff0;
+            margin-left: 0.34rem;
+        }
+        .addShop_sxy p{
+            width: 4rem;
+            margin-left: 0.15rem;
+            font-size: 0.28rem;
+            color: #3b3b3b;
+            margin-top: 0.05rem;
+        }
+        .addShop_sxy img{
+            width: 0.46rem;
+            height: 0.46rem;
+            cursor: pointer;
+        }
+        /*进货单*/
+        .stockList_sxy{
+            width: 5.6rem;
+            padding: 0 0.32rem;
+            box-sizing: border-box;
+            height: auto;
+            background: #fff;
+            box-shadow:0px 0px 0.14rem #d2d2cc;
+
+            /*display: none;*/
+        }
+        .stockList_sxy .shopname{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            height: 1rem;
+            border-bottom: 0.01rem dashed #ededed;
+        }
+        .stockList_sxy .shopname i{
+            font-size: 0.36rem;
+            color: #49bff0;
+        }
+        .stockList_sxy .shopname p{
+            width: 4.1rem;
+            margin-left: 0.15rem;
+            font-size: 0.28rem;
+            color: #3b3b3b;
+            margin-top: 0.04rem;
+        }
+        .stockList_sxy .shopname span{
+            font-size: 0.4rem;
+            color: #40a1f8;
+        }
+        .list_title{
+            width: 100%;
+            display: flex;
+            height: 0.8rem;
+            align-items: center;
+            padding-top: 0.2rem;
+            box-sizing: border-box;
+        }
+        .list_title i{
+            font-size: 0.36rem;
+            color: #f5d84e;
+        }
+        .list_title p{
+            font-size: 0.28rem;
+            color:#2d2d2d;
+            margin-left: 0.1rem;
+        }
+        .product_list{
+            width: 100%;
+        }
+        .product_list li{
+            display: flex;
+            height: 0.7rem;
+            align-items: center;
+            width: 100%;
+            border-bottom: 0.01rem dashed #ededed;
+        }
+        .product_list li:last-child{
+            border-bottom: none;
+        }
+        .product_list li p{
+            width: 23.3333%;
+            overflow: hidden;
+        }
+        .product_list li.title p{
+            width:23.3333%;
+            font-size: 0.24rem;
+            color: #2493f7;
+            overflow: hidden;
+        }
+        .product_list li p:first-child{
+            width:30%;
+        }
+        .product_name span{
+            font-size: 0.24rem;
+            color: #1f1f1f;
+            white-space:nowrap;
+            overflow: hidden;
+            width: 90%;
+        }
+        .product_list li span{
+            font-size: 0.24rem;
+            color: #757575;
+            font-family: sans-serif;
+        }
+        .product_list li i{
+            font-size: 0.24rem;
+            color: #505050;
+            font-style: normal;
+        }
+        .detail_sxy p{
+            display: flex;
+            align-items: center;
+        }
+        .submit_sxy{
+            width: 100%;
+            height: 1rem;
+            text-align: center;
+            line-height: 1rem;
+            background-color: #2493f7;
+            font-size: 0.3rem;
+            color:#fff;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            display: none;
+            cursor:pointer;
+        }
+        .delete_order{
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header_sxy">商品选择</div>
+    <div class="arrow_qty" onclick="close_Win()" tapmode="active">
+    	<div class="arrowLeft_qty"></div>
+    </div>
+    <section class="content_sxy">
+        <!-- 没有进货 -->
+        <div class="noOrder_sxy">
+            <img src="../../image/product_sxy/product_sxy_03.png" alt="" class="noOrder_img">
+            <p>您还没有添加进货单...</p>
+        </div>
+        <!-- 进货单 -->
+        <div class="stockList_sxy">
+            <!-- <div class="order_box">
+                <div class="shopname">
+                    <i class="iconfont">&#xe604;</i>
+                    <p class="store_name">太原市清徐县湖东二街店</p>
+                    <span class="iconfont delete_order">&#xe63d;</span>
+                </div>
+                <div class="list_title">
+                    <i class="iconfont">&#xe61e;</i>
+                    <p>货品种类及数量</p>
+                </div>
+                <ul class="product_list">
+                    <li class="title">
+                        <p>商品名称</p>
+                        <p>单价</p>
+                        <p>数量</p>
+                        <p>总额</p>
+                    </li>
+                    <li class="detail_sxy">
+                        <p class="product_name"><span>老膏药老膏药老膏药</span></p>
+                        <p class="unit_price"><span>￥</span><i>540</i></p>
+                        <p class="pro_num"><span>×</span><i>540</i></p>
+                        <p class="total_price"><span>￥</span><i>540</i></p>
+                    </li>
+                    <li class="detail_sxy">
+                        <p class="product_name"><span>老膏药老膏药老膏药</span></p>
+                        <p class="unit_price"><span>￥</span><i>540</i></p>
+                        <p class="pro_num"><span>×</span><i>540</i></p>
+                        <p class="total_price"><span>￥</span><i>540</i></p>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+        <!-- 添加进货门店 -->
+        <div class="addShop_sxy"  onclick="jumpSelect()" tapmode="active">
+            <i class="iconfont">&#xe604;</i>
+            <p>添加进货门店</p>
+            <img src="../../image/product_sxy/product_sxy_07.png" alt="">
+        </div>
+    </section>
+    <!-- 底部提交按钮 -->
+    <div class="submit_sxy" tapmode="active" style="cursor:pointer">提交进货申请</div>
+</body>
+<script>
+    // 点击返回按钮
+    function close_Win(){
+        api.closeWin({
+            animation:{
+              type:"none",                //动画类型（详见动画类型常量）
+              duration:50
+            }
+        });
+
+    }
+    // 点击跳转选择门店
+    function jumpSelect(){
+        //门店ID数组  传到填写收货信息页面，点击返回删除订单
+        var store_arr=[];
+        for(var i=0;i<$('.shopname').length;i++){
+            store_arr.push($($(".shopname")[i]).attr('store_id'))
+        }
+        api.openWin({
+            name: 'selectProduct_sxy',
+            url: 'widget://html/stockApply/selectProduct_sxy.html',
+            pageParam:{
+                store_arr:store_arr
+            },
+            bounces: false,
+            reload:true,
+            rect: {x: 0,y: 0,w: 'auto',h: "auto"},
+            animation:{
+              type:"none",                //动画类型（详见动画类型常量）
+              duration:50
+            }
+        });
+    }
+    // 选择商品后展示
+    function show_goods(shop_id,shop_name,goods){
+        if(goods.length>0){
+            $('.stockList_sxy').css('display','block');
+            $('.noOrder_sxy').css('display','none');
+            $('.submit_sxy').css('display','block');
+            var shop_order="";
+            shop_order+='<div class="order_box"><div class="shopname" store_id='+shop_id+'><i class="iconfont">&#xe604;</i><p class="store_name">'+shop_name+
+            '</p><span class="iconfont delete_order">&#xe63d;</span></div><div class="list_title"><i class="iconfont">&#xe61e;</i><p>货品种类及数量</p></div><ul class="product_list"><li class="title"><p>商品名称</p><p>单价</p><p>数量</p><p>总额</p></li>';
+            goods.forEach(function(val){
+                shop_order+='<li class="detail_sxy"><p class="product_name" product_id='+val[0]+'><span>'+val[3]+'</span></p><p class="unit_price"><span>￥</span><i>'+val[2]
+                +'</i></p><p class="pro_num"><span>×</span><i>'+val[1]+'</i></p><p class="total_price"><span>￥</span><i>'+(parseInt(val[2])*parseInt(val[1]))
+                +'</i></p></li>'
+            })
+            shop_order+='</ul></div>';
+            $('.stockList_sxy').append(shop_order);
+        }
+    }
+    // 点击删除，删除订单
+    $(document).on('click','.delete_order',function(){
+        $(this).parent().parent().remove();
+        if($('.stockList_sxy').height()==0){
+            $('.noOrder_sxy').css('display','flex');
+            $('.submit_sxy').css('display','none');
+        }
+    })
+    // [{storeid:[[id,num,money],[id,num,money],[id,num,money]]},{storeid:[[id,num,money],[id,num,money],[id,num,money]]}]
+    // 点击提交
+    var product_list=[];
+    var uid;
+    $('.submit_sxy').one('click',function(){
+        $(".order_box").each(function(i){
+
+            var goods_list=[];//每个门店对应的商品是二维数组
+            var shopid;
+            shopid=$(this).find(".shopname").attr('store_id');
+            $(this).find(".detail_sxy").each(function(k){
+                var productid=$(this).find('.product_name').attr('product_id');//商品ID
+                var pro_count=$(this).find('.pro_num i').html();//商品数量
+                var all_price=$(this).find('.total_price i').html();//商品总价
+                var goods=new Array();//商品对应
+                goods[0]=productid;
+                goods[1]=pro_count;
+                goods[2]=all_price;
+                goods_list.push(goods);
+            });
+                var order_list=new Object();
+                order_list[shopid]=goods_list;
+                product_list.push(order_list);
+
+        });
+        uid=api.getPrefs({sync:true,key:'uid'});
+        roleid=api.getPrefs({sync:true,key:'roleid'});
+        // //门店ID数组  传到填写收货信息页面，点击返回删除订单
+        var store_arr=[];
+        for(var i=0;i<$('.shopname').length;i++){
+            store_arr.push($($(".shopname")[i]).attr('store_id'))
+        }
+        //所有商品总价  折扣roleid 2——25  roleid 4——35
+        var total_money=0;
+        for(var i=0;i<$('.total_price i').length;i++){
+            total_money+=parseInt($($(".total_price i")[i]).html())
+        }
+        api.showProgress({
+            title: '正在加载中...',
+            text: '请耐心等待',
+            modal: true
+        });
+        api.hideProgress();
+        api.ajax({
+            url: 'http://appapi.duyiwang.cn/index.php?action=order&dir=work&do=order_add',
+            method: 'post',
+            data: {
+                values: {uid: uid, add_list: product_list}
+            },
+            dataType: 'json'
+        }, function(ret,err){
+            if(ret.code==200){
+                product_list=[];
+                api.openWin({
+                    name: 'Transfer_hhj',
+                    url: 'widget://html/stockApply/Transfer_hhj.html',
+                    bounces: false,
+                    pageParam: {
+                        total_money:total_money,store_arr:store_arr
+                    },
+                    reload:true,
+                    rect: {x: 0,y: 0,w: 'auto',h: "auto"},
+                    animation:{
+                      type:"none",                //动画类型（详见动画类型常量）
+                      duration:50
+                    }
+                });
+            }else if(ret.code==500){
+                api.toast({
+                    msg: ret.msg,
+                    duration: 3000,
+                    location: 'bottom'
+                })
+                location.reload();
+            }
+        })
+    })
+    function submit_order(){
+
+
+    }
+    function form_jump(){
+      location.reload();
+    }
+</script>
+</html>

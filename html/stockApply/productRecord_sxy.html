@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/api.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <link rel="stylesheet" href="../../modules/icon/iconfont.css"/>
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('../../modules/icon/iconfont.eot');
+            src: url('../../modules/icon/iconfont.eot?#iefix') format('embedded-opentype'),
+            url('../../modules/icon/iconfont.woff') format('woff'),
+            url('../../modules/icon/iconfont.ttf') format('truetype'),
+            url('../../modules/icon/iconfont.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:0.4rem;font-style:normal;
+            color: #1b8bef;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body,html{
+            background-color: #f5f5f5;
+        }
+        /*header*/
+        .header_sxy{
+            width: 100%;
+            height: 0.88rem;
+            background: linear-gradient(to right, #268ce9,#64c0ea);
+            text-align: center;
+            font-size: 0.34rem;
+            color: #fff;
+            line-height: 0.88rem;
+            float: left;
+            position: fixed;
+            top: 0rem;
+            left: 0rem;
+            z-index: 999;
+        }
+        .arrow_qty{
+            width: 1.2rem;
+            height: 0.88rem;
+            position: fixed;
+            left: 0rem;
+            top: 0rem;
+            z-index: 9991;
+            cursor: pointer;
+        }
+        .arrowLeft_qty{
+            width: 0.15rem;
+            height: 0.28rem;
+            float: left;
+            background-image: url(../../image/img_qty/arrowLeft_06.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 0.3rem;
+            margin-left: 0.2rem;
+        }
+        .bg_blue{
+            width: 100%;
+            height: 1.6rem;
+            background: linear-gradient(to right, #268ce9,#64c0ea);
+            position: fixed;
+            top: 0.88rem;
+            left: 0
+        }
+        /*主体部分*/
+        .content_record{
+            width: 6rem;
+            margin: 0 0.2rem;
+            box-sizing: border-box;
+            height: auto;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 0.05rem;
+            margin-bottom: 0.4rem;
+            position: absolute;
+            top: 0.88rem;
+            left: 0;
+            z-index: 888;
+
+            display:none;
+        }
+        /*订单信息*/
+        .order_info{
+            width: 5.5rem;
+            height: auto;
+            overflow: hidden;
+            padding-top: 0.14rem;
+            margin: 0 0.25rem;
+            box-sizing: border-box;
+        }
+        .order_info li{
+            width: 100%;
+            height:1rem;
+            display: flex;
+            align-items: center;
+            border-bottom: 0.01rem dashed #ededed;
+        }
+        .order_info li p{
+            font-size:0.28rem;
+            color:#424242;
+            width: 1.34rem;
+            text-align: justify;
+            text-align-last:justify;
+        }
+        .order_info li span{
+            width: 0.01rem;
+            height: 0.14rem;
+            background-color: #dddddd;
+            margin: 0 0.1rem;
+        }
+        .order_info li h1{
+            font-size:0.24rem;
+            color:#6c6c6c;
+            font-weight: normal;
+        }
+        .order_info .order_info_title > p{
+            font-size:0.28rem;
+            color:#393939;
+            width: 1.34rem;
+            text-align: center;;
+            text-align-last:center;
+        }
+        .order_info_title i{
+            font-size:0.32rem;
+            color:#edc818;
+            margin-right: 0.2rem;
+        }
+        .order_info .order_status h1{
+            color: #f71f6b;
+        }
+        /*货品及数量*/
+        .product_num_title{
+            font-size: 0.28rem;
+            color: #424242;
+            padding-left: 0.25rem;
+            box-sizing: border-box;
+            margin-top: 0.36rem;
+        }
+        .product_num{
+            padding: 0 0.25rem;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        .shopname{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            height: 0.8rem;
+            margin-top: 0.2rem;
+        }
+        .shopname p{
+            width: 4.1rem;
+            margin-left: 0.15rem;
+            font-size: 0.28rem;
+            color: #3b3b3b;
+            margin-top: 0.04rem;
+        }
+        .shopname i{
+            font-size: 0.36rem;
+            color: #49bff0;
+        }
+        .product_list{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        .product_list li{
+            display: flex;
+            height: 0.8rem;
+            align-items: center;
+            width: 100%;
+            border-bottom: 0.01rem dashed #ededed;
+        }
+        .product_list li p{
+            width: 23.3333%;
+            overflow: hidden;
+        }
+        .product_list li.title p{
+            width:23.3333%;
+            font-size: 0.24rem;
+            color: #2493f7;
+            overflow: hidden;
+        }
+        .product_list li p:first-child{
+            width:30%;
+        }
+        .product_name span{
+            font-size: 0.24rem;
+            color: #1f1f1f;
+            white-space:nowrap;
+            overflow: hidden;
+            width: 90%;
+        }
+        .product_list li span{
+            font-size: 0.24rem;
+            color: #757575;
+            font-family: sans-serif;
+        }
+        .product_list li i{
+            font-size: 0.24rem;
+            color: #505050;
+            font-style: normal;
+        }
+        .detail_sxy p{
+            display: flex;
+            align-items: center;
+        }
+        .allmoney_sxy{
+            width:100%;
+            height: auto;
+            overflow: hidden;
+            padding-top: 0.14rem;
+            box-sizing: border-box;
+        }
+        .allmoney_sxy li{
+            width: 100%;
+            display: flex;
+            padding:0.36rem 0;
+            box-sizing: border-box;
+            border-bottom: 0.01rem dashed #ededed;
+        }
+        .allmoney_sxy li p{
+            font-size: 0.28rem;
+            color: #424242;
+            width: 1.34rem;
+            text-align: justify;
+            text-align-last: justify;
+        }
+        .allmoney_sxy li span{
+            width: 0.01rem;
+            height: 0.14rem;
+            background-color: #dddddd;
+            margin: 0 0.1rem;
+            margin-top: 0.1rem;
+        }
+        .allmoney_sxy li .money{
+            font-size: 0.28rem;
+            color: #44a3f8;
+            font-weight: normal;
+        }
+        .allmoney_sxy li .address{
+            font-size: 0.24rem;
+            color: #6c6c6c;
+            line-height: 0.4rem;
+            width: 3.6rem;
+            font-weight: normal;
+        }
+        .upload_img{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        .upload_title{
+            width: 100%;
+            height: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        .upload_title i{
+            font-size: 0.32rem;
+            color: #3286f7;
+            margin-right: 0.12rem;
+        }
+        .upload_title p{
+            font-size: 0.28rem;
+            color: #393939;
+        }
+        .img_box{
+            width: 3.89rem;
+            height: 2.17rem;
+            background: #fcfdfe;
+            border-radius: 0.05rem;
+            border: 0.01rem solid #50bff8;
+            box-shadow:0px 0px 0.14rem #d2d2cc;
+            margin: 0.4rem auto;
+            margin-top: 0.1rem;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .img_box i{
+            font-size: 0.6rem;
+            color: #c2c2c2;
+            margin-bottom: 0.2rem;
+        }
+        .img_box p{
+            font-size: 0.24rem;
+            color: #808080;
+        }
+        .sub_confirm{
+            width: 5.13rem;
+            height: 0.8rem;
+            background: linear-gradient(to right, #268ce9,#64c0ea);
+            text-align: center;
+            font-size: 0.28rem;
+            color: #ffffff;
+            line-height: 0.8rem;
+            border-radius: 0.4rem;
+            margin: 0 auto;
+            margin-bottom: 0.4rem;
+            cursor: pointer;
+        }
+        .model_frame_zn {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        .select_and_cancel_zn {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .select_pic_zn {
+            width: 100%;
+            height: 0.88rem;
+            background: #fff;
+            line-height: 0.88rem;
+            text-align: center;
+            font-size: 0.28rem;
+            color: #333;
+            margin-bottom: 0.01rem;
+            border-bottom: 0.01rem solid #ddd;
+        }
+
+        .cancel_zn {
+            width: 100%;
+            height: 0.88rem;
+            background: #fff;
+            line-height: 0.88rem;
+            text-align: center;
+            font-size: 0.28rem;
+            color: #333;
+        }
+        .img_zn{
+          width:99%;
+          height:99%;
+        }
+        .before_box{
+            margin: 0;
+        }
+        .order_info li div {
+            font-size: 0.24rem;
+            color: #6c6c6c;
+            font-weight: normal;
+        }
+        #order_list{
+            height: auto;
+            overflow: hidden;
+            padding: 0.2rem 0;
+        }
+        #order_list em{
+            font-style: normal;
+            display: block;
+            line-height: 0.36rem;
+            font-size: 0.24rem;
+            color:#f71f6b;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="header_sxy">进货记录</div>
+    <div class="arrow_qty" onclick="close_Win()" tapmode="active">
+        <div class="arrowLeft_qty"></div>
+    </div>
+    <div class="bg_blue"></div>
+    <!-- 主体部分 -->
+    <div class="content_record">
+        <!-- 订单信息 -->
+        <ul  class="order_info info_box">
+            <li class="order_info_title">
+                <i class="iconfont">&#xe7a0;</i>
+                <p>订单信息</p>
+            </li>
+            <li class="order_status">
+                <p>订单状态</p>
+                <span></span>
+                <h1>未完成</h1>
+            </li>
+            <li id="order_list">
+                <p>运单号</p>
+                <span></span>
+                <div>
+
+                </div>
+            </li>
+            <li class="order_name">
+                <p>姓名</p>
+                <span></span>
+                <h1>嘉安道</h1>
+            </li>
+            <li class="order_tel">
+                <p>电话</p>
+                <span></span>
+                <h1>12345678999</h1>
+            </li>
+        </ul>
+        <!-- 货品及数量 -->
+        <p class="product_num_title">货品及数量</p>
+        <div class="product_num">
+            <ul  class="order_info before_box">
+                <li class="order_info_title">
+                    <i class="iconfont icon-zhanghuxinxi" style="color:#e88163"></i>
+                    <p>账户信息</p>
+                </li>
+                <li>
+                    <p>账户信息</p>
+                    <span></span>
+                    <h1>张军芳</h1>
+                </li>
+                <li>
+                    <p>卡号</p>
+                    <span></span>
+                    <h1 style="font-size:0.26rem;">6228 4809 0066 7285 713</h1>
+                </li>
+                <li>
+                    <p>开户行</p>
+                    <span></span>
+                    <h1>中国农业银行太原市北大街支行</h1>
+                </li>
+            </ul>
+            <!-- 上传转账凭证 -->
+            <div class="upload_img">
+                <div class="upload_title">
+                    <i class="iconfont">&#xe67a;</i>
+                    <p>上传转账凭证</p>
+                </div>
+                <div class="img_box">
+                    <!-- <i class="iconfont">&#xe609;</i>
+                    <p class="rome">点击上传转账凭证</p> -->
+                    <img src="../../image/product_sxy/pingzheng.png" alt="" class="img_zn">
+                </div>
+            </div>
+            <div class="sub_confirm">确认提交</div>
+        </div>
+    </div>
+    <div class="model_frame_zn">
+        <div class="select_and_cancel_zn">
+            <p class="select_pic_zn" onclick="open_picture()" tapmode="active">从手机相册选择</p>
+            <p class="cancel_zn">取消</p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script src="../../script/jquery-1.11.0.js"></script>
+<script>
+// 点击返回按钮
+function close_Win(){
+    api.closeWin({
+        animation:{
+          type:"none",                //动画类型（详见动画类型常量）
+          duration:50
+        }
+    });
+    api.execScript({
+        name: 'record_hhj',
+        script: 'reload_page();'
+    });
+
+}
+var uid;
+var orderid;//订单id
+function orders_(){
+    apiready = function() {
+            api.showProgress({
+                title: '努力加载中...',
+                text: '请耐心等待',
+                modal: true
+            });
+            api.hideProgress();
+            // 接收订单id的值
+            orderid = api.pageParam.ooddeer;
+            var uid = api.getPrefs({sync:true,key:'uid'});
+            api.ajax({
+                url: 'http://appapi.duyiwang.cn/index.php?action=order&dir=work&do=order_detail',
+                method: 'post',
+                data: {
+                    values: {uid: uid,orderid:orderid}
+                },
+                dataType: 'json'
+            }, function (ret, err) {
+                if(ret.code==200){
+                    $('.content_record').css('display','block')
+                    joint(ret);// 订单信息
+                    shopJoint(ret);// 货品及数量
+                    totalValue(ret);//  商品总价 收货地址
+                    order_img(ret);//是否上传凭证图片
+                    if(ret.order_info.voucher_image!=null && ret.order_info.status==0){
+                        $('.sub_confirm').css('display','none');
+                        $('.upload_title p').html('转账凭证');
+                    }else if(ret.order_info.voucher_image!=null && ret.order_info.status==2){
+                        $('.sub_confirm').html('确认收货');
+                    }else if(ret.order_info.voucher_image==null){
+                        $('.sub_confirm').css('display','block');
+                    }else if(ret.order_info.voucher_image!=null && ret.order_info.status==1){
+                        $('.sub_confirm').css('display','none');
+                        $('.upload_title p').html('转账凭证');
+
+                    }
+                }
+            });
+        }
+    }
+    orders_();
+    // 订单信息
+  function joint(ret){
+           var order='';
+           if(ret.order_info.order_number.length==1 && ret.order_info.order_number[0]==""){
+               $('.order_status h1').html(ret.order_info.order_status);
+               $('#order_list div').html('<em>暂未发货</em>');
+               $('.order_name h1').html(ret.order_info.name);
+               $('.order_tel h1').html(ret.order_info.mobile);
+           }else{
+               $('.order_status h1').html(ret.order_info.order_status);
+               ret.order_info.order_number.forEach(function(v){
+                   order+='<em>'+v+'<em>';
+               });
+               $('#order_list div').html(order);
+               $('.order_name h1').html(ret.order_info.name);
+               $('.order_tel h1').html(ret.order_info.mobile);
+           }
+     }
+    //  货品及数量
+     function shopJoint(ret){
+       var data = ret.order_info.store;
+       var str = '';
+       data.forEach(function(n, i) {
+         str+= '<div class="shopname">'+
+                 '<i class="iconfont">&#xe604;</i>'+
+                 '<p class="store_name">'+n.name+'</p>'+
+               '</div>'+
+               '<ul class="product_list">'+
+                   '<li class="title">'+
+                       '<p>商品名称</p>'+
+                       '<p>单价</p>'+
+                       '<p>数量</p>'+
+                       '<p>总额</p>'+
+                   '</li>';
+              n.goods_info.forEach(function(object, k) {
+
+                  str += '<li class="detail_sxy">'+
+                       '<p class="product_name"><span>'+object.name.slice(0,5)+'</span></p>'+
+                       '<p class="unit_price"><span>￥</span><i>'+object.money+'</i></p>'+
+                       '<p class="pro_num"><span>×</span><i>'+object.count+'</i></p>'+
+                       '<p class="total_price"><span>￥</span><i>'+object.goods_price+'</i></p>'+
+                   '</li>';
+                 });
+            str += '</ul>'
+       })
+      $('.before_box').before(str);
+     }
+    //  商品总价 收货地址
+     function totalValue(ret){
+             var str ='';
+               str += '<ul class="allmoney_sxy">'+
+                   '<li>'+
+                       '<p>转账金额</p>'+
+                       '<span></span>'+
+                       '<h1 class="money">'+ret.order_info.price+'&nbsp;元'+'</h1>'+
+                   '</li>'+
+                   '<li>'+
+                       '<p>收货地址</p>'+
+                       '<span></span>'+
+                       '<h1 class="address">'+ret.order_info.address+'</h1>'+
+                   '</li>'+
+               '</ul>';
+               $('.before_box').before(str);
+              //  $('.address').html(name_md);
+     }
+    //  图片有无
+    function order_img(ret){
+        if(ret.order_info.voucher_image==null){
+            $('.img_zn').attr('src','../../image/product_sxy/pingzheng.png');
+        }else{
+            $('.img_zn').attr('src',ret.order_info.voucher_image);
+        }
+    }
+     //    上传凭证图片
+    $('.img_box').click(function() {
+        if($('.img_zn').attr('src')=='../../image/product_sxy/pingzheng.png'){
+            $('.model_frame_zn').show();
+        }
+    })
+    $('.cancel_zn').click(function() {
+        $('.model_frame_zn').hide();
+    })
+    //  上传图片
+    var path_yyt;
+    var img_64 ;//base64编码图片
+     function open_picture() {
+         var UIMediaScanner = api.require('UIMediaScanner');
+         UIMediaScanner.open({
+             type: 'picture',
+             column: 4,
+             classify: true,
+             max: 1,
+             sort: {
+                 key: 'time',
+                 order: 'desc'
+             },
+             texts: {
+                 stateText: '已选择*项',
+                 cancelText: '取消',
+                 finishText: '完成'
+             },
+             styles: {
+                 bg: '#fff',
+                 mark: {
+                     icon: '',
+                     position: 'bottom_left',
+                     size: 20
+                 },
+                 nav: {
+                     bg: '#eee',
+                     stateColor: '#000',
+                     stateSize: 18,
+                     cancelBg: 'rgba(0,0,0,0)',
+                     cancelColor: '#000',
+                     cancelSize: 18,
+                     finishBg: 'rgba(0,0,0,0)',
+                     finishColor: '#000',
+                     finishSize: 18
+                 }
+             },
+             exchange: true,
+             rotation: true
+         }, function(ret) {
+             if (ret) {
+                 if(ret.eventType!="cancel") {
+                   path_yyt = ret.list[0].path;
+
+                   UIMediaScanner.transPath({
+                        path: path_yyt
+                    }, function(ret, err) {
+                        if (ret) {
+                            path_yyt=ret.path;
+                            $('.model_frame_zn').hide();
+                            $('.img_zn').attr('src', path_yyt);
+                            var trans = api.require('trans');
+                            trans.decodeImgToBase64({
+                                imgPath: ret.path
+                            }, function(ret, err) {
+                               if (ret.status) {
+                                   img_64 = ret.base64Str;
+                               }
+                           });
+                            // alert(JSON.stringify(ret.path));
+                        } else {
+                            // alert(JSON.stringify(err));
+                        }
+                    });
+                }
+             }
+         });
+     }
+    //  上传确定按钮
+    $('.sub_confirm').one('click',function(){
+        uid=api.getPrefs({sync:true,key:'uid'});
+        //  上传图片后点击确认提交图片   没有上传图片提示上传图片
+        api.showProgress({
+            title: '正在上传中...',
+            text: '请耐心等待',
+            modal: true
+        });
+        api.hideProgress();
+        if($('.sub_confirm').html()=='确认提交'){
+            if(img_64!=undefined){
+                api.ajax({
+                    url: 'http://appapi.duyiwang.cn/index.php?action=order&dir=work&do=upload_credentials',
+                    method: 'post',
+                    data: {
+                        values: {
+                            uid: uid,
+                            voucher_image:img_64,
+                            orderid:orderid
+                        }
+                    },
+                    dataType: 'json'
+                }, function(ret, err) {
+                    if(ret.code==200){
+                        $('.img_zn').attr('src', ret.url);
+                        api.toast({
+                            msg: "上传成功,等待物流人员发货",
+                            duration: 3000,
+                            location: 'bottom'
+                        })
+                        setTimeout(function(){
+                            api.openWin({
+                                name: 'record_hhj',
+                                url: 'widget://html/stockApply/record_hhj.html',
+                                bounces: false,
+                                reload:true,
+                                rect: {
+                                    x: 0,
+                                    y: 0,
+                                    w: 'auto',
+                                    h: 'auto'
+                                },
+                                animation:{
+                                  type:"none",                //动画类型（详见动画类型常量）
+                                  duration:50
+                                }
+                            });
+                        },1000)
+                    }
+                });
+            }else{
+                api.toast({
+                    msg: "请上传转账凭证再提交",
+                    duration: 3000,
+                    location: 'bottom'
+                })
+            }
+        }else if($('.sub_confirm').html()=='确认收货'){ //点击确认收货
+            api.ajax({
+                url: 'http://appapi.duyiwang.cn/index.php?action=order&dir=work&do=confirm_order&dosubmit=1',
+                method: 'post',
+                data: {
+                    values: {
+                        uid: uid,
+                        orderid:orderid
+                    }
+                },
+                dataType: 'json'
+            }, function(ret, err) {
+                if(ret.code==200){
+                    api.toast({
+                        msg: ret.msg,
+                        duration: 3000,
+                        location: 'bottom'
+                    })
+                    setTimeout(function(){
+                        api.openWin({
+                            name: 'record_hhj',
+                            url: 'widget://html/stockApply/record_hhj.html',
+                            bounces: false,
+                            reload:true,
+                            rect: {
+                                x: 0,
+                                y: 0,
+                                w: 'auto',
+                                h: 'auto'
+                            },
+                            animation:{
+                              type:"none",                //动画类型（详见动画类型常量）
+                              duration:50
+                            }
+                        });
+                    },1000)
+                }
+            });
+        }
+
+    })
+
+</script>
+</html>

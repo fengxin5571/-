@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>manager</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <style type="text/css">
+        html,body{
+            height: 100%;
+        }
+        #wrap{
+            height: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-flex-flow: column;
+            flex-flow: column;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap"></div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript" src="./script/db.js"></script>
+<script type="text/javascript">
+    var uid;
+    apiready = function(){
+        uid = api.getPrefs({sync:true,key:'uid'});
+        api.setPrefs({key: 'is_database',value: false});//数据库是否创建成功
+        init_db()//初始化数据库工作
+        if(uid){
+            api.openWin({
+                name: 'main',
+                url: 'html/main.html',
+                bounces: false,
+                rect: {x: 0,y: 0,w: 'auto',h: 'auto'},
+                animation: {
+                    type: "none", //动画类型（详见动画类型常量）
+                    duration: 50
+                }
+            });
+        }else {
+            api.openFrame({
+                name: 'register',
+                url: 'widget://html/WeChat/register.html',
+                bounces: false,
+                reload:true,
+                rect: {x: 0,y: 0,w: 'auto',h: 'auto'},
+                animation: {
+                    type: "none", //动画类型（详见动画类型常量）
+                    duration: 50
+                }
+            });
+        }
+    };
+</script>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/api.css">
+    <link rel="stylesheet" href="../../css/hhj_css/new_pass.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 设置新密码 -->
+    <!-- 导航 -->
+    <div class="head">
+        <span class="cy">设置密码</span>
+        <section  onclick="api.closeWin()">
+            <div class="arrowLeft_qty"></div>
+        </section>
+    </div>
+    <div class="bangding">请设置您的密码</div>
+    <div class="top_qty">
+        <div class="loginInput_qty">
+            <input type="text" name="text" placeholder=" 13698525691" class="input_qty sign_z" readonly="true">
+            <div class="chachsa_qty"></div>
+        </div>
+        <div class="loginInput_qty" style="margin-top:0.4rem;">
+            <input type="password" name="text" placeholder=" 请设置密码" class="input_qty password" maxlength="16">
+        </div>
+        <div class="dibu_box">
+            <span class="yuedu">* 密码长度6-16位，支持数字、字母和字符</span>
+        </div>
+        <div class="bott" tapmode="active" onclick="complete()">完&nbsp;成</div>
+    </div>
+</body>
+<script>
+    var telphone;//注册手机号
+    var password;//密码
+    var unionid;//微信用户唯一ID
+    apiready=function(){
+        telphone=api.pageParam.tel;
+        $('.sign_z').val(telphone);
+    }
+    // 点击完成
+    function complete(){
+        api.closeWin({
+            name:'login',
+            animation: {
+                type: "none", //动画类型（详见动画类型常量）
+                duration: 50
+            }
+        });
+        password=$('.password').val();
+        unionid=api.getPrefs({
+            sync: true,
+            key: 'unionid'
+        });
+        // console.log(unionid);
+        if(password.length<6){
+            $('.password').focus();
+            api.toast({
+                msg: '密码长度不得少于6位',
+                duration: 4000,
+                location: 'bottom'
+            });
+        }else{
+            api.ajax({
+            	url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=register',
+            	method: 'post',
+            	data: {
+            		values:{mobile:telphone,password:password,weixin_id:unionid}
+            	},
+            	dataType:'json'
+            },function(ret,err){
+                // alert(JSON.stringify(ret));
+                // 注册成功到主页
+                if(ret.code==200){
+                    api.toast({
+                        msg: "注册成功",
+                        duration: 4000,
+                        location: 'bottom'
+                    });
+                    api.setPrefs({key: 'uid',value: ret.uid});
+                    setTimeout(function(){
+                        api.openWin({
+                  			name:'main',
+                  			url:'widget://html/main.html',
+                  			bounces: false,
+                  			rect: {x: 0,y: 0,w: 'auto',h: 'auto'},
+                  		})
+                    },1000);
+                }
+            });
+        }
+    }
+</script>
+
+</html>

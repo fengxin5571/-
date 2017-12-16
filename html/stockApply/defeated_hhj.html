@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" href="../../css/api.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <style>
+
+
+        html,
+        body {
+            background: #f5f5f5;
+            position: relative;
+        }
+
+        .header_qty {
+            width: 100%;
+            height: 0.88rem;
+            /*background: #2492f6;*/
+            background: linear-gradient(to right, #268ce9, #64c0ea);
+            text-align: center;
+            font-size: 0.34rem;
+            color: #fff;
+            line-height: 0.88rem;
+            float: left;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 111;
+        }
+
+        .arrow_qty {
+            width: 1.2rem;
+            height: 0.88rem;
+            position: fixed;
+            left: 0rem;
+            top: 0rem;
+            z-index: 99999;
+        }
+
+        .arrowLeft_qty {
+            width: 0.15rem;
+            height: 0.28rem;
+            float: left;
+            background-image: url(../../image/img_qty/arrowLeft_06.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 0.3rem;
+            margin-left: 0.2rem;
+        }
+
+        .jilu{
+            width:3.79rem;
+            height:4rem;
+            margin:0 auto;
+            /*border:1px solid red;*/
+            margin-top: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+        .jilu img{
+          display: block;
+          width:100%;
+          height:100%;
+
+        }
+      .qianwang{
+        font-size: 0.28rem;
+        color:rgb(51, 51, 51);
+
+      }
+      .bott{
+        width:5.06rem;
+        height:0.9rem;
+        margin:0 auto;
+        text-align: center;
+        line-height: 0.9rem;
+        background: linear-gradient(to right, #268ce9, #64c0ea);
+        color:#fff;
+        border-radius: 50px;
+        font-size: 0.28rem;
+      }
+      .box{
+        height: auto;
+        width:70%;
+        margin:0 auto;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="header_qty">提交通知</div>
+    <div class="arrow_qty"  onclick="go_return()" tapmode="active">
+        <div class="arrowLeft_qty"></div>
+    </div>
+    <div class="jilu">
+        <img src="../../image/apply/shibai.png" alt="">
+
+    </div>
+    <div class="box"><p class="qianwang">立即前往确认您的账单</p></div>
+    <div class="bott" onclick='open_jinhuo_hhj()' tapmode="active">返回选择清单</div>
+
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script src="../../script/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+    // 跳转下一个页面 选择清单
+
+    function open_jinhuo_hhj() {
+        api.openWin({
+            name: 'productSelect_sxy',
+            url: 'widget://html/stockApply/productSelect_sxy.html',
+            bounces: false,
+            reload:true,
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            },
+            animation:{
+              type:"none",                //动画类型（详见动画类型常量）
+              duration:50
+            }
+        });
+
+    }
+    apiready=function(){
+        //设备 back 键被点击事件，仅 Android 平台有效，字符串类型
+        api.addEventListener({
+            name: 'keyback'
+        }, function (ret, err) {
+            api.toast({
+                msg: '请点击页面中的按钮',
+                duration: 3000,
+                location: 'bottom'
+            });
+            return;
+        });
+    }
+    /*
+    *返回事件
+    */
+    function go_return(){
+
+        api.openWin({
+            name: 'record_hhj',
+            url: 'widget://html/stockApply/record_hhj.html',
+            bounces: false,
+            reload:true,
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            },
+            animation:{
+              type:"none",                //动画类型（详见动画类型常量）
+              duration:50
+            }
+        });
+    }
+</script>
+
+</html>

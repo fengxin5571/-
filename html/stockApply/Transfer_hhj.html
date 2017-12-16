@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" href="../../css/api.css">
+
+    <script src="../../script/jquery.min.js"></script>
+
+    <script src="../../script/rem.js"></script>
+    <style>
+
+
+        html,
+        body {
+            background: #f5f5f5;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .head {
+            width: 100%;
+            height: 2rem;
+            /*background: #2492f6;*/
+            background: linear-gradient(to right, #268ce9, #64c0ea);
+            text-align: center;
+            color: #fff;
+            line-height: 1rem;
+            font-size: 0.34rem;
+            z-index: 1;
+        }
+
+        .head span {
+            position: relative;
+            right: 0.3rem;
+        }
+
+        .huitui {
+            float: left;
+            width: 0.35rem;
+            height: 0.5rem;
+            margin-top: 0.3rem;
+            margin-left: 0.2rem;
+        }
+
+        .box {
+            height: auto;
+            width: 5.8rem;
+            border-radius: 5px;
+            z-index: 99;
+            margin: 0 auto;
+            position: relative;
+            bottom: 1rem;
+            text-align: left;
+        }
+
+        .min_box {
+            width: 100%;
+            height: 2rem;
+            background: #f2f9fd;
+            border-radius: 5px;
+        }
+
+        .big_box {
+            width: 100%;
+            height: 7.2rem;
+            background: #fff;
+            box-shadow: 0px 15px 34px 15px rgb(233, 238, 242);
+            border-bottom-right-radius:5px;
+            border-bottom-left-radius:5px;
+        }
+
+        .min_img {
+            height: 1.1rem;
+            width: 1.1rem;
+            float: left;
+            margin-top: 0.32rem;
+            margin-left: 0.4rem;
+        }
+
+        .min_sp1 {
+            font-size: 0.28rem;
+            color: rgb(74, 74, 74);
+            position: relative;
+            bottom: 0.2rem;
+            left: 0.2rem;
+        }
+
+        .min_sp2 {
+            font-size: 0.24rem;
+            color: rgb(98, 211, 164);
+            position: relative;
+            bottom: 0.2rem;
+            left: 0.2rem;
+        }
+
+        .tiao {
+            width: 10%;
+            height: 5rem;
+            /*border: 1px solid red;*/
+            display: inline-block;
+            float: left;
+            margin-top: 0.4rem;
+            margin-left: 0.2rem;
+        }
+
+        .liebiao {
+            width: 86%;
+            height: 5rem;
+            margin-top: 0.4rem;
+            display: inline-block;
+            float: right;
+
+        }
+
+        .xingming {
+            height: 0.8rem;
+            width: 100%;
+            /*border: 1px solid green;*/
+            margin-bottom: 0.2rem;
+            display: flex;
+            justify-content: flex-start;
+
+        }
+
+        .xm_sp {
+            font-size: 0.28rem;
+            color: rgb(66, 66, 66);
+            line-height: 0.72rem;
+            margin-right: 0.2rem;
+
+        }
+
+        .xingbie {
+            height: 0.72rem;
+            width: 100%;
+            /*border: 1px solid green;*/
+            margin-bottom: 0.2rem;
+            margin-top: 0.24rem;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .xingbie .inp1 {
+            width: 0.4rem;
+            height: 0.4rem;
+            margin-top: 0.15rem;
+            margin-right: 0.2rem;
+            font-size: 0.28rem;
+
+
+        }
+
+        .xingbie .inp2 {
+            width: 0.4rem;
+            height: 0.4rem;
+            margin-top: 0.15rem;
+            margin-right: 0.2rem;
+            font-size: 0.28rem;
+        }
+
+        .xingbie .sex1 {
+            font-size: 0.28rem;
+            line-height: 0.72rem;
+            margin-right: 0.8rem;
+
+
+        }
+
+        .xingbie .sex2 {
+            font-size: 0.28rem;
+            line-height: 0.72rem;
+
+        }
+
+        .xb_sp {
+            margin-right: 0.5rem;
+            font-size: 0.28rem;
+            color: rgb(66, 66, 66);
+            line-height: 0.72rem;
+
+        }
+
+        .inp_txt {
+            font-size: 0.24rem;
+            color:#2e2e2e;
+            height: 0.7rem;
+            width: 3.16rem;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            margin-top: 0.05rem;
+            margin-left: 0.1rem;
+
+            outline:none;
+            padding-left: 0.1rem;
+
+        }
+
+        .shouhuo {
+            height: 1.2rem;
+            width: 100%;
+            /*border: 1px solid green;*/
+            margin-bottom: 0.12rem;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .inp_txt1 {
+            font-size: 0.24rem;
+            color: #2e2e2e;
+            height: 1.2rem;
+            width: 3.16rem;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            margin-top: 0.1rem;
+            margin-left: 0.1rem;
+            resize:none;
+            outline: none;
+            padding-left: 0.1rem;
+            padding-top: 0.18rem;
+            padding-bottom: 0.18rem;
+            box-sizing: border-box;
+
+        }
+
+        .bott {
+            text-align: center;
+            width: 5rem;
+            margin: 0 auto;
+            height: 0.8rem;
+            border-radius: 50px;
+            background: linear-gradient(to right, #268ce9, #64c0ea);
+            color: #fff;
+            font-size: 0.28rem;
+            line-height: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .anniu {
+            display: inline-block;
+            height:4.79rem;
+            margin-top: 0.04rem;
+
+
+        }
+        .tan{
+            width:4.8rem;
+            height:2.68rem;
+            border-radius: 0.05rem !important;
+            margin:0 auto;
+            z-index: 999;
+            position: relative;
+            bottom:7rem;
+            display: none
+        }
+        .tishi{
+            width:4.8rem;
+            height:2rem;
+            background: #fff;
+            /*border:1px solid red;*/
+        }
+
+        .tishi .p1{
+          color:rgb(51, 51, 51);
+          font-size: 0.28rem;
+          text-align: center;
+          padding-top: 0.5rem;
+
+        }
+        .tishi .p2{
+          color:rgb(51, 51, 51);
+          font-size: 0.28rem;
+          text-align: center;
+          margin-top: 0.3rem;
+
+        }
+
+        .tishi_box{
+          width:4.8rem;
+          height:0.68rem;
+          /*border:1px solid red;*/
+          display: flex;
+          justify-content: flex-start;
+        }
+        .quxiao{
+            width:50%;
+            height:100%;
+            background: rgb(176, 176, 176);
+            text-align: center;
+            line-height:0.68rem;
+            font-size: 0.28rem;
+            display: inline-block;
+            color:#fff;
+        }
+        .queren{
+          width:50%;
+          height:100%;
+          background: rgb(36, 147, 247);
+          text-align: center;
+          line-height: 0.68rem;
+          font-size: 0.28rem;
+          color:#fff;
+        }
+        .zhezhao{
+            width:100%;
+            height:100%;
+            background:#aaa;
+            position:absolute;
+            top:0px;
+            left:0px;
+            display:none;
+            z-index:222;
+            opacity:0.5;
+        }
+        .wancheng{
+          font-size: 0.24rem;
+          display: none;
+          position: relative;
+          bottom: 0.2rem;
+          left: 2.2rem;
+          color:#64c0ea;
+        }
+        .sex{
+            width: 3.16rem;
+            height: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 0.3rem;
+            box-sizing: border-box;
+        }
+        .sex li{
+            display: flex;
+            align-items: center;
+        }
+        .sex li .radio{
+            width: 0.3rem;
+            height: 0.3rem;
+            border: 0.01rem solid #c6c6c6;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            margin-right: 0.3rem;
+        }
+        .sex li .radio img{
+            width: 0.2rem;
+            height: 0.14rem;
+            margin-top: 0.02rem;
+        }
+        .sex li.active .radio{
+            width: 0.3rem;
+            height: 0.3rem;
+            background-color: #2493f7;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 0.3rem;
+            border: 0.01rem solid #2493f7;
+            box-sizing: border-box;
+        }
+        .sex li p{
+            font-size: 0.24rem;
+            color: #1b1b1b;
+        }
+        .total_money{
+            color:#268ce9;
+            font-size:0.28rem;
+            margin-top:0.16rem;
+            margin-left:0.15rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <span class="cy">转账详情</span>
+        <img src="../../image/product_sxy/arrow_sxy_03.png" alt="" onclick="return_delete()" tapmode="active" class="huitui">
+    </div>
+    <div class="box">
+        <div class="min_box">
+            <img src="../../image/apply/txhhj.png" class="min_img">
+            <span class="min_sp1">郝华杰</span>
+
+            <span class="wancheng">完成</span>
+            <p class="min_sp2">请确认您的进货账单 !</p>
+        </div>
+        <div class="big_box">
+            <div class="tiao">
+                <img src="../../image/apply/anniu.png" alt="" class="anniu">
+            </div>
+            <div class="liebiao">
+                <div class="xingming">
+                    <span class="xm_sp">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</span>
+                    <input type="text" class="inp_txt receive_name">
+                </div>
+                <div class="xingming">
+                    <span class="xm_sp">电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话</span>
+                    <input type="text" class="inp_txt receive_tel" maxlength="11">
+                </div>
+                <div class="xingbie">
+                    <span class="xb_sp">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
+                    <ul class="sex">
+                    <li  class="active">
+                        <div class="radio">
+                            <img src="../../image/product_sxy/duigou1_sxy.png" alt="">
+                        </div>
+                        <p role="1">男</p>
+                    </li>
+                    <li>
+                        <div class="radio">
+                            <img src="../../image/product_sxy/duigou_sxy.png" alt="">
+                        </div>
+                        <p role="2">女</p>
+                    </li>
+                </ul>
+                </div>
+                <div class="shouhuo">
+                    <span class="xm_sp">收货地址</span>
+                    <textarea  cols="30" rows="10" class="inp_txt1 receive_address"></textarea>
+                </div>
+                <div class="xingming">
+                    <span class="xm_sp">转账金额</span>
+                    <span class="total_money">8000元</span>
+                </div>
+
+            </div>
+            <div style="clear:both"></div>
+            <div class="bott">确认提交</div>
+        </div>
+    </div>
+    <div class="tan">
+        <div class="tishi">
+            <p class="p1">提示<p>
+            <p class="p2">确认提交您的订货账单吗？</p>
+        </div>
+        <div class="tishi_box">
+          <div class="quxiao">取消</div>
+          <div class="queren">确认</div>
+        </div>
+    </div>
+    <div class="zhezhao"></div>
+
+
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+
+<script src="../../script/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+      // 点击提交让弹框显示
+        $('.bott').click(function(){
+            // 判断名字是否为空
+            if ($('.receive_name').val() == "") {
+                $('.receive_name').focus();
+                api.toast({
+                    msg: '姓名是必须的',
+                    duration: 3000,
+                    location: 'bottom'
+                });
+            }
+            // 判断电话号码
+            if ($('.receive_tel').val() == "") {
+                $('.receive_tel').focus();
+                api.toast({
+                    msg: '电话号码是必须的',
+                    duration: 3000,
+                    location: 'bottom'
+                });
+            }
+            // 判断地址是否为空
+            if ($('.receive_address').val() == "") {
+                $('.receive_address').focus();
+                api.toast({
+                    msg: '收货地址是必须的',
+                    duration: 3000,
+                    location: 'bottom'
+                });
+            }
+            if($('.receive_address').val() != "" && $('.receive_tel').val() != "" && $('.receive_name').val() != ""){
+                $('.zhezhao').show();
+                $('.tan').show();
+            }
+
+        });
+      // 点击取消隐藏弹框
+        $('.quxiao').click(function(){
+            $('.zhezhao').hide();
+            $('.tan').hide();
+
+        });
+        //   性别选择
+        var sex;
+        $('.sex li').click(function () {
+            $('.sex li').removeClass('active');
+            $('.sex li').find('.radio img').attr('src','../../image/product_sxy/duigou_sxy.png')
+            $(this).addClass('active');
+            $(this).find('.radio img').attr('src','../../image/product_sxy/duigou1_sxy.png')
+        });
+        var total_money;//商品总价
+        var store_arr;//门店ID数组
+        var uid;
+        var roleid;
+        var name;
+        var mobile;
+        var address;
+        var role_name;//经销商姓名
+        apiready=function(){
+            total_money=api.pageParam.total_money;
+            store_arr=api.pageParam.store_arr;
+            role_name=api.getPrefs({sync:true,key:'name'});
+            $('.total_money').html(total_money+'元');
+            $('.min_sp1').html(role_name);
+            //设备 back 键被点击事件，仅 Android 平台有效，字符串类型
+            api.addEventListener({
+                name: 'keyback'
+            }, function (ret, err) {
+                return_delete();//点击手机back键，删除订单
+            });
+       }
+    //    点击遮罩“确定”提交收货信息
+        $('.queren').click(function(){
+            uid=api.getPrefs({sync:true,key:'uid'});
+            roleid=api.getPrefs({sync:true,key:'roleid'});
+            name=$('.receive_name').val();
+            mobile=$('.receive_tel').val();
+            address=$('.receive_address').val();
+            sex=$('.active').find('p').attr('role');
+            $('.wancheng').show();
+            api.showProgress({
+                title: '正在提交中...',
+                text: '请耐心等待',
+                modal: true
+            });
+            api.hideProgress();
+            api.ajax({
+                url: 'http://appapi.duyiwang.cn/index.php?action=order&dir=work&do=order_person_info&dosubmit=1',
+                method: 'post',
+                data: {
+                    values:{
+                        uid:uid,
+                        roleid:roleid,
+                        name:name,
+                        sex:sex,
+                        mobile:mobile,
+                        address:address,
+                        price:total_money
+                    }
+                },
+                dataType:'json'
+            },function(ret,err){
+                if(ret.code==200){
+
+                    api.openWin({
+                        name: 'succeed_hhj',
+                        url: 'widget://html/stockApply/succeed_hhj.html',
+                        bounces: false,
+                        reload:true,
+                        rect: {
+                            x: 0,
+                            y: 0,
+                            w: 'auto',
+                            h: 'auto'
+                        },
+                        animation:{
+                          type:"none",                //动画类型（详见动画类型常量）
+                          duration:50
+                        }
+                    });
+
+                }else{
+                    api.openWin({
+                        name: 'defeated_hhj',
+                        url: 'widget://html/stockApply/defeated_hhj.html',
+                        bounces: false,
+                        reload:true,
+                        rect: {
+                            x: 0,
+                            y: 0,
+                            w: 'auto',
+                            h: 'auto'
+                        },
+                        animation:{
+                          type:"none",                //动画类型（详见动画类型常量）
+                          duration:50
+                        }
+                    });
+                }
+            })
+      })
+    // 验证电话号码
+    $(document).on('change','.receive_tel',function(){
+        if(!(/^1[34578]\d{9}$/.test($(".receive_tel").val()))){
+            $(this).val('');
+            $(this).focus();
+            api.toast({
+                msg: "请输入正确的电话号码",
+                duration: 3000,
+                location: 'bottom'
+            })
+        }
+    })
+    // 点击返回按钮删除已经提交的订单
+    function return_delete(){
+        uid=api.getPrefs({sync:true,key:'uid'});
+        api.ajax({
+            url: 'http://appapi.duyiwang.cn/index.php?action=order&dir=work&do=order_person_info',
+            method: 'post',
+            data: {
+                values:{
+                    uid:uid,
+                    order_storeid:store_arr
+                }
+            },
+            dataType:'json'
+        },function(ret,err){
+            if(ret.code==200){
+                api.toast({
+                    msg: "订单已删除",
+                    duration: 3000,
+                    location: 'bottom'
+                })
+            }
+        })
+        api.closeWin();
+        api.execScript({
+            name: 'productSelect_sxy',
+            script: 'form_jump();'
+        });
+    }
+</script>
+
+</html>

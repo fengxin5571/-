@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/api.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    body,html{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../image/product_sxy/guide_wx.jpg');
+        background-size: cover;
+    }
+</style>
+<body>
+
+</body>
+<script>
+apiready = function() {
+  function wx(){
+    var wx = api.require('wx');//引入微信模块
+    var code=api.getPrefs({ sync: true,key: 'code'})
+    wx.getToken({//获取微信口令
+        code: code
+    }, function(ret, err) {
+       if (ret.status) {
+            wx.getUserInfo({//获取用户信息
+                accessToken: ret.accessToken,
+                openId: ret.openId
+            }, function(ret, err) {
+                if (ret.status) {
+                  api.setPrefs({key: 'unionid',value: ret.unionid});
+                  // 判断数据库中是否有微信用户 唯一标识  有 直接跳转到主页设置偏好   没有绑定手机号到绑定手机号页面
+                  api.ajax({
+                    url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=login',
+                    method: 'post',
+                    data: {
+                      values:{weixin_id:ret.unionid}
+                    },
+                    dataType:'json'
+                  },function(ret,err){
+                      if(ret.code==200){
+                        // 已经绑定手机号  直接完成登录
+
+                        api.setPrefs({key: 'name',value: ret.name});
+                        api.setPrefs({key: 'type',value: ret.type});
+                        api.setPrefs({key: 'mobile',value: ret.mobile});
+                        api.setPrefs({key: 'store_id',value: ret.store_id});
+                        api.setPrefs({key: 'uid',value: ret.uid});
+                        api.setPrefs({key: 'user_role',value: ret.user_role});
+                        api.setPrefs({key: 'roleid',value: ret.roleid});
+                        api.openWin({
+                          name:'main',
+                          url:'widget://html/main.html',
+                          bounces: false,
+                          reload:true,
+                          rect: {x: 0,y: 0,w: 'auto',h: 'auto'},
+                        })
+                      }else if(ret.code==500){
+                          // 未绑定手机号  跳转的绑定页面
+                          api.openWin({//成功后打开绑定页面
+                              name: 'binding_sj',
+                              url: 'widget://html/WeChat/binding_sj.html',
+                              bounces: false,
+                              reload: true,
+                              rect: {x: 0,y: 0,w: 'auto',h: 'auto'},
+                              // pageParam: {unionid: ret.unionid},//将微信用户唯一标识传入到下个页面
+                          });
+                      }
+                  });
+
+                }
+            });
+       }
+    });
+
+  }
+wx();
+}
+
+function close_me(){
+    var ss;
+    api.closeWin({
+        animation: {
+            type: "none", //动画类型（详见动画类型常量）
+            duration: 50
+        }
+    });
+}
+</script>
+
+</html>

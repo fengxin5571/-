@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/api.css">
+    <link rel="stylesheet" href="../../css/hhj_css/binding.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <title>Document</title>
+</head>
+<body>
+  <!-- 绑定新手机号 -->
+    <!-- 导航 -->
+    <div class="head">
+        <span class="cy">绑定手机号码</span>
+        <section  onclick="api.closeWin()"  tapmode="active">
+            <div class="arrowLeft_qty"></div>
+        </section>
+    </div>
+    <div class="bangding">绑定手机号，让你的账号更安全</div>
+    <div class="top_qty">
+        <div class="loginInput_qty">
+            <input type="text" name="text" placeholder="请输入手机号" class="input_qty login_z" style="color:#6d6d6d;" maxlength="11">
+            <div class="chacha_qty"></div>
+        </div>
+        <div class="loginInput_qty" style="margin-top:0.4rem;">
+            <input type="hidden" name="verifycode" class="code_yyt">
+            <input type="text" name="text" placeholder="请输入验证码" class="input_qty code_get">
+            <botton class="chacha"  onclick="get_code()"  tapmode="active">获取验证码</botton>
+        </div>
+        <div class="dibu_box">
+            <span class="yuedu">注册代表同意<span class="tiaokuan">《独易网服务协议》</span></span>
+        </div>
+        <div class="bott" onclick="shuru()" tapmode="active">下一步</div>
+    </div>
+</body>
+<script>
+    var sign_z;//手机号
+    var verification;//自己输入的验证码
+    var verifycode;//获取到的验证码
+    var type;
+    apiready=function(){
+        type=api.pageParam.type;
+    }
+    // 验证手机号是否合法
+    function checkMobile(){
+        var sMobile = $('.login_z').val();
+        if(!(/^1[34578]\d{9}$/.test(sMobile))){
+            $('.sign_z').focus();
+            return 0;
+        }
+    }
+    // 获取验证码
+    var flag=true;
+    // 倒计时
+    function time_over() {
+        if (flag==true){
+            flag=false;
+            var miao=60;
+            var aa=setInterval(again,1000)
+            function again() {
+                miao--;
+                if(miao<=0){
+                    clearInterval(aa)
+                    $(".chacha").html("获取验证码")
+                    flag=true;
+                }else{
+                    var daojishi="<span>"+miao+"</span> s";
+                    $(".chacha").html(daojishi);
+                }
+            }
+        }
+    }
+    // 点击获取验证码
+    function get_code() {
+        api.closeWin({
+            name:'binding_sj',
+            animation: {
+                type: "none", //动画类型（详见动画类型常量）
+                duration: 50
+            }
+        });
+        if (checkMobile()==0){
+            api.toast({
+                msg: '请输入正确的手机号码',
+                duration: 4000,
+                location: 'bottom'
+            });
+        }else {
+            sign_z = $(".login_z").val();
+            api.ajax({
+            	url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=verification',
+            	method: 'post',
+            	data: {
+            		values:{mobile:sign_z}
+            	},
+            	dataType:'json'
+            },function(ret,err){
+            	if(ret.code == 200){
+                    // 手机号不存在，提示注册
+                    api.toast({
+                        msg: '手机号没有注册，请进行注册',
+                        duration: 4000,
+                        location: 'bottom'
+                    });
+                    setTimeout(function(){
+                        api.openWin({
+                            name: 'login',
+                            url: 'widget://html/WeChat/login.html',
+                            bounces: false,
+                            reload: true,
+                            rect: {x: 0,y: 0,w: 'auto',h: 'auto'},
+                        });
+                    },1000);
+            	}else if(ret.code == 500){
+                    // 手机号存在  获取短信验证码
+                    time_over()
+                    sign_z = $(".login_z").val();
+                    if($(".chacha").html()=='获取验证码'){
+                        api.ajax({
+                        	url: 'http://appapi.duyiwang.cn/index.php?action=sms&do=getverifycode',
+                        	method: 'post',
+                        	data: {
+                        		values:{mobile:sign_z,type:type}
+                        	},
+                        	dataType:'json'
+                        },function(ret,err){
+                        	if(ret.code == 200){
+                                api.toast({
+                                    msg: ret.msg,
+                                    duration: 3000,
+                                    location: 'bottom'
+                                });
+                        		$(".code_yyt").val(ret.verifycode);
+                        	}else if(ret.code == 500){
+
+                        	}
+                        });
+                    }
+            	}
+            });
+        }
+    }
+    // 点击下一步
+    function shuru() {
+        api.closeWin({
+            name:'binding_sj',
+            animation: {
+                type: "none", //动画类型（详见动画类型常量）
+                duration: 50
+            }
+        });
+        //判断手机号是否为空以及验证码是否相等
+        sign_z = $(".login_z").val();
+        verification=$('.code_get').val();
+        verifycode=$('.code_yyt').val();
+        if(!sign_z){
+            $(".login_z").focus();
+            api.toast({
+				msg: '请输入手机号',
+				duration: 4000,
+				location: 'bottom'
+			});
+			return false;
+        }
+        if(!verifycode){
+            $(".code_yyt").focus();
+            api.toast({
+				msg: '点击获取验证码',
+				duration: 4000,
+				location: 'bottom'
+			});
+			return false;
+        }
+        if(!verification){
+            $('.code_get').focus();
+            api.toast({
+				msg: '请输入验证码',
+				duration: 4000,
+				location: 'bottom'
+			});
+			return false;
+        }
+        if(verification!=verifycode){
+            api.toast({
+				msg: '验证码不正确',
+				duration: 4000,
+				location: 'bottom'
+			});
+			return false;
+        }
+
+        //&& verification==verifycode
+        if(sign_z!='' && verification!='' && verification==verifycode){
+            // 判断手机号是否已经注册过  注册过完成登录  新手机号去注册
+            api.openWin({
+                name: 'bangdingshuru',
+                url: 'widget://html/WeChat/bangdingshuru.html',
+                bounces: false,
+                reload: true,
+                rect: {x: 0,y: 0,w: 'auto',h: 'auto'},
+                pageParam:{tel:sign_z},
+            });
+        }
+    }
+</script>
+</html>

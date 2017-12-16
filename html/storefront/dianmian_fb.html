@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" href="../../css/api.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <style>
+        /*产品详细*/
+
+        html,
+        body {
+            background: #f5f5f5;
+            position: relative;
+        }
+
+        .header_qty {
+            width: 100%;
+            height: 0.88rem;
+            background: linear-gradient(to right, #268ce9,#64c0ea);
+            text-align: center;
+            font-size: 0.34rem;
+            color: #fff;
+            line-height: 0.88rem;
+            float: left;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 111;
+        }
+
+        .arrow_qty {
+            width: 1.2rem;
+            height: 0.88rem;
+            position: fixed;
+            left: 0rem;
+            top: 0rem;
+            z-index: 99999;
+        }
+
+        .arrowLeft_qty {
+            width: 0.15rem;
+            height: 0.28rem;
+            float: left;
+            background-image: url(../../image/img_qty/arrowLeft_06.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 0.3rem;
+            margin-left: 0.2rem;
+        }
+
+        .navBox {
+            margin: 1.2rem auto;
+        }
+
+        ul {
+            display: none;
+            width: 94%;
+            cursor: pointer;
+            border-radius: 5px;
+            background: #fff;
+            margin-left: 3%;
+        }
+
+        ul li {
+            font-size: .2183486rem/* 22px */
+            ;
+            /* text-align: center; */
+            width: 94%;
+            height: 1rem;
+            margin-left: 2.5%;
+            line-height: 1rem;
+            color: #727272;
+            border-bottom: 1px solid #e9e9e9;
+        }
+
+        ul li span {
+            font-size: 0.22rem/* 22px */
+            ;
+            color: #2493f7;
+            margin-right: 0.16rem;
+            float: right;
+        }
+
+        .myDiv {
+            width: 94%;
+            height: 1rem;
+            line-height: 1rem;
+            font-size: 0.24rem/* 24px */
+            ;
+            color: #606060;
+            border-radius: 5px;
+            /* text-align: center; */
+            cursor: pointer;
+            background: #fff;
+            margin-left: 2.5%;
+            margin-bottom: .2218349rem;
+            /* 24px */
+        }
+
+        .xiangqing {
+            text-align: center;
+            color: #2493f7;
+            font-size: 0.22rem;
+            margin-bottom: 0.22rem;
+        }
+
+        .xiala {
+            height: 0.3rem;
+            width: 0.3rem;
+            float: right;
+            margin-right: 0.3rem;
+            margin-top: 0.3rem;
+        }
+
+        .shengfen {
+            margin-left: 4%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header_qty">店面分布</div>
+    <div class="arrow_qty" onclick="api.closeWin()">
+        <div class="arrowLeft_qty"></div>
+    </div>
+    <div class="navBox">
+
+
+    </div>
+
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script src="../../script/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+    // 获取省份数据
+
+    function provinces() {
+        apiready = function() {
+            api.ajax({
+                url: 'http://appapi.duyiwang.cn/index.php?action=region&dir=index&do=ajax_region',
+                method: 'post',
+                data: {
+                    values: {
+                        type: 1
+                    }
+                },
+                dataType: 'json'
+            }, function(ret, err) {
+
+                // 执行拼接函数
+                provinceRender(ret)
+
+                // 点击ul显示隐藏
+                $(document).ready(function() {
+                    $(".myDiv").on("click", function() {
+                        $(this).next("ul").slideToggle(100).siblings("ul").slideUp(500)
+                    })
+                })
+
+            });
+        }
+    }
+    provinces();
+
+    // 拼接省份html
+    function provinceRender(ret) {
+        var data = ret.province
+        var str = ''
+        data.forEach(function(n, i) {
+
+                str +=
+                    '<div class="myDiv">' +
+                    '<span class="shengfen" data-proid="' + n.provinceid + '">' + n.province + '</span>' +
+                    '<img src="../../image/img_qty/xiala.png" alt="" class="xiala">' +
+                    '</div>' +
+
+                    '<ul>' +
+                    '<li>&nbsp;经&nbsp;&nbsp;销&nbsp;&nbsp;商<span class="val_sx"></span></li>' +
+                    '<li>&nbsp;加&nbsp;&nbsp;盟&nbsp;&nbsp;商<span class="val_sx"></span></li>' +
+                    '<li>&nbsp;门店总数<span class="val_sx"></span></li>' +
+                    '<li class="xiangqing" onclick="open_tys(\'' + n.province + '\')">查看详情</li>' +
+                    '</ul>'
+
+
+            })
+            // 写入页面
+        $('.navBox').html(str)
+    }
+
+
+    provinceid = '';
+    $(document).on('click', '.myDiv', function(e) {
+        province = $(this).find('.shengfen').attr('data-proid');
+
+
+
+        var _this = $(this);
+
+        api.ajax({
+            url: 'http://appapi.duyiwang.cn/index.php?action=store&dir=work&do=store_num',
+            method: 'post',
+            data: {
+                values: {
+                    provinceid: province
+                }
+            },
+            dataType: 'json'
+        }, function(ret, err) {
+
+
+            // 写入加盟商经销商门店数
+            _this.next().find('li').find('span').eq(0).html(ret.dealerConut);
+            _this.next().find('li').find('span').eq(1).html(ret.franchiseeConut);
+            _this.next().find('li').find('span').eq(2).html(ret.storeCount);
+            // 判断门店数是单数还双数
+            $.each($('.val_sx'), function(k, v) {
+                if ($(this).html().length < 1 || $(this).html() < 10) {
+                    $(this).html("0" + $(this).html());
+                }
+            })
+        });
+
+    });
+
+    // 跳转下一个页面
+    // province_name是省份名字
+    // province是省份ID
+    function open_tys(province_name) {
+        api.openWin({
+            name: 'dianmian_s',
+            url: 'widget://html/storefront/dianmian_s.html',
+            bounces: false,
+            pageParam: {
+                provinceid: province,
+                province_name: province_name
+
+            },
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            }
+        });
+
+    }
+</script>
+
+</html>

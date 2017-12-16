@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" href="../../css/api.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/imagescache.js"></script>
+    <script src="../../script/rem.js"></script>
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('../../modules/icon/iconfont.eot');
+            src: url('../../modules/icon/iconfont.eot?#iefix') format('embedded-opentype'),
+            url('../../modules/icon/iconfont.woff') format('woff'),
+            url('../../modules/icon/iconfont.ttf') format('truetype'),
+            url('../../modules/icon/iconfont.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:0.4rem;font-style:normal;
+            color: #1b8bef;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body,html{
+            background: #f5f5f5;
+        }
+        .stock_box_zn{
+            background: linear-gradient(to right, #268ce9,#64c0ea);
+            height:.88rem;
+            width:100%;
+            position:fixed;
+            top:0;
+            left:0;
+            z-index: 888;
+        }
+        .stock_zn{
+            color:#fff;
+            font-size: .3rem;
+            height:100%;
+            line-height: .88rem;
+            text-align: center;
+        }
+        .icon_zn{
+            width: 0.29rem;
+            height: 0.43rem;
+            position: absolute;
+            left: 0.15rem;
+            top: 0.25rem;
+            background: url("../../image/product_sxy/return_sxy_03.png") no-repeat;
+            background-size: cover;
+        }
+        .edit_zn{
+            width: 1rem;
+            color:#fff;
+            font-size: .3rem;
+            height:100%;
+            line-height: .88rem;
+            position:absolute;
+            top:0;
+            right:0.2rem;
+            outline: none;
+            letter-spacing:0.03rem;
+        }
+        /*中间内容部分*/
+        .content_sxy{
+            width: 100%;
+            padding: 0 0.4rem;
+            box-sizing: border-box;
+            padding-top: 1.32rem;
+        }
+        /*选择门店*/
+        .select_store_sxy{
+            width: 5.6rem;
+            height: 1rem;
+            background-color: #fff;
+            border-radius: 0.05rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .select_store_sxy i{
+            font-size: 0.36rem;
+            color: #49bff0;
+            position: absolute;
+            left: 0.3rem;
+            top: 0.28rem;
+        }
+        #select_store{
+            width: 5.6rem;
+            height: 1rem;
+            padding-left: 0.8rem;
+            box-sizing: border-box;
+            font-size: 0.28rem;
+            color: #3b3b3b;
+            outline: none;
+            border: none;
+            background-color: #fff;
+            appearance:none;
+            -moz-appearance:none;
+            -webkit-appearance:none;
+            background: url("../../image/product_sxy/select_arrow_sxy_03.png") no-repeat scroll 5rem center transparent;
+            background-size: 0.28rem 0.18rem;
+        }
+        #select_store option{
+            width: 5.6rem;
+            height: 1rem;
+            padding-left: 0.2rem;
+            box-sizing: border-box;
+            font-size: 0.24rem;
+            color: #202020;
+            border-bottom: 0.01rem dashed #ededed;
+        }
+        /*商品列表*/
+        .pro_list_sxy{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            padding-left: 0.4rem;
+            padding-right: 0.3rem;
+            padding-bottom: 1rem;
+            box-sizing: border-box;
+
+            display: none;
+        }
+        .saleEnteyFont_sxy{
+            width: 5.7rem;
+			font-size: 0.24rem;
+			color: #3a3a3a;
+			letter-spacing: 0.02rem;
+            margin-top: 0.42rem;
+        }
+        .productList_sxy{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        .productList_sxy li{
+            width: 1.8rem;
+            height: 2.33rem;
+            background-color: #fff;
+            box-shadow:0px 0px 0.1rem #d2d2cc;
+            border-radius: 0.05rem;
+            float: left;
+            margin-right: 0.1rem;
+            margin-top: 0.26rem;
+            cursor: pointer;
+        }
+        .productList_sxy li .productName_sxy{
+            width: 1.8rem;
+            font-size: 0.26rem;
+            color: #2493f7;
+            text-align: center;
+            margin-top: 0.16rem;
+        }
+        .productMoney_sxy{
+            font-size: 0.24rem;
+            color: #999999;
+            text-align: center;
+            margin-top: 0.08rem;
+        }
+        .productMoney_sxy span{
+            font-size: 0.18rem;
+        }
+        .productImg_sxy{
+            width: 1.8rem;
+            height: 0.95rem;
+            margin-bottom: 0.04rem;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .productImg_sxy img{
+            width: 70%;
+        }
+        .repertoryName_sxy{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .repertoryName_sxy input{
+            width: 0.76rem;
+            font-size: 0.3rem;
+            color:#2493f7;
+            outline: none;
+            border: none;
+        }
+        .repertoryName_sxy img{
+            width: 0.21rem;
+            height: 0.21rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="stock_box_zn">
+        <div class="stock_zn">商品选择</div>
+        <div class="icon_zn" onclick="close_Win()" tapmode="active"></div>
+        <button class="edit_zn save_goods">保存</button>
+    </div>
+    <div class="content_sxy">
+        <!-- 选择门店 -->
+        <div class="select_store_sxy">
+            <i class="iconfont">&#xe604;</i>
+            <select name="" id="select_store">
+                <option value="00">请选择您要进货的门店</option>
+            </select>
+        </div>
+    </div>
+    <!-- 商品列表 -->
+    <div class="pro_list_sxy">
+        <!-- <div class="saleEnteyFont_sxy">仪年堂气血能量养生仪</div>
+        <ul class="productList_sxy">
+            <li>
+                <div class="productName_sxy">产品名</div>
+                <div class="productMoney_sxy"><span>￥</span><i style="font-style:normal">70</i>/件</div>
+                <div class="productImg_sxy">
+                    <img src="../../image/img_qty/product_03.png" alt="">
+                </div>
+                <div class="repertoryName_sxy">
+                    <input type="text" class="product_num" value="000" maxlength="3">
+                    <img src="../../image/product_sxy/math_03.png" alt="">
+                </div>
+            </li>
+        </ul> -->
+    </div>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script>
+    // 点击返回按钮
+    function close_Win(){
+        api.closeWin({
+            animation:{
+              type:"none",                //动画类型（详见动画类型常量）
+              duration:50
+            }
+        });
+    }
+    // 点击商品自动获取焦点
+    $(document).on('click','.productList_sxy li',function(){
+        $(this).find('.product_num').focus();
+    })
+    var role_id;//用户权限ID
+    var uid;//用户id
+    var products_list=new Array();//选择商品
+    var store_arr;//选择过的门店
+    // 获取经销商加盟商门店  以及全部产品
+    function get_data() {
+        apiready=function () {
+            role_id=api.getPrefs({sync:true,key:'roleid'}); //获取偏好设置  用户权限ID
+            uid=api.getPrefs({sync:true,key:'uid'});
+            store_arr=api.pageParam.store_arr;
+            api.ajax({
+                url: 'http://appapi.duyiwang.cn/index.php?action=order&dir=work&do=index',
+                method: 'post',
+                data: {
+                    values: {roleid: role_id, uid: uid}
+                },
+                dataType: 'json'
+            }, function (ret, err) {
+                if(ret.code=="200"){
+                    //父产品
+                    ret.store.forEach(function(value){
+                        var md_store="<option value="+value.id+">"+value.mbname+"</option>";
+                        $("#select_store").append(md_store);
+                    })
+                    var goods_list='';//商品列表
+                    ret.good.forEach(function(val){
+                        goods_list+="<div class='saleEnteyFont_sxy'>"+val.typename+"</div><ul class='productList_sxy'>"
+                        val.goods.forEach(function(goods){
+
+                            goods_list+='<li><div class="productName_sxy">'+goods.name.slice(0,5)+'</div><div class="productMoney_sxy"><span>￥</span><i style="font-style:normal">'+
+                            goods.purchase_price+'</i>/'+goods.purchase_dw+'</div><div class="productImg_sxy"><img onload="fnLoadImage(this)" data-url="http://app.duyiwang.cn/'+goods.good_img+'" src=http://app.duyiwang.cn/'+goods.good_img+
+                            '  alt=""></div><div class="repertoryName_sxy"><input type="text" class="product_num" placeholder="000" maxlength="3" self_id='
+                            +goods.id+'><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozMTg5NjMwYi1hMzk5LTMwNDEtYmQ1ZS1jNzIxYzM2MmEwNzMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MDczM0JGQzM2RERDMTFFNzg4M0VBMzE4RkNCQ0ZFMUYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MDczM0JGQzI2RERDMTFFNzg4M0VBMzE4RkNCQ0ZFMUYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NmNkZjg4MGItY2RjMy1hOTQzLWI5MjMtZmE2N2QyZDcyMmQzIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YmIwMTI0OTYtNmFjYy0xMWU3LWI3ZjAtZTMwN2VlMjMxNjM3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+KYhS/gAAAL9JREFUeNrk1FsKwjAQBdB0yLZ8L8FHcQF+xeUke/C5BLW6sXoDUyglDkmMX14YAtPhMBDSylrbqsQYY6pQ3zm3wLHT0lBKGDyglloVCMB5B2LBFxUAZziOqJUHfY8KgCcGn12fvgCnITAbZfCMWg/BLBTghMENwCY0QxnghcHHpzlKAMcSiO9tEsrgFVVLG0ajvQ09eI9ZgiLBbSwoogBHPfCWcqHSpvsc0EcLv7c697WR+kH+HNXDJ1YibwEGALgwUKq5yvBwAAAAAElFTkSuQmCC" alt=""></div></li>'
+                        })
+                        goods_list+='</ul>';
+                    })
+                    //console.log(goods_list);
+                    $('.pro_list_sxy').append(goods_list);
+                }
+
+            });
+        }
+    }
+
+    get_data();
+    // 选择进货门店
+    var shop_id;
+    var shop_name;
+	$(document).on('change','#select_store',function(){
+		if($(this).children('option:selected').html() != "请选择您要进货的门店") {
+			shop_id = parseInt($('#select_store').val());
+            if(store_arr.length>0){
+                for(var i=0;i<store_arr.length;i++){
+                    if(shop_id==store_arr[i]){
+                        api.toast({
+                			msg: "已经选择过该门店，请重新选择您要进货的门店",
+                			duration: 3000,
+                			location: 'bottom'
+                		})
+                        location.reload();
+                    }
+                }
+            }
+            shop_name = $(this).children('option:selected').html();
+            $('.pro_list_sxy').css('display','block');
+		}else{
+            $('.pro_list_sxy').css('display','none');
+        }
+	})
+    // 判断输入的数字是否是数字
+    $(document).on('change','.product_num',function(){
+        if(!(/^[1-9]\d{0,2}$/.test($(this).val()))){
+            $(this).val('');
+            $(this).focus();
+            api.toast({
+                msg: "请输入正确的数字",
+                duration: 3000,
+                location: 'bottom'
+            })
+        }
+    })
+    //点击保存按钮，保存选择好的商品
+    $('.save_goods').click(function(){
+        $(".product_num").each(function () {
+            if ($(this).val() != "" && (/^[1-9]\d{0,2}$/.test($(this).val()))) {
+                var aa = $(this).val();//商品数量
+                var bb = $(this).attr('self_id');//商品ID
+                var cc=$(this).parent().parent().find('.productMoney_sxy i').html();//商品单价
+                var dd=$(this).parent().parent().find('.productName_sxy').html();//商品名称
+                var goods=new Array();
+                goods[0]=bb;
+                goods[1]=aa;
+                goods[2]=cc;
+                goods[3]=dd;
+                products_list.push(goods);
+            }
+        })
+        shop_id=JSON.stringify(shop_id);
+        shop_name=JSON.stringify(shop_name);
+        products_list=JSON.stringify(products_list);
+        // 选择后的商品展示在商品选择页  productSelect_sxy页面
+        api.execScript({
+            name: 'productSelect_sxy',
+            script: 'show_goods('+shop_id+','+shop_name+','+products_list+')'
+        });
+        api.closeWin();
+    })
+</script>
+</body>
+</html>

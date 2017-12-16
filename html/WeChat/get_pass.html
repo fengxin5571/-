@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/api.css">
+    <link rel="stylesheet" href="../../css/hhj_css/get_pass.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 设置新密码 -->
+    <!-- 导航 -->
+    <div class="head">
+        <span class="cy">找回密码</span>
+        <section  onclick="api.closeWin()"  tapmode="active">
+            <div class="arrowLeft_qty"></div>
+        </section>
+    </div>
+    <div class="bangding">设置一下您的密码</div>
+    <div class="top_qty">
+        <div class="loginInput_qty">
+            <input type="text" name="text" placeholder=" 13698525691" class="input_qty sign_z" readonly="true">
+            <div class="chacha_qty"></div>
+        </div>
+        <div class="loginInput_qty" style="margin-top:0.4rem;">
+            <input type="password" name="text" placeholder=" 请设置新密码" class="input_qty new_pass">
+        </div>
+        <div class="dibu_box">
+            <span class="yuedu">* 密码长度6-16位，支持数字、字母和字符</span>
+        </div>
+        <div class="bott" onclick="complete()" tapmode="active">完&nbsp;成</div>
+    </div>
+</body>
+<script>
+    var telphone;//手机号  从上个页面传过来
+    var new_pass;//新密码
+    apiready=function(){
+        telphone=api.pageParam.tel;
+        $('.sign_z').val(telphone);
+    }
+    // 点击完成 设置
+    function complete(){
+        api.closeWin({
+            name:'retrieve_pass',
+            animation: {
+                type: "none", //动画类型（详见动画类型常量）
+                duration: 50
+            }
+        });
+        new_pass=$('.new_pass').val();
+        if(new_pass.length<6){
+            $('.new_pass').focus();
+            api.toast({
+                msg: '密码长度不得少于6位',
+                duration: 4000,
+                location: 'bottom'
+            });
+        }else{
+            // 后台数据库更新密码  修改成功后跳转到登录页面
+            api.ajax({
+            	url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=forget',
+            	method: 'post',
+            	data: {
+            		values:{mobile:telphone,password:new_pass}
+            	},
+            	dataType:'json'
+            },function(ret,err){
+            	if(ret.code == 200){
+                    api.toast({
+                        msg: ret.msg,
+                        duration: 3000,
+                        location: 'bottom'
+                    });
+                    setTimeout(function(){
+                        api.execScript({
+                            name: 'root',
+                            frameName: 'register',
+                            script: 'go_load()'
+                        });
+                        api.closeWin({
+                            animation: {
+                                type: "none", //动画类型（详见动画类型常量）
+                                duration: 50
+                            }
+                        });
+                    },1000);
+            	}else if(ret.code == 500){
+                    api.toast({
+                        msg: ret.msg,
+                        duration: 3000,
+                        location: 'bottom'
+                    });
+            	}
+            });
+        }
+    }
+</script>
+
+</html>

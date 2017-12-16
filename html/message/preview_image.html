@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <style>
+        body,html{
+            background: #000;
+        }
+        .download{
+            width: 0.6rem;
+            height: 0.6rem;
+            position: absolute;
+            right: 0.5rem;
+            bottom: 1rem;
+            z-index: 999;
+            cursor: pointer;
+        }
+        .download img{
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="download">
+        <img src="../../image/download.png" alt="">
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="../../script/api.js"></script>
+
+<script>
+// 点击保存按钮，保存图片
+    $('.download').on('click',function(){
+        var path_yyt=api.pageParam.path_yyt; //获取图片路径
+        var name=path_yyt.split('/')[path_yyt.split('/').length-1];//图片后缀
+        var myDate = new Date().getTime();//获取系统当前时间
+        var new_path='fs://image/'+myDate+'.'+name; //图片存放路径
+        api.download({
+            url: path_yyt,
+            savePath: new_path,
+            report: true,
+            cache: true,
+            allowResume: true
+        }, function (ret, err) {
+            if (ret.state == 1) {
+                // 保存图片到系统相册
+                api.saveMediaToAlbum({
+                    path: new_path
+                }, function(ret, err) {
+                    if (ret && ret.status) {
+                        api.toast({
+                            msg: '图片已保存至手机相册',
+                            duration: 4000,
+                            location: 'bottom'
+                        });
+                        // 下载成功后,关闭下面的下载frame
+                        setTimeout(function(){
+                            api.closeFrame({
+                                name: 'preview_image'
+                            });
+                        },1000);
+                    } else {
+                        api.toast({
+                            msg: '保存失败',
+                            duration: 3000,
+                            location: 'bottom'
+                        });
+                    }
+                });
+            } else {
+
+            }
+        });
+    })
+</script>

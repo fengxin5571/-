@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" href="../../css/api.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+</head>
+<style>
+    @font-face {
+        font-family: 'iconfont';
+        src: url('../../modules/icon/iconfont.eot');
+        src: url('../../modules/icon/iconfont.eot?#iefix') format('embedded-opentype'),
+        url('../../modules/icon/iconfont.woff') format('woff'),
+        url('../../modules/icon/iconfont.ttf') format('truetype'),
+        url('../../modules/icon/iconfont.svg#iconfont') format('svg');
+    }
+    .iconfont{
+        font-family:"iconfont" !important;
+        font-size:0.4rem;font-style:normal;
+        color: #1b8bef;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    body,html{
+        background-color: #f9f9f9;
+    }
+    /*header*/
+    .header_sxy{
+        width: 100%;
+        height: 0.88rem;
+        background: linear-gradient(to right, #268ce9,#64c0ea);
+        text-align: center;
+        font-size: 0.34rem;
+        color: #fff;
+        line-height: 0.88rem;
+        float: left;
+        position: fixed;
+        top: 0rem;
+        left: 0rem;
+        z-index: 999;
+    }
+    .arrow_qty{
+        width: 1.2rem;
+        height: 0.88rem;
+        position: fixed;
+        left: 0rem;
+        top: 0rem;
+        z-index: 9991;
+        cursor: pointer;
+    }
+    .arrowLeft_qty{
+        width: 0.15rem;
+        height: 0.28rem;
+        float: left;
+        background-image: url(../../image/img_qty/arrowLeft_06.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 0.3rem;
+        margin-left: 0.2rem;
+    }
+    .bg_blue{
+        width: 100%;
+        height: 1.3rem;
+        background: linear-gradient(to right, #268ce9,#64c0ea);
+        position: fixed;
+        top: 0.88rem;
+        left: 0;
+    }
+    /*经销商*/
+    .content_record{
+        width: 5.6rem;
+        margin: 0 0.4rem;
+        box-sizing: border-box;
+        height:auto;
+        overflow: hidden;
+        margin-bottom: 0.6rem;
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        z-index: 888;
+    }
+    .dealers_sxy{
+        width: 5.6rem;
+        height:auto;
+        overflow: hidden;
+        margin: auto;
+        background: #f9f9f9;
+    }
+    .dealers_box{
+        width: 5.6rem;
+        height:auto;
+        overflow: hidden;
+        margin-bottom: 0.28rem;
+        position: relative;
+    }
+    .dealers_top{
+        width: 5.6rem;
+        height: 2.07rem;
+        padding: 0.23rem  0.3rem;
+        padding-bottom: 0;
+        box-sizing: border-box;
+        background: #fff;
+        border-radius: 0.08rem;
+        box-shadow:0 0.02rem 0.12rem #c5cbce;
+        position: absolute;
+        left: 0;
+        top:0;
+    }
+    .dealers_top_box{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.2rem;
+    }
+    .img_box{
+        width: 0.93rem;
+        height: 0.93rem;
+        border-radius: 50%;
+        background: #25475f;
+        overflow: hidden;
+        margin-right: 0.14rem;
+    }
+    .img_box img{
+        width: 0.93rem;
+    }
+    .dealers_text{
+        height: 0.93rem;
+        padding: 0.15rem 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+    }
+    .dealers_text .name{
+        font-size: 0.24rem;
+        color: #2b2b2b;
+    }
+    .dealers_text div{
+        display: flex;
+        align-items: center;
+    }
+    .dealers_text div .tel{
+        font-size: 0.22rem;
+        color: #808080;
+    }
+    .dealers_text div span{
+        font-size: 0.22rem;
+        color: #cdcdcd;
+        padding: 0 0.14rem;
+    }
+    .dealers_text div .area{
+        font-size: 0.2rem;
+        color: #626262;
+    }
+    .dealers_bot_box{
+        margin-left: 0.1rem;
+    }
+    .dealers_bot_box .main_sx{
+        font-size: 0.2rem;
+        color:#999999;
+        margin-bottom: 0.1rem;
+    }
+    .dealers_bot_box .main_tc{
+        font-size: 0.18rem;
+        color:#cccccc;
+    }
+    .dealers_bot{
+        width: 5.04rem;
+        height: auto;
+        overflow: hidden;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 0.22rem;
+        box-sizing: border-box;
+        background: #fff;
+        justify-content: space-between;
+        margin-top: 2.06rem;
+    }
+    .dealers_bot li{
+        width: 50%;
+        height: 0.7rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 0.01rem dashed #e9e9e9;
+    }
+    .dealers_bot li p{
+        font-size: 0.24rem;
+        color: #838383;
+        line-height: 0.7rem;
+        width: 2rem;
+        overflow: hidden;
+    }
+    .dealers_bot li span{
+        width: 0.01rem;
+        height: 0.2rem;
+        background: #e9e9e9;
+        margin-right: 0.2rem;
+    }
+    .dealers_bot li:nth-child(even) span{
+        display: none;
+    }
+    /*门店*/
+    .store_sxy{
+        width: 5.6rem;
+        padding: 0 0.3rem;
+        box-sizing: border-box;
+        height: auto;
+        overflow: hidden;
+        background: #fff;
+        border-radius: 0.05rem;
+        margin-top: -0.03rem;
+    }
+    .store_sxy .title{
+        width: 100%;
+        height: 0.86rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .store_sxy .title li{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .store_sxy .title li i{
+        font-size: 0.3rem;
+        color: #2a96f7;
+        margin-right: 0.2rem;
+    }
+    .store_sxy .title li p{
+        font-size:0.24rem;
+        color:#4a4a4a;
+    }
+    .store_detail li{
+        width: 100%;
+        height: 1.08rem;
+        box-sizing: border-box;
+        border-top: 0.01rem dashed #e9e9e9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .store_detail li section{
+        display: flex;
+        align-items: center;
+    }
+    .store_detail li:nth-child(odd)  section .icon{
+        width: 0.6rem;
+        height: 0.6rem;
+        background-color: #62d3a4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-right: 0.25rem;
+    }
+    .store_detail li:nth-child(even) section .icon{
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        background-color: #ecce68;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0.25rem;
+    }
+    .store_detail li section i{
+        font-size: 0.3rem;
+        color:#fff;
+    }
+    .store_detail li .store_title{
+        font-size:0.24rem;
+        color:#424242;
+    }
+    .store_detail li .store_name{
+        font-size:0.24rem;
+        color:#838383;
+    }
+    .jiajia{
+        font-size: 0.3rem;
+        color: #000;
+        line-height: 0.5rem;
+        text-align: center;
+        margin-bottom: 0.2rem;
+    }
+</style>
+<body>
+    <div class="header_sxy">进货记录</div>
+    <div class="arrow_qty" onclick="api.closeWin()" tapmode="active">
+        <div class="arrowLeft_qty"></div>
+    </div>
+    <div class="bg_blue"></div>
+    <div class="content_record">
+        <!-- 经销商 -->
+        <div class="dealers_sxy">
+            <!-- <div class="dealers_box">
+                <div class="dealers_top">
+                    <ul class="dealers_top_box">
+                        <li class="img_box">
+                            <img src="" alt="">
+                        </li>
+                        <li class="dealers_text">
+                            <p class="name">蒋 进</p>
+                            <div>
+                                <p class="tel">15536974521</p>
+                                <span>|</span>
+                                <p class="area">太原市经销商</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="dealers_bot_box">
+                        <p class="main_sx">山西太常生物科技有限公司</p>
+                        <p class="main_tc">Shan Xi Chang Biolgical Technology Co.Ltd.</p>
+                    </ul>
+                </div>
+                <ul class="dealers_bot">
+                    <li>
+                        <p>寇庄西路店</p>
+                        <span></span>
+                    </li>
+                    <li>
+                        <p>寇庄西路店</p>
+                        <span></span>
+                    </li>
+                    <li>
+                        <p>寇庄西路店</p>
+                        <span></span>
+                    </li>
+                    <li>
+                        <p>寇庄西路店</p>
+                        <span></span>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+        <!-- 门店 -->
+        <div class="store_sxy">
+            <ul class="title">
+                <li>
+                    <i class="iconfont" style="margin-top:-0.02rem;font-size:0.34rem;">&#xe604;</i>
+                    <p>门店</p>
+                </li>
+                <li>
+                    <i class="iconfont">&#xe602;</i>
+                    <p>加盟商</p>
+                </li>
+            </ul>
+            <ul class="store_detail">
+                <!-- <li>
+                    <section>
+                        <div class="icon">
+                            <i class="iconfont">&#xe6a3;</i>
+                        </div>
+                        <p class="store_title">寇庄西路店</p>
+                    </section>
+                    <p class="store_name">吴乐文</p>
+                </li>
+                <li>
+                    <section>
+                        <div class="icon">
+                            <i class="iconfont">&#xe6a3;</i>
+                        </div>
+                        <p class="store_title">寇庄西路店</p>
+                    </section>
+                    <p class="store_name">吴乐文</p>
+                </li>
+                <li>
+                    <section>
+                        <div class="icon">
+                            <i class="iconfont">&#xe6a3;</i>
+                        </div>
+                        <p class="store_title">寇庄西路店</p>
+                    </section>
+                    <p class="store_name">吴乐文</p>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var id;
+    // 通过上一个页面传参数得到cityid城市ID，city_name城市名字
+    function cityss(){
+        apiready=function(){
+            id = api.pageParam.cityid;
+            city_name = api.pageParam.city_name;
+            // 获取到城市名写入导航
+            $('.header_sxy').html(city_name);
+            api.ajax({
+                url: 'http://appapi.duyiwang.cn/index.php?action=store&dir=work&do=dealer_franchisee_info',
+                method: 'post',
+                data: {
+                    values: {
+                        cityid: id
+                    }
+                },
+                dataType: 'json'
+            }, function(ret, err) {
+                // 执行拼接函数
+                cityssRender(ret)
+                    // 判断头像和名字是否为空
+                    // ret.dealer_info数据是数组，所以要通过遍历判断
+                ret.dealer_info.forEach(function(n, k) {
+                    if ((n.head_img == null) || (n.head_img == 'null')) {
+                        $(".img_box img").attr("src", "../../image/header_picture/tc_log.png");
+                    } else if (n.head_img.slice(0, 4) == 'http') {
+                        $(".img_box img").attr("src", n.head_img)
+                    } else {
+                        $(".img_box img").attr("src", "../../image/header_picture/" + n.head_img + "")
+                    }
+                })
+            });
+        }
+    }
+    cityss();
+    // 拼接经销商html
+    leng ='';
+    jxs_len ='';
+    function cityssRender(ret) {
+        var data = ret.dealer_info;
+        var str = '';
+
+        //     // 遍历经销商数据
+        data.forEach(function(n, i) {
+            str +='<div class="dealers_box"><div class="dealers_top"><ul class="dealers_top_box"><li class="img_box"><img alt="" src="'+n.head_img+
+            '"></li><li class="dealers_text"><p class="name">'+n.name+'</p><div><p class="tel">'+n.username+
+            '</p><span>|</span><p class="area">'+n.position+
+            '</p></div></li></ul><ul class="dealers_bot_box"><p class="main_sx">山西太常生物科技有限公司</p><p class="main_tc">Shan Xi Chang Biolgical Technology Co.Ltd.</p></ul></div><ul class="dealers_bot">';
+                n.mdname.forEach(function(object, k) {
+                    str +='<li><p>'+object.slice(0,7)+'</p><span></span></li>'
+                })
+                str+='</ul></div>';
+        })
+        $('.dealers_sxy').append(str);
+        var string='';
+        if (ret.store) {
+            ret.store.forEach(function(object, k) {
+                var username = object.username ? object.username : "该店还没有加盟商";
+                string +='<li><section><div class="icon"><i class="iconfont">&#xe6a3;</i></div>'+
+                '<p class="store_title">'+object.name.slice(0,8)+'</p></section><p class="store_name">'+
+                username +'</p></li>';
+            })
+        }
+        $('.store_detail').append(string);
+        // 判断是否有门店
+        if(ret.store !==null && ret.store ==0){
+          $('.store_detail').append('<div class="jiajia">该市还没有门店</div>');
+        }
+        $.each($('.dealers_box'),function(i,n){
+            var leng=$(this).find('.dealers_bot li').length;
+            if(leng%2==0){
+                $(this).find('.dealers_bot li').eq(leng-1).css('border-bottom','none');
+                $(this).find('.dealers_bot li').eq(leng-2).css('border-bottom','none');
+            }else if(leng%2==1){
+                $(this).find('.dealers_bot li:last-child').css('border-bottom','none');
+            }
+        })
+    }
+</script>

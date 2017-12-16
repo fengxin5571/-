@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/api.css">
+    <script src="../../script/jquery.min.js"></script>
+
+    <script src="../../script/rem.js"></script>
+    <link rel="stylesheet" href="../../css/swiper.min.css"/>
+    <link rel="stylesheet" href="../../modules/font_zn/iconfont.css"/>
+    <link rel="stylesheet" href="../../modules/icon/iconfont.css"/>
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('../../modules/iconfont/iconfont.eot');
+            src: url('../../modules/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+            url('../../modules/iconfont/iconfont.woff') format('woff'),
+            url('../../modules/iconfont/iconfont.ttf') format('truetype'),
+            url('../../modules/iconfont/iconfont.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:0.48rem;font-style:normal;
+            color: #1b8bef;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        html,body{
+            background: #f6f6f6;
+        }
+        li{
+            display: block;
+        }
+        .work_title{
+            width: 100%;
+            height: 0.88rem;
+            background: linear-gradient(to right, #268ce9,#64c0ea);
+            font-size: 0.32rem;
+            line-height: 0.88rem;
+            text-align: center;
+            color: #fff;
+            z-index: 999;
+            position: fixed;
+            top:0;
+            left:0;
+        }
+        .work_msg{
+            width: 100%;
+            height: 3.2rem;
+            margin-top:0.88rem;
+        }
+        .work_msg img{
+            width: 100%;
+            height: 3.2rem;
+        }
+        .work_msg_con{
+            width: 4.5rem;
+            height: auto;
+            margin: 0 auto;
+        }
+        .goods_name{
+            width: 100%;
+            text-align: right;
+            height: auto;
+            float: right;
+            font-size: 0.24rem;
+            color: #f8c21f;
+            line-height: 0.4rem;
+            margin-top: 0.48rem;
+        }
+        .study_today_e{
+            width: 100%;
+            height: auto;
+            text-align: right;
+            float: right;
+            font-size: 0.16rem;
+            line-height: 0.24rem;
+            color: #999;
+        }
+        .study_today{
+            width: 100%;
+            height: auto;
+            float: right;
+            font-size: 0.24rem;
+            line-height: 0.28rem;
+            color: #3299f7;
+            text-align: right;
+        }
+        .big_title{
+            width: 100%;
+            height: auto;
+            float: right;
+            text-align: right;
+            font-size: 0.34rem;
+            line-height: 0.38rem;
+            margin-top: 0.45rem;
+            color: #2493f7;
+        }
+        .study_con{
+            width: auto;
+            height: 0.32rem;
+            padding: 0 0.15rem;
+            font-size: 0.2rem;
+            line-height: 0.32rem;
+            color: #fff;
+            background: #f8c21f;
+            float: right;
+            border-radius: 0.16rem;
+            margin-top: 0.05rem;
+        }
+        .work_con{
+            width: 6rem;
+            height: auto;
+            margin: 0 auto;
+            background: #ffffff;
+            margin-top: 0.2rem;
+            border-top: 0.01rem solid #eeeeee;
+            border-left: 0.01rem solid #eeeeee;
+            overflow: hidden;
+            display: block;
+            /*margin-bottom:1rem;*/
+        }
+        .work_one{
+            width: 2rem;
+            position: relative;
+            height: 2rem;
+            float: left;
+            background: #fff;
+            border-right: 0.01rem solid #eeeeee;
+            border-bottom: 0.01rem solid #eeeeee;
+            box-sizing: border-box;
+        }
+        .work_one_icon{
+            width: 0.48rem;
+            height: 0.48rem;
+            margin: 0 auto;
+            margin-top: 0.6rem;
+            /*background: url("../../image/img_yyt/trade_in.png") no-repeat;*/
+            background-size: 100% 100%;
+        }
+
+
+        .work_one_w{
+            width: 100%;
+            height: auto;
+            font-size: 0.26rem;
+            line-height: 0.6rem;
+            text-align: center;
+            color: #333;
+        }
+        .biaoji_yyt{
+            display: none;
+            width: 0.14rem;
+            height: 0.14rem;
+            position: absolute;
+            right: 0.22rem;
+            top: 0.22rem;
+            background: red;
+            border-radius: 50%;
+        }
+        /*轮播图*/
+        .swiper-container{
+            width:100%;
+            height:3.2rem;
+            position: relative;
+        }
+        .swiper-slide{
+            background: #fff;
+        }
+        .swiper-slide img{
+            width:100%;
+            height:100%;
+        }
+        .swiper-pagination{
+            position:absolute;
+            bottom:0 !important;
+        }
+        .swiper-pagination span{
+            width:0.2rem;
+            height:0.2rem;
+            border-radius: 0.1rem;
+            box-sizing: border-box;
+            background: #ccc;
+            opacity: 1 !important;
+        }
+        .swiper-pagination-bullet-active{
+            background: transparent !important;
+            border:0.02rem solid #2348a4 !important;
+            box-sizing: border-box;
+        }
+        .apply_product{
+            display: none;
+        }
+        .classification{
+            font-size: 0.24rem;
+            color: #5a5a5a;
+            margin-top: 0.45rem;
+            margin-bottom: 0.3rem;
+            font-style: normal;
+            margin-left: 0.2rem;
+        }
+        .trade_in{
+            display: none;
+        }
+        .open_check{
+            display: none;
+        }
+        .open_shopM{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="work_title">工作</div>
+<div class="work_msg">
+    <!--<img src="../../image/image_zn/banner_zn_03.jpg" alt="">-->
+    <!-- 轮播 -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+</div>
+<h1 class="classification">销售服务</h1>
+<ul class="work_con">
+    <li class="work_one trade_in" onclick="open_trade_in()">
+        <div class="work_one_icon iconfont" style="color:#50ce8e;">&#xe61a;</div>
+        <div class="work_one_w">销售录入</div>
+    </li>
+    <li class="work_one" onclick="open_saleRecord()">
+        <div class="work_one_icon iconfont " style="color:#fad453;">&#xe600;</div>
+        <div class="work_one_w">销售记录</div>
+    </li>
+    <li class="work_one open_check" onclick="open_check()">
+        <div class="work_one_icon iconfont " style="color:#f8661b;">&#xe66a;</div>
+        <div class="work_one_w">查看库存</div>
+    </li>
+    <li class="work_one" onclick="open_sale()">
+        <div class="work_one_icon iconfont icon-icon018 " style="color:#f7d329;"></div>
+        <div class="work_one_w">销售排行</div>
+    </li>
+    <li class="work_one apply_product" onclick="open_apply()">
+        <div class="work_one_icon iconfont icon-jinhuo" style="color:#f55d72"></div>
+        <div class="work_one_w">进货申请</div>
+    </li>
+</ul>
+
+<h1 class="classification">门店管理</h1>
+<ul class="work_con">
+    <li class="work_one" onclick="open_shenhe()">
+        <div class="work_one_icon iconfont " style="color:#4fe1af;">&#xe726;</div>
+        <div class="work_one_w">我的审核</div>
+        <div class="biaoji_yyt"></div>
+    </li>
+    <li class="work_one open_shopM" onclick="open_shopM()">
+        <div class="work_one_icon iconfont icon-guanlirenyuan" style="color:#f55d72"></div>
+        <div class="work_one_w">店员管理</div>
+    </li>
+    <li class="work_one" onclick="open_dianmian()">
+        <div class="work_one_icon iconfont " style="color:#48ccdc;">&#xe605;</div>
+        <div class="work_one_w">店面分布</div>
+    </li>
+</ul>
+<h1 class="classification">个性服务</h1>
+<ul class="work_con" style="margin-bottom:0.2rem">
+    <li class="work_one" onclick="open_feed()">
+        <div class="work_one_icon iconfont " style="color:#63c9eb;">&#xe637;</div>
+        <div class="work_one_w">问答专区</div>
+    </li>
+</ul>
+</body>
+<script src="../../script/swiper.min.js"></script>
+<script src="../../script/api.js"></script>
+
+<script src="../../script/imagescache.js"></script>
+<script>
+
+    var store_id;
+    var uid;
+    var roleid;
+    var role;
+    function biaoji() {
+        apiready=function () {
+            store_id=api.getPrefs({sync:true,key:'store_id'});
+            role = api.getPrefs({
+                sync: true,
+                key: 'roleid'
+            });
+            api.ajax({
+                url: 'http://appapi.duyiwang.cn/index.php?action=verify&dir=work&do=wdstatus',
+                method: 'post',
+                data: {
+                    values: {store_id:store_id}
+                },
+                dataType: 'json'
+            }, function (ret, err) {
+                if (ret.verify != 0 || ret.buy != 0){
+
+                    $(".biaoji_yyt").css("display","block");
+                }
+            });
+
+
+
+//            banner图片动态添加
+            function get_image_zn(){
+                var type=1;
+                api.ajax({
+                    url: 'http://appapi.duyiwang.cn/index.php?action=banner&dir=work&do=banner',
+                    method: 'post',
+                    data: {
+                        values: {type:type}
+                    },
+                    dataType: 'json'
+                }, function (ret, err) {
+
+                    for(var i=0;i<ret.banner.img.length;i++){
+                        var  img=" <div class='swiper-slide'><img  onload='fnLoadImage(this)' data-url='http://app.duyiwang.cn/img/"+ret.banner.img[i]+"' src='http://app.duyiwang.cn/img/"+ret.banner.img[i]+"' alt=''></div>";
+                        $('.swiper-wrapper').append(img);
+                    }
+                    var swiper=new Swiper('.swiper-container',{
+                        pagination:'.swiper-pagination',
+                        slidersPerView:1,
+                        paginationClickable:true,
+                        loop:true,
+                        autoplay:3000,
+                        autoplayDisableOnInteraction:false
+                    })
+                });
+            }
+            get_image_zn();
+
+
+            //拿到roleid
+            function get_data() {
+                uid=api.getPrefs({sync:true,key:'uid'});
+                api.ajax({
+                    url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=info',
+                    method: 'post',
+                    data: {
+                        values:{uid:uid}
+                    },
+                    dataType:'json'
+                },function(ret,err){
+                    if(ret.code == 200){
+                        roleid=ret.info.roleid;
+                    }else if(ret.code == 500){
+
+                    }
+                });
+            }
+            get_data();
+            if (role == 2 || role == 4 || role == 1  || role == 6 || role == 7 ) {
+                $('.apply_product').css('display','block');
+            }
+            if (role == 3 || role == 5 || role == 1  || role == 6 || role == 7 ) {
+                $('.trade_in').css('display','block');
+            }
+            if (role == 3 || role == 5 || role == 1  || role == 6 || role == 7 ) {
+                $('.open_check').css('display','block');
+            }
+            if (role == 3 || role == 5 || role == 1  || role == 6 || role == 7 ) {
+                $('.open_shopM').css('display','block');
+            }
+        }
+    }
+    biaoji();
+
+    function open_trade_in() {
+        if (parseInt(store_id)) {
+            if(roleid == 3 || roleid == 5 || roleid == 1  || roleid == 6 || roleid == 7){
+                api.openWin({
+                    name: 'saleEntry',
+                    url: 'widget://html/work/saleEntry.html',
+                    bounces: false,
+                    pageParam: {type: 1},
+                    animation:{
+                      type:"none",                //动画类型（详见动画类型常量）
+                      duration:50
+                    },
+                    rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+                });
+            }
+        } else {
+            api.toast({
+                msg: '请选择您所属门店',
+                duration: 4000,
+                location: 'bottom'
+            });
+            api.openWin({
+                name: 'personInfo_qty',
+                url: 'widget://html/me/personInfo_qty.html',
+                bounces: false,
+                animation:{
+                  type:"none",                //动画类型（详见动画类型常量）
+                  duration:50
+                },
+                pageParam: {type: 1},
+                rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+            });
+        }
+    }
+    function open_feed() {
+        api.openWin({
+            name: 'feedback_message_zn',
+            url: 'widget://html/feedback/feedback_message_zn.html',
+            bounces: false,
+            animation:{
+              type:"none",                //动画类型（详见动画类型常量）
+              duration:50
+            },
+            rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+        });
+    }
+
+    function open_dianmian() {
+
+        api.openWin({
+            name: 'dianmian_fb',
+            url: 'widget://html/storefront/dianmian_fb.html',
+            bounces: false,
+            animation:{
+              type:"none",                //动画类型（详见动画类型常量）
+              duration:50
+            },
+            rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+        });
+
+    }
+    function open_saleRecord() {
+        if((roleid==3)||(roleid==5)){
+            api.openWin({
+                name: 'saleRecord_store_qty',
+                url: 'widget://html/work/saleRecord_store_qty.html',
+                bounces: false,
+                animation:{
+                  type:"none",                //动画类型（详见动画类型常量）
+                  duration:50
+                },
+                rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+            });
+        }else if((roleid==2)||(roleid==4)){
+            api.openWin({
+                name: 'saleRecord_agency_qty',
+                url: 'widget://html/work/saleRecord_agency_qty.html',
+                bounces: false,
+                animation:{
+                  type:"none",                //动画类型（详见动画类型常量）
+                  duration:50
+                },
+                rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+            });
+        }else if((roleid==1)||(roleid==6)||(roleid==7)){
+            api.openWin({
+                name: 'saleRecord_manager_zn',
+                url: 'widget://html/work/saleRecord_manager_zn.html',
+                bounces: false,
+                animation:{
+                  type:"none",                //动画类型（详见动画类型常量）
+                  duration:50
+                },
+                rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+            });
+        } else {
+            api.toast({
+                msg: '请选择您所属门店',
+                duration: 4000,
+                location: 'bottom'
+            });
+            api.openWin({
+                name: 'personInfo_qty',
+                url: 'widget://html/me/personInfo_qty.html',
+                bounces: false,
+                animation:{
+                  type:"none",                //动画类型（详见动画类型常量）
+                  duration:50
+                },
+                pageParam: {type: 1},
+                rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+            });
+        }
+    }
+    function open_sale() {
+        if((roleid==3)||(roleid==5)){
+            api.openWin({
+                name: 'saleRank_entry_qty',
+                url: 'widget://html/saleBank/saleRank_entry_qty.html',
+                // 进入销售排行
+                bounces: false,
+                animation:{
+                  type:"none",                //动画类型（详见动画类型常量）
+                  duration:50
+                },
+                rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+            });
+        }else if((roleid==2)||(roleid==4)){
+            api.openWin({
+                name: 'saleRank_entry_agency_zn',
+                url: 'widget://html/saleBank/saleRank_entry_agency_zn.html',
+                bounces: false,
+                animation:{
+                  type:"none",                //动画类型（详见动画类型常量）
+                  duration:50
+                },
+                rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+            });
+        }else if((roleid==1)||(roleid==6)||(roleid==7)){
+            api.openWin({
+                name: 'saleRank_country_qty',
+                url: 'widget://html/saleBank/saleRank_country_qty.html',
+                bounces: false,
+                animation:{
+                  type:"none",                //动画类型（详见动画类型常量）
+                  duration:50
+                },
+                rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+            });
+        } else {
+            api.toast({
+                msg: '请选择您所属门店',
+                duration: 4000,
+                location: 'bottom'
+            });
+            api.openWin({
+                name: 'personInfo_qty',
+                url: 'widget://html/me/personInfo_qty.html',
+                bounces: false,
+                animation:{
+                  type:"none",                //动画类型（详见动画类型常量）
+                  duration:50
+                },
+                pageParam: {type: 1},
+                rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+            });
+        }
+    }
+    function open_shopM() {
+        if (parseInt(store_id)) {
+            if(roleid == 3 || roleid == 5 || roleid == 1  || roleid == 6 || roleid == 7){
+                api.openWin({
+                    name: 'shopMangment_qty',
+                    url: 'widget://html/work/shopMangment_qty.html',
+                    bounces: false,
+                    animation:{
+                      type:"none",                //动画类型（详见动画类型常量）
+                      duration:50
+                    },
+                    rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+                });
+            }
+        } else {
+            api.toast({
+                msg: '请选择您所属门店',
+                duration: 4000,
+                location: 'bottom'
+            });
+            api.openWin({
+                name: 'personInfo_qty',
+                url: 'widget://html/me/personInfo_qty.html',
+                bounces: false,
+                animation:{
+                  type:"none",                //动画类型（详见动画类型常量）
+                  duration:50
+                },
+                pageParam: {type: 1},
+                rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+            });
+        }
+    }
+    function open_check() {
+        if (parseInt(store_id)) {
+            if(roleid == 3 || roleid == 5 || roleid == 1  || roleid == 6 || roleid == 7){
+                api.openWin({
+                    name: 'check_qty',
+                    url: 'widget://html/work/check_qty.html',
+                    bounces: false,
+                    animation:{
+                      type:"none",                //动画类型（详见动画类型常量）
+                      duration:50
+                    },
+                    rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+                });
+            }
+        } else {
+            api.toast({
+                msg: '请选择您所属门店',
+                duration: 4000,
+                location: 'bottom'
+            });
+            api.openWin({
+                name: 'personInfo_qty',
+                url: 'widget://html/me/personInfo_qty.html',
+                bounces: false,
+                pageParam: {type: 1},
+                animation:{
+                  type:"none",                //动画类型（详见动画类型常量）
+                  duration:50
+                },
+                rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+            });
+        }
+    }
+
+    function open_shenhe() {
+        api.openWin({
+            name: 'auditEnter',
+            url: 'widget://html/work/auditEnter.html',
+            bounces: false,
+            rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+        });
+    }
+    /*
+    *审核通过后重新获取门店id
+    */
+    function store_id_cz() {
+        store_id=api.getPrefs({sync:true,key:'store_id'});
+        location.reload();
+    }
+
+
+    $(".work_one").on("touchstart",function () {
+        $(this).css("background","#eee")
+        $(this).on("touchend",function () {
+            $(this).css("background","#fff")
+            $(this).off("touchend")
+        })
+    })
+    var startPos = 0,endPos = 0,isScrolling = 0;
+    document.addEventListener('touchstart',function(event){
+        var touch = event.targetTouches[0]; //touches数组对象获得屏幕上所有的touch，取第一个touch
+        startPos = {x:touch.pageX,y:touch.pageY,time:+new Date}; //取第一个touch的坐标值
+        isScrolling = 0; //这个参数判断是垂直滚动还是水平滚动
+    }, false);
+
+    //解绑事件 web前端开发
+    document.addEventListener('touchend',function(event){
+        document.removeEventListener('touchmove',this,false);
+        document.removeEventListener('touchend',this,false);
+    }, false);
+
+    document.addEventListener('touchmove',function(event){
+        //当屏幕有多个touch或者页面被缩放过，就不执行move操作
+        if(event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
+        var touch = event.targetTouches[0];
+        endPos = {x:touch.pageX - startPos.x,y:touch.pageY - startPos.y};
+        isScrolling = Math.abs(endPos.x) < Math.abs(endPos.y) ? 1:0; //isScrolling为1时，表示纵向滑动，0为横向滑动
+        if(isScrolling === 0){
+
+            event.preventDefault(); //阻止触摸事件的默认行为，即阻止滚屏
+        }
+    }, false);
+
+    // 如果身份是经销商和加盟商才可以申请进货
+    function open_apply() {
+        if (role == 2 || role == 4 || role == 1 || role == 6 || role == 7) {
+            api.openWin({
+                name: 'apply_hhj',
+                url: 'widget://html/stockApply/apply_hhj.html',
+                bounces: false,
+                rect: {
+                    x: 0,
+                    y: 0,
+                    w: 'auto',
+                    h: 'auto'
+                }
+            });
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" href="../../css/api.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <style>
+        /*个人信息填写*/
+
+        html,
+        body {
+            background: #f5f5f5;
+            position: relative;
+        }
+
+        .header_qty {
+            width: 100%;
+            height: 0.88rem;
+            background: linear-gradient(to right, #268ce9,#64c0ea);
+            text-align: center;
+            font-size: 0.34rem;
+            color: #fff;
+            line-height: 0.88rem;
+            position: relative;
+        }
+
+        .arrow_qty {
+            width: 1.2rem;
+            height: 0.88rem;
+            position: absolute;
+            left: 0rem;
+            top: 0rem;
+        }
+
+        .arrowLeft_qty {
+            width: 0.15rem;
+            height: 0.28rem;
+            float: left;
+            background-image: url(../../image/img_qty/arrowLeft_06.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 0.3rem;
+            margin-left: 0.2rem;
+        }
+
+        .headPart_qty {
+            width: 100%;
+            /*height: 1.3rem;*/
+            height: auto;
+            float: left;
+            border-bottom: 1px solid #F6F6F6;
+            background: #fff;
+        }
+
+        .headPartSmall_qty {
+            width: 6rem;
+            height: 1.3rem;
+            float: left;
+            margin-left: 0.2rem;
+        }
+
+        .headFont_qty {
+            width: 1.5rem;
+            float: left;
+            font-size: 0.24rem;
+            letter-spacing: 0.5rem;
+            line-height: 1.3rem;
+        }
+
+        .headImgBox_qty {
+            width: 1rem;
+            height: 1.3rem;
+            float: right;
+        }
+
+        .headImgBox_qty img {
+            display: block;
+            width: 0.86rem;
+            height: 0.86rem;
+            border-radius: 50%;
+            margin: 0 auto;
+            margin-top: 0.04rem;
+        }
+
+        .headpart {
+            height: 0.8rem;
+            line-height: 0.8rem;
+        }
+
+        .headpartsmall {
+            height: 0.8rem;
+            line-height: 0.8rem;
+        }
+
+        .headfont {
+            line-height: 0.8rem;
+            float: left;
+        }
+
+        .headfont1 {
+            line-height: 0.8rem;
+            float: left;
+            letter-spacing: 0rem;
+        }
+
+        .inputBox_qty {
+            width: 4.5rem;
+            font-size: 0.24rem;
+            float: left;
+        }
+
+        .inputBox_qty input {
+            width: 4.5rem;
+            height: 0.6rem;
+            font-size: 0.24rem;
+            margin-top: 0.1rem;
+            float: left;
+            outline: none;
+        }
+
+        .inputBox_qty select {
+            width: 4.1rem;
+            height: 0.6rem;
+            font-size: 0.24rem;
+            margin-top: 0.1rem;
+            float: left;
+            outline: none;
+            border: none;
+        }
+
+        .submitBox {
+            width: 100%;
+            height: 1rem;
+            line-height: 1rem;
+            background: #2493f7;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
+
+        .submitBox input {
+            width: 100%;
+            height: 1rem;
+            font-size: 0.3rem;
+            float: left;
+            color: #fff;
+            outline: none;
+            letter-spacing: 0.2rem;
+        }
+
+        #ClickMe_qty {
+            width: 4.1rem;
+            height: 0.6rem;
+            font-size: 0.24rem;
+            margin-top: 0.1rem;
+            float: left;
+            line-height: 0.6rem;
+            color: #A9A9A9;
+        }
+
+        #goodcover {
+            display: none;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1001;
+            -moz-opacity: 0.8;
+            opacity: 0.50;
+            filter: alpha(opacity=80);
+        }
+
+        #code {
+            width: 4.18rem;
+            height: 2.15rem;
+            background-color: #fff;
+            position: absolute;
+            display: none;
+            left: 45%;
+            z-index: 1002;
+        }
+
+        .applyFont_qty {
+            width: 4.18rem;
+            height: 0.52rem;
+            line-height: 0.52rem;
+            text-align: center;
+            font-size: 0.24rem;
+            font-weight: bolder;
+            color: #323232;
+            float: left;
+            letter-spacing: 0.03rem;
+            margin-top: 0.03rem;
+        }
+
+        .applyBig_qty {
+            width: 4.18rem;
+            height: 0.52rem;
+            text-align: center;
+            font-size: 0.24rem;
+            line-height: 0.52rem;
+            font-weight: bolder;
+            color: #333333;
+            float: left;
+            letter-spacing: 0.02rem;
+        }
+
+        .sure {
+            width: 4.18rem;
+            height: 0.8rem;
+            line-height: 0.8rem;
+            background: #2493f7;
+            color: #fff;
+            text-align: center;
+            font-size: 0.28rem;
+            float: left;
+            margin-top: 0.28rem;
+            letter-spacing: 0.04rem;
+        }
+
+        .inputBox_qty label {
+            width: 1.5rem;
+            height: 0.8rem;
+            font-size: 0.26rem;
+            line-height: 0.8rem;
+            float: left;
+            margin-right: 0.2rem;
+        }
+
+        .inputBox_qty .store_small {
+            display: block;
+            width: 0.3rem;
+            height: 0.3rem;
+            margin-top: 0.25rem;
+        }
+
+        .inputBox_qty .store_big {
+            display: block;
+            width: 0.3rem;
+            height: 0.3rem;
+            margin-top: 0.25rem;
+        }
+
+        .inputBox_qty .man_yyt {
+            display: block;
+            width: 0.3rem;
+            height: 0.3rem;
+            margin-top: 0.25rem;
+        }
+
+        .inputBox_qty .woman_yyt {
+            display: block;
+            width: 0.3rem;
+            height: 0.3rem;
+            margin-top: 0.25rem;
+        }
+
+        #mdlb {
+            width: 4rem;
+            height: 0.8rem;
+            font-siduoxuan_iddm;
+            line-height: 0.8rem;
+            text-align: left;
+            color: #333;
+        }
+
+        .select_pic_yyt {
+            width: 100%;
+            height: auto;
+            text-align: center;
+            font-size: 0.24rem;
+            color: #333;
+            line-height: 0.4rem;
+        }
+
+        .photo_s_yyt {
+            width: 100%;
+            overflow: hidden;
+            background: #fff;
+            margin-bottom: 0.3rem;
+            border-top: 0.27rem solid #f5f5f5;
+            transition: all 0.5s ease;
+            display: none;
+        }
+
+        .select_con_yyt {
+            width: 6rem;
+            height: auto;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .picture_yyt {
+            width: 0.84rem;
+            margin: 0.18rem;
+            float: left;
+            display: block;
+        }
+
+        #select_zn {
+            background: #fff;
+            -moz-appearance: none;
+            -ms--appearance: none;
+            -webkit-appearance: none;
+        }
+
+        #select_zn option {
+            background: #fff;
+            text-align: center;
+        }
+
+        .inputBox_qty label input {
+            visibility: hidden;
+        }
+
+        .inputBox_qty label img {
+            width: 0.3rem;
+            height: 0.3rem;
+            margin-top: 0.25rem;
+            float: left;
+        }
+
+        form {
+            display: block;
+            background: #fff;
+            width: 100%;
+            height: auto;
+        }
+
+        #store_zn {
+            overflow: hidden;
+            background: #fff;
+            height: auto;
+        }
+
+        #store_zn .headpartsmall {
+            background: #fff;
+            height: auto;
+        }
+
+        #mdlb {
+            height: auto;
+        }
+
+        .model_frame_zn {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .select_and_cancel_zn {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .select_pic_zn {
+            width: 100%;
+            height: 0.88rem;
+            background: #fff;
+            line-height: 0.88rem;
+            text-align: center;
+            font-size: 0.28rem;
+            color: #333;
+            margin-bottom: 0.01rem;
+            border-bottom: 0.01rem solid #ddd;
+        }
+
+        .cancel_zn {
+            width: 100%;
+            height: 0.88rem;
+            background: #fff;
+            line-height: 0.88rem;
+            text-align: center;
+            font-size: 0.28rem;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header_qty">个人信息</div>
+    <div class="arrow_qty" onclick="api.closeWin()">
+        <div class="arrowLeft_qty"></div>
+    </div>
+    <div class="headPart_qty">
+        <div class="headPartSmall_qty">
+            <div class="headFont_qty">头像</div>
+            <div class="headImgBox_qty">
+                <img src="../../image/img_qty/head.jpg" class="img_zn">
+                <div class="select_pic_yyt">更改头像</div>
+            </div>
+        </div>
+    </div>
+    <form action="">
+        <div class="headPart_qty headpart">
+            <div class="headPartSmall_qty headpartsmall">
+                <div class="headFont_qty headfont">姓名</div>
+                <div class="inputBox_qty name_yyt">
+                    <input type="text" placeholder="请输入您的姓名">
+                </div>
+            </div>
+        </div>
+        <div class="headPart_qty headpart">
+            <div class="headPartSmall_qty headpartsmall">
+                <div class="headFont_qty headfont">性别</div>
+                <div class="inputBox_qty">
+                    <!--<select name="" id="" style="background: #fff">-->
+                    <!--<option value="0" class="man_yyt">男</option>-->
+                    <!--<option value="1" class="woman_yyt">女</option>-->
+                    <label><img src="../../image/image_zn/checkbox_zn.png" alt=""/><input name="sex" type="radio"  class="man_yyt"/>男</label>
+                    <label><img src="../../image/image_zn/checkbox_zn.png" alt=""/><input name="sex" type="radio"  class="woman_yyt"/>女</label>
+                    <!--</select>-->
+                </div>
+            </div>
+        </div>
+        <div class="headPart_qty headpart">
+            <div class="headPartSmall_qty headpartsmall">
+                <div class="headFont_qty headfont">年龄</div>
+                <div class="inputBox_qty age_yyt">
+                    <input type="text" placeholder="请输入您的年龄">
+                </div>
+            </div>
+        </div>
+        <div class="headPart_qty headpart">
+            <div class="headPartSmall_qty headpartsmall">
+                <div class="headFont_qty headfont">职位</div>
+                <div class="inputBox_qty position_zn">
+                    <select name="" id="select_zn">
+                    <option value="0">
+                        请选择
+                    </option>
+                    <option value="5" class="store_small">
+                        店员
+                    </option>
+                    <option value="3" class="store_big">
+                        店长
+                    </option>
+                    <option value="4">
+                        加盟商
+                    </option>
+                    <option value="2">
+                        经销商
+                    </option>
+                    <option value="1">
+                        总部人员
+                    </option>
+                </select>
+
+                </div>
+            </div>
+        </div>
+        <div class="headPart_qty headpart" id="store_zn">
+            <div class="headPartSmall_qty headpartsmall" id="none">
+                <div class="headFont_qty headfont1">所属门店</div>
+                <div class="inputBox_qty inputBox_qtya">
+                    <div id="mdlb">请选择您的所属门店</div>
+                </div>
+            </div>
+            <div class="headPartSmall_qty headpartsmall" id="nona">
+                <div class="headFont_qty headfont1">所属区域</div>
+                <div class="inputBox_qty inputBox_qtya">
+                    <div id="mdla">请选择您的所属区域</div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="submitBox">
+        <input type="button" name="" id="" value="提交" onclick="submit_yyt()">
+    </div>
+    <div class="model_frame_zn">
+        <div class="select_and_cancel_zn">
+            <p class="select_pic_zn" onclick="open_picture()">从手机相册选择</p>
+            <p class="cancel_zn">取消</p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+    // 点击头像  选择图片弹出
+    $('.headImgBox_qty').click(function() {
+        $('.model_frame_zn').show();
+    })
+    $('.cancel_zn').click(function() {
+        $('.model_frame_zn').hide();
+    })
+
+    // 判断所属区域是否显示
+    $('#select_zn').on('change',function(){
+        var role_ID=$('#select_zn').val();
+        if (role_ID == 2 || role_ID == 4) {
+            $('#nona').show();
+        } else {
+            $('#nona').hide();
+        }
+    })
+    var path_yyt;
+    var head_img;
+    //    更换头像
+    function open_picture() {
+        var UIMediaScanner = api.require('UIMediaScanner');
+        UIMediaScanner.open({
+            type: 'picture',
+            column: 4,
+            classify: true,
+            max: 1,
+            sort: {
+                key: 'time',
+                order: 'desc'
+            },
+            texts: {
+                stateText: '已选择*项',
+                cancelText: '取消',
+                finishText: '完成'
+            },
+            styles: {
+                bg: '#fff',
+                mark: {
+                    icon: '',
+                    position: 'bottom_left',
+                    size: 20
+                },
+                nav: {
+                    bg: '#eee',
+                    stateColor: '#000',
+                    stateSize: 18,
+                    cancelBg: 'rgba(0,0,0,0)',
+                    cancelColor: '#000',
+                    cancelSize: 18,
+                    finishBg: 'rgba(0,0,0,0)',
+                    finishColor: '#000',
+                    finishSize: 18
+                }
+            },
+            exchange: true,
+            rotation: true
+        }, function(ret) {
+            if (ret) {
+                path_yyt = ret.list[0].thumbPath;
+                UIMediaScanner.transPath({
+                    path: path_yyt
+                }, function(ret, err) {
+                    if (ret) {
+                        path_yyt=ret.path;
+                        // alert(path_yyt)
+                    } else {
+                        // alert(JSON.stringify(err));
+                    }
+                });
+                var trans = api.require('trans');
+                trans.decodeImgToBase64({
+                    imgPath: path_yyt
+                }, function(ret, err) {
+                    if (ret.status) {
+                        head_img = ret.base64Str;
+                        api.ajax({
+                            url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=userinfo',
+                            method: 'post',
+                            data: {
+                                values: {
+                                    uid: uid,
+                                    type: type,
+                                    stroe_id: store_id,
+                                    path: ret.base64Str
+                                }
+                            },
+                            dataType: 'json'
+                        }, function(ret, err) {
+                            $('.img_zn').attr('src', path_yyt);
+                            $('.model_frame_zn').hide();
+                        });
+                    }
+                });
+
+            }
+        });
+    }
+
+
+    // 男生女生
+    $('.inputBox_qty label').change(function() {
+        $(this).siblings().children('img').attr('src', '../../image/image_zn/checkbox_zn.png');
+        $(this).children('img').attr('src', '../../image/image_zn/checkbox_zn_sure.png');
+    })
+    var uid;
+    var type;
+    var store_id_zn = [];
+
+
+    var cityid;
+    function get_data() {
+        apiready = function() {
+            api.setPrefs({
+                key: 'once',
+                value: '1'
+            });
+            store_id = api.getPrefs({
+                sync: true,
+                key: 'store_id'
+            });
+            uid = api.getPrefs({
+                sync: true,
+                key: 'uid'
+            });
+            type = api.getPrefs({
+                sync: true,
+                key: 'type'
+            });
+            // 获取个人已经有信息
+            api.ajax({
+                url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=userinfo',
+                method: 'post',
+                data: {
+                    values: {
+                        uid: uid,
+                        type: type,
+                        stroe_id: store_id
+                    }
+                },
+                dataType: 'json'
+            }, function(ret, err) {
+                // alert(JSON.stringify(ret))
+                // 城市ID 判断没有修改时传给后台
+                cityid=ret.stroe.areaid?ret.stroe.areaid:ret.stroe.cityid;
+                    // 获取身份权限ID
+                    fanhui_val = ret.userinfo.roleid;
+
+                // 所属区域
+              if (ret.stroe.position) {
+                  $("#mdla").html(ret.stroe.position);
+              }
+                // 判断头像有无
+                if ((ret.userinfo.head_img == 'null') || (ret.userinfo.head_img == null)) {//默认头像
+                    head_img = ret.userinfo.head_img;
+                    $(".headImgBox_qty img").attr("src", "../../image/header_picture/tc_log.png");
+                } else if (ret.userinfo.head_img.slice(0, 4) == 'http') {//网络图片
+                    head_img = ret.userinfo.head_img;
+                    $(".headImgBox_qty img").attr("src", ret.userinfo.head_img);
+                } else {  //上传过的图片
+                    head_img = ret.userinfo.head_img;
+                    $(".headImgBox_qty img").attr("src", "../../image/header_picture/" + ret.userinfo.head_img + "");
+                }
+                // 姓名
+                if (ret.userinfo.name) {
+                    $(".name_yyt input").val(ret.userinfo.name)
+                }
+                // 性别
+                if (ret.userinfo.sex) {
+                    if (ret.userinfo.sex == 1) {
+                        $('.inputBox_qty label:first-child img').attr('src', '../../image/image_zn/checkbox_zn_sure.png')
+                        $(".man_yyt").attr("checked", "checked");
+                    } else if (ret.userinfo.sex == 2) {
+                        $('.inputBox_qty label:last-child img').attr('src', '../../image/image_zn/checkbox_zn_sure.png')
+                        $(".woman_yyt").attr("checked", "checked");
+                    }
+                } else {
+                    $(".man_yyt").attr("checked", "checked");//默认男性
+                }
+                // 年龄
+                if (ret.userinfo.age) {
+                    $(".age_yyt input").val(ret.userinfo.age)
+                }
+                // 拿到所属门店，写入
+                if (ret.stroe.name) {
+                    $("#mdlb").html(ret.stroe.name)
+                }
+                //判断用户值，显示隐藏区域
+                if (ret.userinfo.roleid == 2 || ret.userinfo.roleid == 4) {
+                    $('#nona').show();
+                } else {
+                    $('#nona').hide();
+                }
+                // 用户权限   职位
+                if (ret.userinfo.roleid) {
+                    if (ret.userinfo.roleid == 5) {//店员
+                        $('#select_zn').attr('value', '5');
+                    } else if (ret.userinfo.roleid == 3) {//店长
+                        $('#select_zn').attr('value', '3');
+                    } else if (ret.userinfo.roleid == 2) {//经销商
+                        store_id_zn = ret.stroe.mid;//门店id数组
+                        $('#select_zn').attr('value', '2');
+                    } else if (ret.userinfo.roleid == 4) {//加盟商
+                        store_id_zn = ret.stroe.mid;
+                        $('#select_zn').attr('value', '4');
+                    } else if (ret.userinfo.roleid == 1) {//总部人员
+                        $('#select_zn').attr('value', '1');
+                    } else if (ret.userinfo.roleid == 6) {
+                        $('#select_zn').css('display', 'none');
+                        $('#mdlb').html('太常集团');
+                        $('.position_zn').html('董事长');
+                    } else if (ret.userinfo.roleid == 7) {
+                        $('#select_zn').css('display', 'none');
+                        $('#mdlb').html('太常集团');
+                        $('.position_zn').html('总经理');
+                    }
+                }
+            });
+        };
+    }
+    get_data();
+    // 获取页面数据，判断头像年龄性别职位门店写入
+    function updata_zn() {
+        store_id = api.getPrefs({
+            sync: true,
+            key: 'store_id'
+        });
+        uid = api.getPrefs({
+            sync: true,
+            key: 'uid'
+        });
+        type = api.getPrefs({
+            sync: true,
+            key: 'type'
+        });
+        api.ajax({
+            url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=userinfo',
+            method: 'post',
+            data: {
+                values: {
+                    uid: uid,
+                    type: type,
+                    stroe_id: store_id
+                }
+            },
+            dataType: 'json'
+        }, function(ret, err) {
+            // 头像图片
+            if ((ret.userinfo.head_img == 'null') || (ret.userinfo.head_img == null)) {
+                head_img = ret.userinfo.head_img;
+                $(".headImgBox_qty img").attr("src", "../../image/header_picture/tc_log.png");
+            } else if (ret.userinfo.head_img.slice(0, 4) == 'http') {
+                head_img = ret.userinfo.head_img;
+                $(".headImgBox_qty img").attr("src", ret.userinfo.head_img);
+            } else {
+                head_img = ret.userinfo.head_img;
+                $(".headImgBox_qty img").attr("src", "../../image/header_picture/" + ret.userinfo.head_img + "");
+            }
+            // 姓名
+            if (ret.userinfo.name) {
+                $(".name_yyt input").val(ret.userinfo.name)
+            }
+            // 性别
+            if (ret.userinfo.sex) {
+                if (ret.userinfo.sex == 1) {
+                    $('.inputBox_qty label:first-child img').attr('src', '../../image/image_zn/checkbox_zn_sure.png')
+                    $(".man_yyt").attr("checked", "checked");
+                } else if (ret.userinfo.sex == 2) {
+                    $('.inputBox_qty label:last-child img').attr('src', '../../image/image_zn/checkbox_zn_sure.png')
+                    $(".woman_yyt").attr("checked", "checked");
+                }
+            } else {
+                $(".man_yyt").attr("checked", "checked");
+            }
+            // 年龄
+            if (ret.userinfo.age) {
+                $(".age_yyt input").val(ret.userinfo.age)
+            }
+            //拿到所属门店，写入
+            //mdlb 是所属门店
+            if (ret.stroe.name) {
+                $("#mdlb").html(ret.stroe.name)
+            }
+            // 用户权限  职位
+            if (ret.userinfo.roleid) {
+                if (ret.userinfo.roleid == 5) {
+                    $('#select_zn').attr('value', '5');
+                } else if (ret.userinfo.roleid == 3) {
+                    $('#select_zn').attr('value', '3');
+                } else if (ret.userinfo.roleid == 2) {
+                    $('#select_zn').attr('value', '2');
+                } else if (ret.userinfo.roleid == 4) {
+                    $('#select_zn').attr('value', '4');
+                } else if (ret.userinfo.roleid == 1) {
+                    $('#select_zn').attr('value', '1');
+                } else if (ret.userinfo.roleid == 6) {
+                    $('#select_zn').css('display', 'none');
+                    $('#mdlb').html('太常集团');
+                    $('.position_zn').html('董事长');
+                } else if (ret.userinfo.roleid == 7) {
+                    $('#select_zn').css('display', 'none');
+                    $('#mdlb').html('太常集团');
+                    $('.position_zn').html('总经理');
+                }
+            }
+
+        });
+    }
+    // 职位点击  1  太常集团  否则下面提示选择门店
+    $('#select_zn').click(function() {
+
+            if ($(this).val() == 1) {
+                $('#mdlb').html('太常集团');
+            } else {
+                $('#mdlb').html('请选择门店');
+            }
+
+        })
+
+        // 点击选择门店
+        //-------------- 判断职位是什么的时候执行什么语句2 4 是加盟商经销商
+    $('#mdlb').click(function() {
+            // 选择所属门店  店长店员
+            if (($('#select_zn').val() == 3) || ($('#select_zn').val() == 5)) {
+                api.openWin({
+                    name: 'store_qty',
+                    url: 'widget://html/me/store_qty.html',
+                    bounces: false,
+                    rect: {
+                        x: 0,
+                        y: 0,
+                        w: 'auto',
+                        h: 'auto'
+                    }
+                });
+            } else if ($('#select_zn').val() == 0) {
+                api.toast({
+                    msg: '请先选择您的职位',
+                    duration: 3000,
+                    location: 'bottom'
+                });
+            } else if (($('#select_zn').val() == 2) || ($('#select_zn').val() == 4)) { //经销商 加盟商
+                var storename=$('#mdlb').html();
+                api.openWin({
+                    name: 'store_agency_zn',
+                    url: 'widget://html/me/store_agency_zn.html',
+                    bounces: false,
+                    pageParam:{
+                        storename:storename,
+                        store_ids:aa,
+                        store_names:bb
+                    },
+                    rect: {
+                        x: 0,
+                        y: 0,
+                        w: 'auto',
+                        h: 'auto'
+                    }
+                });
+            } else {
+                $('#mdlb').html('太常集团');
+            }
+        })
+    fanhui = '';//职位 权限ID
+    //-------------------判断所属区域
+    // 所属区域点击事件
+    $('#mdla').click(function() {
+        fanhui =$('#select_zn').val()
+        if ($('#select_zn').val() == 0) {
+            api.toast({
+                msg: '请先选择您的职位',
+                duration: 3000,
+                location: 'bottom'
+            });
+        } else if (($('#select_zn').val() == 2) || ($('#select_zn').val() == 4)) {  //跳转选择所属区域
+            api.openWin({
+                name: 'store_agency_zn',
+                url: 'widget://html/me/Selection_area.html',
+                bounces: false,
+                pageParam: {
+                    roleid:fanhui
+                },
+                rect: {
+                    x: 0,
+                    y: 0,
+                    w: 'auto',
+                    h: 'auto'
+                }
+            });
+        } else {
+            $('#mdlb').html('太常集团');
+        }
+    })
+
+
+    //---------------------------判断身份显示隐藏 选择区域隐藏显示
+    $('.position_zn').click(function() {
+            $(document).on('change', '#select_zn', function() {
+                if ($('#select_zn').val() == 0) {
+                    api.toast({
+                        msg: '请先选择您的职位',
+                        duration: 3000,
+                        location: 'bottom'
+                    });
+                } else if (($('#select_zn').val() == 2) || ($('#select_zn').val() == 4)) {
+                    $('#nona').show();
+                } else {
+                    $('#nona').hide();
+                }
+            })
+        })
+        //----------a是城市ID，b城市名字，接收门店数据
+    function updata_store(a, b) {
+        $("#mdlb").html(a);
+        store_id = b;
+    }
+
+    var aa;  //门店ID
+    var bb;  //门店名称
+    //a门店ID  b门店名称
+    function updata_id(a, b) {
+        store_id_zn = []
+        for (var i = 0; i < a.length; i++) {
+            store_id_zn.push(a[i])
+        }
+        $("#mdlb").empty();
+        for (var i = 0; i < b.length; i++) {
+            $("#mdlb").append(b[i] + "&nbsp;&nbsp;");   //所属门店写入页面
+        }
+        if(a==""||b==""){
+            $("#mdlb").html('请选择门店');
+        }
+        st_name=[];
+        for (var i=0;i<b.length;i++){
+            st_name.push(b[i])
+        }
+        aa=store_id_zn;
+        bb=st_name;
+    }
+
+
+    // 所属区域
+    var radio_vals ='';
+    var valaa = '';
+    // 接收直辖市多选数据
+    function setCityy(city_zx,duoxuan_name,shuju_yyt) {
+        // alert(city_zx);  //城市名称
+        // alert(duoxuan_name);  //区域数组
+        // alert(shuju_yyt);//区域ID
+        $("#mdla").html(city_zx);
+        $("#mdla").append(duoxuan_name).html();
+        valaa = shuju_yyt;
+
+
+    }
+    // 接受当前单选城市数据
+    function setCity(city_txt, radio_val, city_t) {
+        $("#mdla").html(city_txt);
+        $("#mdla").append(city_t).html();
+          radio_vals = radio_val;
+
+    }
+
+    var name;
+    var age;
+    var roleid;
+    var sex;
+    var store_id;
+
+    // 提交
+    function submit_yyt() {
+        name = $(".name_yyt input").val();
+        age = $(".age_yyt input").val();
+        // 修改后城市 id
+        var city_id=radio_vals?radio_vals:valaa;
+        // 没有修改所属区域，就把原来的区域ID传回去   修改就传修改后的
+        var City_=city_id?city_id:cityid;
+        //当职位为经销商和加盟商时提示选择所属区域
+        if($('#select_zn').val()==2 || $('#select_zn').val()==4){
+            // 判断所属区域里html的值，如果没有选择区域，提示选择，不能强制提交。
+            if ($('#mdla').html() == null || $('#mdla').html() == "请选择您的所属区域") {
+                api.toast({
+                    msg: '请选择您的所属区域',
+                    duration: 3000,
+                    location: 'bottom'
+                });
+                return;
+            }
+        }
+        //选择门店为空时提示请选择门店
+        if($('#select_zn').val()==2 || $('#select_zn').val()==4||$('#select_zn').val()==3 || $('#select_zn').val()==5){
+            // 判断所属门店里html的值，如果没有选择区域，提示选择，不能强制提交。
+            if ($('#mdlb').html() == null || $('#mdlb').html() == "请选择门店") {
+                api.toast({
+                    msg: '请选择门店',
+                    duration: 3000,
+                    location: 'bottom'
+                });
+                return;
+            }
+        }
+
+        // 判断名字是否为空
+        if ($('.name_yyt input').val() == "") {
+            $('.name_yyt input').focus();
+            api.toast({
+                msg: '姓名是必须的',
+                duration: 3000,
+                location: 'bottom'
+            });
+            return;
+            // 正则判断合法年龄
+        } else if (!(/^([1-9]\d)|90$/.test($('.age_yyt input').val()))) {
+            $(".age_yyt input").focus();
+            api.toast({
+                msg: '请输入合法年龄',
+                duration: 3000,
+                location: 'bottom'
+            });
+            return;
+        }
+        // 给职位编号赋值
+        if ($('#select_zn').val() == "3") {
+            roleid = 3
+        } else if ($('#select_zn').val() == "5") {
+            roleid = 5
+        } else if ($('#select_zn').val() == "2") {
+            roleid = 2
+        } else if ($('#select_zn').val() == "4") {
+            roleid = 4
+        } else {
+            roleid = 1
+        }
+        // 给性别赋值
+        if ($(".man_yyt").attr("checked") == "checked") {
+            sex = 1;
+        }
+        if ($(".woman_yyt").attr("checked") == "checked") {
+            sex = 2
+        }
+        // 给董事长总经理编号
+        if ($('.position_zn').html() == '董事长') {
+            roleid = 6;
+            store_id = 370;
+        } else if ($('.position_zn').html() == '总经理') {
+            roleid = 7;
+            store_id = 370;
+        }
+        uid = api.getPrefs({
+            sync: true,
+            key: 'uid'
+        });
+        type = api.getPrefs({
+            sync: true,
+            key: 'type'
+        });
+        if ((head_img == 'null') || (head_img == null)) {
+            if ((roleid == 2) || (roleid == 4)) { //经销商加盟商提交
+                api.ajax({
+                    url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=userinfo&dosubmit=1',
+                    method: 'post',
+                    data: {
+                        values: {
+                            uid: uid,
+                            type: type,
+                            name: name,
+                            age: age,
+                            roleid: roleid,
+                            sex: sex,
+                            stroe_id: store_id_zn,
+                            cityid: City_
+                        }
+                    },
+                    dataType: 'json'
+                }, function(ret, err) {
+
+
+                    if (ret.code == 200) {
+                        api.execScript({
+                            name: 'main',
+                            frameName: 'me_',
+                            script: 'updata()'
+                        })
+                        api.execScript({
+                            name: 'man_information_zn',
+                            script: 'updata()'
+                        })
+                        api.execScript({
+                            name: 'main',
+                            frameName: 'info_qty',
+                            script: 'chat_list_yyt()'
+                        })
+                        api.toast({
+                            msg: ret.msg,
+                            duration: 3000,
+                            location: 'bottom'
+                        });
+                    } else if (ret.code == 500) {
+                        api.toast({
+                            msg: ret.msg,
+                            duration: 3000,
+                            location: 'bottom'
+                        });
+                    }
+                });
+            } else {  //其他职位提交
+                api.ajax({
+                    url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=userinfo&dosubmit=1',
+                    method: 'post',
+                    data: {
+                        values: {
+                            uid: uid,
+                            type: type,
+                            name: name,
+                            age: age,
+                            roleid: roleid,
+                            sex: sex,
+                            stroe_id: store_id,
+                        }
+                    },
+                    dataType: 'json'
+                }, function(ret, err) {
+                    if (ret.code == 200) {
+                        api.execScript({
+                            name: 'main',
+                            frameName: 'me_',
+                            script: 'updata()'
+                        })
+                        api.execScript({
+                            name: 'man_information_zn',
+                            script: 'updata()'
+                        })
+                        api.toast({
+                            msg: ret.msg,
+                            duration: 3000,
+                            location: 'bottom'
+                        });
+                    } else if (ret.code == 500) {
+                        api.toast({
+                            msg: ret.msg,
+                            duration: 3000,
+                            location: 'bottom'
+                        });
+                    }
+                });
+            }
+        } else {  //有头像提交
+            if ((roleid == 2) || (roleid == 4)) {  //经销商 加盟商提交
+                api.ajax({
+                    url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=userinfo&dosubmit=1',
+                    method: 'post',
+                    data: {
+                        values: {
+                            uid: uid,
+                            type: type,
+                            name: name,
+                            age: age,
+                            roleid: roleid,
+                            sex: sex,
+                            stroe_id: store_id_zn,
+                            head_img: head_img,
+                            cityid: City_
+                        }
+                    },
+                    dataType: 'json'
+                }, function(ret, err) {
+                    if (ret.code == 200) {
+                        api.execScript({
+                            name: 'main',
+                            frameName: 'me_',
+                            script: 'updata()'
+                        })
+                        api.execScript({
+                            name: 'man_information_zn',
+                            script: 'updata()'
+                        })
+                        api.execScript({
+                            name: 'main',
+                            frameName: 'info_qty',
+                            script: 'chat_list_yyt()'
+                        })
+                        api.toast({
+                            msg: ret.msg,
+                            duration: 3000,
+                            location: 'bottom'
+                        });
+                    } else if (ret.code == 500) {
+                        api.toast({
+                            msg: ret.msg,
+                            duration: 3000,
+                            location: 'bottom'
+                        });
+                    }
+                });
+            } else {  //店员 店长 等提交
+                api.ajax({
+                    url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=userinfo&dosubmit=1',
+                    method: 'post',
+                    data: {
+                        values: {
+                            uid: uid,
+                            type: type,
+                            name: name,
+                            age: age,
+                            roleid: roleid,
+                            sex: sex,
+                            stroe_id: store_id,
+                            head_img: head_img
+                        }
+                    },
+                    dataType: 'json'
+                }, function(ret, err) {
+
+                    if (ret.code == 200) {
+                        api.execScript({
+                            name: 'main',
+                            frameName: 'me_',
+                            script: 'updata()'
+                        })
+                        api.execScript({
+                            name: 'man_information_zn',
+                            script: 'updata()'
+                        })
+                        api.toast({
+                            msg: ret.msg,
+                            duration: 3000,
+                            location: 'bottom'
+                        });
+                        //                api.closeWin();
+                    } else if (ret.code == 500) {
+                        api.toast({
+                            msg: ret.msg,
+                            duration: 3000,
+                            location: 'bottom'
+                        });
+                    }
+                });
+            }
+        }
+
+    }
+
+    $(function() {
+        $('#ClickMe_qty').click(function() {
+            $('#code').center();
+            $('#goodcover').show();
+            $('#code').fadeIn();
+        });
+        $('#closebt').click(function() {
+            $('#code').hide();
+            $('#goodcover').hide();
+        });
+        $('#goodcover').click(function() {
+            $('#code').hide();
+            $('#goodcover').hide();
+        });
+        jQuery.fn.center = function(loaded) {
+            var obj = this;
+            body_width = parseInt($(window).width());
+            body_height = parseInt($(window).height());
+            block_width = parseInt(obj.width());
+            block_height = parseInt(obj.height());
+
+            left_position = parseInt((body_width / 2) - (block_width / 2) + $(window).scrollLeft());
+            if (body_width < block_width) {
+                left_position = 0 + $(window).scrollLeft();
+            };
+
+            top_position = parseInt((body_height / 2) - (block_height / 2) + $(window).scrollTop());
+            if (body_height < block_height) {
+                top_position = 0 + $(window).scrollTop();
+            };
+
+            if (!loaded) {
+
+                obj.css({
+                    'position': 'absolute'
+                });
+                obj.css({
+                    'top': ($(window).height() - $('#code').height()) * 0.5,
+                    'left': left_position
+                });
+                $(window).bind('resize', function() {
+                    obj.center(!loaded);
+                });
+                $(window).bind('scroll', function() {
+                    obj.center(!loaded);
+                });
+            } else {
+                obj.stop();
+                obj.css({
+                    'position': 'absolute'
+                });
+                obj.animate({
+                    'top': top_position
+                }, 200, 'linear');
+            }
+        }
+    })
+
+    $(".button").on("touchstart", function() {
+        $(this).css("background", "#0066CC");
+        $(this).on("touchend", function() {
+            $(this).css("background", "#2493f7");
+            $(this).off("touchend")
+        })
+    })
+</script>
+
+</html>

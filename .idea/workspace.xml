@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="234c1f17-36a5-42e9-aece-b84b1e4e1093" name="Default" comment="" />
+    <ignored path="manager_.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="manager_" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="groupAnn_qty.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/message/groupAnn_qty.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3750">
+              <caret line="125" column="19" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="groupChart_qty.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/message/groupChart_qty.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="personInfo_qty.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/me/personInfo_qty.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7260">
+              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+              <folding>
+                <element signature="e#32764#33700#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="talk_about.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/message/talk_about.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+              <folding>
+                <marker date="1507685097444" expanded="true" signature="34737:34744" ph="..." />
+                <marker date="1507685097444" expanded="true" signature="36079:36086" ph="..." />
+                <marker date="1507685097444" expanded="true" signature="44799:44824" ph="..." />
+                <marker date="1507685097444" expanded="true" signature="44975:44981" ph="&quot;" />
+                <marker date="1507685097444" expanded="true" signature="45504:45529" ph="..." />
+                <marker date="1507685097444" expanded="true" signature="45678:45684" ph="&quot;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="linkman_option_zn.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/message/linkman_option_zn.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8610">
+              <caret line="287" column="29" selection-start-line="287" selection-start-column="29" selection-end-line="287" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="groupChartNumber_qty.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/message/groupChartNumber_qty.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-25">
+              <caret line="1716" column="27" selection-start-line="1716" selection-start-column="27" selection-end-line="1716" selection-end-column="27" />
+              <folding>
+                <element signature="e#41632#41638#0" expanded="false" />
+                <marker date="1507865568925" expanded="true" signature="58774:58781" ph="..." />
+                <marker date="1507865568925" expanded="true" signature="60165:60172" ph="..." />
+                <marker date="1507865568925" expanded="true" signature="61625:61632" ph="..." />
+                <marker date="1507865568925" expanded="true" signature="71637:71662" ph="..." />
+                <marker date="1507865568925" expanded="true" signature="71813:71819" ph="&quot;" />
+                <marker date="1507865568925" expanded="true" signature="72342:72367" ph="..." />
+                <marker date="1507865568925" expanded="true" signature="72516:72522" ph="&quot;" />
+                <marker date="1507865568925" expanded="true" signature="73045:73070" ph="..." />
+                <marker date="1507865568925" expanded="true" signature="73219:73225" ph="&quot;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="training_detail_zn.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/reference/training_detail_zn.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="work_in.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/html/work/work_in.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="285" column="23" selection-start-line="285" selection-start-column="23" selection-end-line="285" selection-end-column="23" />
+              <folding>
+                <element signature="e#11471#12211#0" expanded="false" />
+                <element signature="e#13029#13286#0" expanded="false" />
+                <element signature="e#13319#13578#0" expanded="false" />
+                <element signature="e#13345#13566#0" expanded="false" />
+                <element signature="e#13624#13883#0" expanded="false" />
+                <element signature="e#13650#13871#0" expanded="false" />
+                <element signature="e#13913#14028#0" expanded="false" />
+                <element signature="e#14055#14298#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manager_training_zn.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/reference/manager_training_zn.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="210" column="23" selection-start-line="210" selection-start-column="23" selection-end-line="210" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="groupChartPer_qty.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/message/groupChartPer_qty.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9480">
+              <caret line="316" column="13" selection-start-line="316" selection-start-column="13" selection-end-line="316" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Html5" />
+        <option value="dyz_app" />
+        <option value="dyw_mobile" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/html/work/myaudit.html" />
+        <option value="$PROJECT_DIR$/html/reference/miji_detail_yyt.html" />
+        <option value="$PROJECT_DIR$/html/reference/Marketing_cheats_zn.html" />
+        <option value="$PROJECT_DIR$/html/reference/manager_training_zn.html" />
+        <option value="$PROJECT_DIR$/html/reference/miji_fenlei_yyt.html" />
+        <option value="$PROJECT_DIR$/html/buffer_zn.html" />
+        <option value="$PROJECT_DIR$/html/message/buffer_zn.html" />
+        <option value="$PROJECT_DIR$/html/reference/download_zn.html" />
+        <option value="$PROJECT_DIR$/modules/font_zn/demo.css" />
+        <option value="$PROJECT_DIR$/html/me/storeOwned.html" />
+        <option value="$PROJECT_DIR$/html/work/saleRecord.html" />
+        <option value="$PROJECT_DIR$/html/saleBank/saleRank1_qty.html" />
+        <option value="$PROJECT_DIR$/html/work/saleRecord1_qty.html" />
+        <option value="$PROJECT_DIR$/html/work/saleRecord_qty.html" />
+        <option value="$PROJECT_DIR$/html/work/saleRecord_zn.html" />
+        <option value="$PROJECT_DIR$/html/saleBank/saleRank_entry_qty.html" />
+        <option value="$PROJECT_DIR$/html/saleBank/saleRank_entry_agency_zn.html" />
+        <option value="$PROJECT_DIR$/html/message/aaaaaaaa.html" />
+        <option value="$PROJECT_DIR$/html/reference/reference_index_zn.html" />
+        <option value="$PROJECT_DIR$/html/me/store_agency_zn.html" />
+        <option value="$PROJECT_DIR$/html/work/saleRecord_agency_qty.html" />
+        <option value="$PROJECT_DIR$/html/work/saleRecord_manager_zn.html" />
+        <option value="$PROJECT_DIR$/html/work/saleRecord_store_qty.html" />
+        <option value="$PROJECT_DIR$/html/saleBank/saleRank_agency_area_zn.html" />
+        <option value="$PROJECT_DIR$/html/saleBank/saleRank_area_zn.html" />
+        <option value="$PROJECT_DIR$/html/saleBank/saleRank_country_qty.html" />
+        <option value="$PROJECT_DIR$/html/me/storeOwned_agency_zn.html" />
+        <option value="$PROJECT_DIR$/html/work/entrySheet.html" />
+        <option value="$PROJECT_DIR$/html/login_/login_qty.html" />
+        <option value="$PROJECT_DIR$/html/login_/register_qty.html" />
+        <option value="$PROJECT_DIR$/html/login_/sign.html" />
+        <option value="$PROJECT_DIR$/html/login_/forgetPassword.html" />
+        <option value="$PROJECT_DIR$/html/login_/revise_password_zn.html" />
+        <option value="$PROJECT_DIR$/html/message/groupChartPer_qty.html" />
+        <option value="$PROJECT_DIR$/html/message/info_qty.html" />
+        <option value="$PROJECT_DIR$/html/message/remind_zn.html" />
+        <option value="$PROJECT_DIR$/html/message/talk_about.html" />
+        <option value="$PROJECT_DIR$/html/main.html" />
+        <option value="$PROJECT_DIR$/html/me/revise_password_zn.html" />
+        <option value="$PROJECT_DIR$/html/me/forwardKey_qty.html" />
+        <option value="$PROJECT_DIR$/html/me/me.html" />
+        <option value="$PROJECT_DIR$/html/work/shopMangment_qty.html" />
+        <option value="$PROJECT_DIR$/html/me/me_.html" />
+        <option value="$PROJECT_DIR$/html/me/man_information_zn.html" />
+        <option value="$PROJECT_DIR$/html/me/personInfo_qty.html" />
+        <option value="$PROJECT_DIR$/html/message/linkman_option_zn.html" />
+        <option value="$PROJECT_DIR$/html/message/groupAnn_qty.html" />
+        <option value="$PROJECT_DIR$/html/message/groupChart_qty.html" />
+        <option value="$PROJECT_DIR$/html/message/groupChartNumber_qty.html" />
+        <option value="$PROJECT_DIR$/html/reference/training_detail_zn.html" />
+        <option value="$PROJECT_DIR$/html/work/work_in.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new_app_zn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new_app_zn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new_app_zn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new_app_zn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new_app_zn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new_app_zn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new_app_zn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="header_picture" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new_app_zn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new_app_zn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new_app_zn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new_app_zn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="work" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new_app_zn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="new_app_zn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reference" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\new_app_zn\html\me" />
+      <recent name="C:\Users\Administrator\Desktop\manager\manager_\image\img_qty" />
+      <recent name="C:\Users\Administrator\Desktop\manager\manager_\html\me" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\new_app_zn\html\me" />
+      <recent name="C:\Users\Administrator\Desktop\new_app_zn\html\reference" />
+      <recent name="C:\Users\Administrator\Desktop\new_app_zn\script" />
+      <recent name="C:\Users\Administrator\Desktop\new_app_zn\html\login_" />
+      <recent name="C:\Users\Administrator\Desktop\new_app_zn\image\image_zn" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter />
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="234c1f17-36a5-42e9-aece-b84b1e4e1093" name="Default" comment="" />
+      <created>1499839351252</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1499839351252</updated>
+      <workItem from="1499839352361" duration="17948000" />
+      <workItem from="1499905146030" duration="30527000" />
+      <workItem from="1499992482917" duration="18628000" />
+      <workItem from="1500017979343" duration="7618000" />
+      <workItem from="1500078367721" duration="24776000" />
+      <workItem from="1500111574763" duration="4001000" />
+      <workItem from="1500116869749" duration="772000" />
+      <workItem from="1500118890734" duration="805000" />
+      <workItem from="1500123310384" duration="9000" />
+      <workItem from="1500256263798" duration="40000" />
+      <workItem from="1500275549247" duration="5413000" />
+      <workItem from="1500338356455" duration="18804000" />
+      <workItem from="1500367033630" duration="92000" />
+      <workItem from="1500367134881" duration="7558000" />
+      <workItem from="1500424359707" duration="17622000" />
+      <workItem from="1500513752758" duration="19882000" />
+      <workItem from="1500600024723" duration="11011000" />
+      <workItem from="1500684837208" duration="281000" />
+      <workItem from="1500691678349" duration="3282000" />
+      <workItem from="1500858847119" duration="13135000" />
+      <workItem from="1500885620912" duration="3777000" />
+      <workItem from="1500944436740" duration="6954000" />
+      <workItem from="1500962530818" duration="93000" />
+      <workItem from="1500962630969" duration="18282000" />
+      <workItem from="1501029149029" duration="22069000" />
+      <workItem from="1501064770339" duration="616000" />
+      <workItem from="1501067455677" duration="5204000" />
+      <workItem from="1501072694558" duration="415000" />
+      <workItem from="1501073460056" duration="771000" />
+      <workItem from="1501115775565" duration="4106000" />
+      <workItem from="1501125245968" duration="3845000" />
+      <workItem from="1501135747172" duration="6207000" />
+      <workItem from="1501142638416" duration="17379000" />
+      <workItem from="1501201478232" duration="19721000" />
+      <workItem from="1501228622723" duration="11024000" />
+      <workItem from="1501288566277" duration="14598000" />
+      <workItem from="1501314374993" duration="9111000" />
+      <workItem from="1501461763745" duration="30110000" />
+      <workItem from="1501498499312" duration="5341000" />
+      <workItem from="1501547831752" duration="32033000" />
+      <workItem from="1501634305702" duration="25517000" />
+      <workItem from="1501721252765" duration="24494000" />
+      <workItem from="1501806505889" duration="24626000" />
+      <workItem from="1501893518414" duration="16972000" />
+      <workItem from="1501914968109" duration="6958000" />
+      <workItem from="1501925918999" duration="25000" />
+      <workItem from="1501926406259" duration="11009000" />
+      <workItem from="1502065121390" duration="14182000" />
+      <workItem from="1502088525413" duration="368000" />
+      <workItem from="1502151884340" duration="4538000" />
+      <workItem from="1502243386355" duration="18618000" />
+      <workItem from="1502326925533" duration="13080000" />
+      <workItem from="1502412675129" duration="26420000" />
+      <workItem from="1502498203304" duration="14898000" />
+      <workItem from="1502779571795" duration="4103000" />
+      <workItem from="1502785671167" duration="1245000" />
+      <workItem from="1502797857908" duration="757000" />
+      <workItem from="1502843838265" duration="739000" />
+      <workItem from="1502950905781" duration="60000" />
+      <workItem from="1502951000662" duration="2556000" />
+      <workItem from="1504941640667" duration="8931000" />
+      <workItem from="1505089752284" duration="25288000" />
+      <workItem from="1505177618818" duration="80000" />
+      <workItem from="1505268039279" duration="18822000" />
+      <workItem from="1505295750632" duration="1182000" />
+      <workItem from="1505350471894" duration="23502000" />
+      <workItem from="1505435292246" duration="26482000" />
+      <workItem from="1505521978996" duration="9897000" />
+      <workItem from="1505782940285" duration="23120000" />
+      <workItem from="1505867081750" duration="3774000" />
+      <workItem from="1505873062298" duration="499000" />
+      <workItem from="1505875693965" duration="300000" />
+      <workItem from="1505891547015" duration="60000" />
+      <workItem from="1505893099135" duration="2717000" />
+      <workItem from="1505898765636" duration="966000" />
+      <workItem from="1505900569160" duration="778000" />
+      <workItem from="1505954852357" duration="229000" />
+      <workItem from="1505955382433" duration="263000" />
+      <workItem from="1505964031687" duration="4000" />
+      <workItem from="1505986626142" duration="1231000" />
+      <workItem from="1506040649057" duration="868000" />
+      <workItem from="1506052114509" duration="3201000" />
+      <workItem from="1506128938833" duration="18548000" />
+      <workItem from="1506303390796" duration="1331000" />
+      <workItem from="1506325005462" duration="7083000" />
+      <workItem from="1506385248677" duration="26213000" />
+      <workItem from="1506472028516" duration="27381000" />
+      <workItem from="1506558132560" duration="25386000" />
+      <workItem from="1506644712321" duration="14293000" />
+      <workItem from="1506672978049" duration="14000" />
+      <workItem from="1506673153615" duration="24000" />
+      <workItem from="1506673897498" duration="3167000" />
+      <workItem from="1506731174159" duration="606000" />
+      <workItem from="1507336281486" duration="11316000" />
+      <workItem from="1507359355506" duration="5287000" />
+      <workItem from="1507366386385" duration="1588000" />
+      <workItem from="1507422376692" duration="7128000" />
+      <workItem from="1507430797270" duration="3009000" />
+      <workItem from="1507452136530" duration="3438000" />
+      <workItem from="1507457471832" duration="26000" />
+      <workItem from="1507509023727" duration="21379000" />
+      <workItem from="1507595461931" duration="24606000" />
+      <workItem from="1507681361601" duration="2916000" />
+      <workItem from="1507685702374" duration="23282000" />
+      <workItem from="1507767974440" duration="8700000" />
+      <workItem from="1507853799052" duration="6930000" />
+      <workItem from="1507943315740" duration="8717000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1029587000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14646997" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14330874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/html/feedback/reply_detail_zn.html</url>
+          <line>281</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/html/message/groupChartNumber_qty.html</url>
+          <line>1110</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/html/message/groupChartNumber_qty.html</url>
+          <line>1029</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/html/work/saleRecord_agency_qty.html</url>
+          <line>610</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/html/work/saleRecord_agency_qty.html</url>
+          <line>629</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/html/work/work_in.html</url>
+          <line>432</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="12" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/html/login_/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2580">
+          <caret line="86" column="80" selection-start-line="86" selection-start-column="80" selection-end-line="86" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/work/saleEntry.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11370">
+          <caret line="379" column="9" selection-start-line="379" selection-start-column="9" selection-end-line="379" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/work/entrySheet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27960">
+          <caret line="932" column="45" selection-start-line="932" selection-start-column="45" selection-end-line="932" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/login_/regSuccess.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="48" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/login_/sign.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8220">
+          <caret line="274" column="27" selection-start-line="274" selection-start-column="22" selection-end-line="274" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/login_/register_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/login_/login_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6540">
+          <caret line="218" column="5" selection-start-line="218" selection-start-column="5" selection-end-line="218" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/login_/forgetPassword.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9930">
+          <caret line="331" column="36" selection-start-line="331" selection-start-column="36" selection-end-line="331" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/reference/product_detail_zn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/offlights.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/ckplayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/feedback/questionDetail_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="688" column="31" selection-start-line="688" selection-start-column="31" selection-end-line="688" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/saleBank/saleRank_entry_agency_zn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-494">
+          <caret line="154" column="31" selection-start-line="154" selection-start-column="31" selection-end-line="154" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/work/saleRecord_agency_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18420">
+          <caret line="619" column="32" selection-start-line="619" selection-start-column="32" selection-end-line="619" selection-end-column="32" />
+          <folding>
+            <element signature="n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#21970#23088#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/work/personAudita.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/saleBank/saleRank_agency_area_zn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7380">
+          <caret line="246" column="34" selection-start-line="246" selection-start-column="34" selection-end-line="246" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/saleBank/saleRank_entry_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3060">
+          <caret line="102" column="32" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/message/groupChartNum_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="66" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/message/picture_yyt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/message/remind_zn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="66" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/message/systemInfo_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="48" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="50" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/me/store_agency_zn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/me/store_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/me/storeOwned.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="50" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/me/storeOwned_agency_zn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="50" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/me/accont_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="48" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/me/accont_qty_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="48" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/me/forwardKey_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6420">
+          <caret line="214" column="18" selection-start-line="214" selection-start-column="18" selection-end-line="214" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/me/me_.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="121" column="9" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/me/set_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/work/shopMangment_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="80" column="28" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/work/trade_in_.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/reference/training_detail_zn2.html" />
+    <entry file="file://$PROJECT_DIR$/html/message/info_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="413" column="29" selection-start-line="413" selection-start-column="29" selection-end-line="413" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/work/saleRecord_manager_zn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image/image_zn/none_yyt.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/me/revise_password_zn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="66" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/me/me_.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8370">
+          <caret line="279" column="46" selection-start-line="279" selection-start-column="45" selection-end-line="279" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/me/man_information_zn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9270">
+          <caret line="309" column="9" selection-start-line="309" selection-start-column="9" selection-end-line="309" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/message/talk_about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <marker date="1507685097444" expanded="true" signature="34737:34744" ph="..." />
+            <marker date="1507685097444" expanded="true" signature="36079:36086" ph="..." />
+            <marker date="1507685097444" expanded="true" signature="44799:44824" ph="..." />
+            <marker date="1507685097444" expanded="true" signature="44975:44981" ph="&quot;" />
+            <marker date="1507685097444" expanded="true" signature="45504:45529" ph="..." />
+            <marker date="1507685097444" expanded="true" signature="45678:45684" ph="&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/message/linkman_option_zn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8610">
+          <caret line="287" column="29" selection-start-line="287" selection-start-column="29" selection-end-line="287" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/message/groupChartPer_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9480">
+          <caret line="316" column="13" selection-start-line="316" selection-start-column="13" selection-end-line="316" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/message/groupAnn_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3750">
+          <caret line="125" column="19" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/message/groupChart_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/message/groupChartNumber_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25">
+          <caret line="1716" column="27" selection-start-line="1716" selection-start-column="27" selection-end-line="1716" selection-end-column="27" />
+          <folding>
+            <element signature="e#41632#41638#0" expanded="false" />
+            <marker date="1507865568925" expanded="true" signature="58774:58781" ph="..." />
+            <marker date="1507865568925" expanded="true" signature="60165:60172" ph="..." />
+            <marker date="1507865568925" expanded="true" signature="61625:61632" ph="..." />
+            <marker date="1507865568925" expanded="true" signature="71637:71662" ph="..." />
+            <marker date="1507865568925" expanded="true" signature="71813:71819" ph="&quot;" />
+            <marker date="1507865568925" expanded="true" signature="72342:72367" ph="..." />
+            <marker date="1507865568925" expanded="true" signature="72516:72522" ph="&quot;" />
+            <marker date="1507865568925" expanded="true" signature="73045:73070" ph="..." />
+            <marker date="1507865568925" expanded="true" signature="73219:73225" ph="&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/reference/manager_training_zn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="210" column="23" selection-start-line="210" selection-start-column="23" selection-end-line="210" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/me/personInfo_qty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7260">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <element signature="e#32764#33700#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/reference/training_detail_zn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/work/work_in.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="285" column="23" selection-start-line="285" selection-start-column="23" selection-end-line="285" selection-end-column="23" />
+          <folding>
+            <element signature="e#11471#12211#0" expanded="false" />
+            <element signature="e#13029#13286#0" expanded="false" />
+            <element signature="e#13319#13578#0" expanded="false" />
+            <element signature="e#13345#13566#0" expanded="false" />
+            <element signature="e#13624#13883#0" expanded="false" />
+            <element signature="e#13650#13871#0" expanded="false" />
+            <element signature="e#13913#14028#0" expanded="false" />
+            <element signature="e#14055#14298#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

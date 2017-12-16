@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <script src="../script/jquery.min.js"></script>
+    <script src="../script/rem.js"></script>
+
+</head>
+<body>
+
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script src="../script/socket.io.js"></script>
+<script src="../script/db.js"></script>
+<script src="../script/comment_socket.js"></script>
+<script type="text/javascript">
+    var h1;
+    var uid;//用户id
+    var select_idx;
+    var socket;//socket对象
+    apiready = function() {
+        // api.closeFrame({name: 'login_qty'});//关闭登录页面
+        var hh = api.winHeight;
+        h1 = hh - 65;
+        nvtabbar();
+        uid = api.getPrefs({sync: true, key: 'uid'});
+        api.setStatusBarStyle({
+            style: 'light'
+        });
+        console.log(api.getPrefs({sync:true,key:'is_database'}))
+        /*
+        *监听安卓返回事件，将应用退回到
+        */
+        api.addEventListener({
+            name: 'keyback'
+        }, function (ret, err) {
+            api.toLauncher();
+        });
+        //通知栏点击事件
+        api.addEventListener({
+            name: 'noticeclicked'
+        }, function (ret, err) {
+            var obj = eval('(' + ret.value + ')');
+            if(obj.key == 'ql'){//如果是群聊点击过来的
+                api.openWin({//打开对应的群聊对话框
+                    name: 'groupChartNumber_qty',
+                    url: 'widget://html/message/groupChartNumber_qty.html',
+                    bounces: false,
+                    pageParam: {gid:obj.gid },
+                    allowEdit:true,
+                    rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+                });
+            }else if (obj.key == 'dl'){//如果是单聊过来的
+                api.openWin({
+                    name: 'talk_about',
+                    url: 'widget://html/message/talk_about.html',
+                    bounces: false,
+                    pageParam: {friend_id: obj.toid},
+                    allowEdit:true,
+                    rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+                });
+            }else{
+                api.openWin({
+                    name: 'man_information_zn',
+                    url: 'widget://html/me/man_information_zn.html',
+                    bounces: false,
+                    rect: {x: 0, y: 0, w: 'auto', h: 'auto'}
+                });
+            }
+        });
+
+
+    }
+    /*
+    *底部导航栏点击事件
+    */
+    function nvtabbar(){
+        NVTabBar = api.require('NVTabBar');
+        NVTabBar.open({
+            styles: {
+                bg: '#fff',
+                h: 65,
+                badge:{bgColor:'#fff',numColor: '#999999', size: 6.0}
+            },
+            items: [{
+                w: api.winWidth / 4.0,
+                bg: {marginB: -5,image: 'rgba(0,0,0,0)'},
+                iconRect: {w: 26.0,h: 26.0,},
+                icon: {
+                    normal: 'widget://image/img_yyt/work_.png',
+                    highlight: 'widget://image/img_yyt/work_b.png',
+                    selected: 'widget://image/img_yyt/work_b.png'
+                },
+                title: {text: '首页',size: 11.0,normal: '#9c9c9c',selected: '#1387ea',marginB: 9.0}
+            }, {
+                w: api.winWidth / 4.0,
+                bg: {marginB: -5,image: 'rgba(0,0,0,0)'},
+                iconRect: {w: 26.0,h: 26.0,},
+                icon: {
+                    normal: 'widget://image/img_yyt/message_.png',
+                    highlight: 'widget://image/img_yyt/message_b.png',
+                    selected: 'widget://image/img_yyt/message_b.png'
+                },
+                title: {text: '消息',size: 11.0,normal: '#9c9c9c',selected: '#1387ea',marginB: 9.0}
+            }, {
+                w: api.winWidth / 4.0,
+                bg: {marginB: -5,image: 'rgba(0,0,0,0)'},
+                iconRect: {w: 26.0,h: 26.0,},
+                icon: {
+                    normal: 'widget://image/img_yyt/data_.png',
+                    highlight: 'widget://image/img_yyt/data_b.png',
+                    selected: 'widget://image/img_yyt/data_b.png'
+                },
+                title: {text: '资料',size: 11.0,normal: '#9c9c9c',selected: '#1387ea',marginB: 9.0}
+            },{
+
+                w: api.winWidth / 4.0,
+                bg: {marginB: -5,image: 'rgba(0,0,0,0)'},
+                iconRect: {w: 26.0,h: 26.0,},
+                icon: {
+                    normal: 'widget://image/img_yyt/me_.png',
+                    highlight: 'widget://image/img_yyt/me_b.png',
+                    selected: 'widget://image/img_yyt/me_b.png'
+                },
+                title: {text: '我的',size: 11.0,normal: '#9c9c9c',selected: '#1387ea',marginB: 9.0}
+            },],
+            selectedIndex: 0
+            //进入工作首页
+        }, function(ret, err) {
+            if (ret){
+                select_idx=ret.index;
+                if(ret.eventType=='show' || ret.index==0){//进入工作框架
+                    api.openFrame({
+                        name: 'work_in',
+                        url: 'widget://html/work/work_in.html',
+                        bounces: false,
+                        rect: {x: 0,y: 0,w: 'auto',h: h1}
+                    });
+                }else{
+                    api.setFrameAttr({
+                        name: 'work_in',
+                        hidden:true
+                    });
+                }
+                if(ret.index==2){//进入资料框架
+                    api.openFrame({
+                        name: 'reference_index_zn',
+                        url: 'widget://html/reference/reference_index_zn.html',
+                        bounces:true,
+                        reload:false,
+                        pageParam: {h1:h1},
+                        rect: {x: 0,y: 0,w: 'auto',h:h1},
+                    });
+                }else{
+                    api.setFrameAttr({
+                        name: 'reference_index_zn',
+                        hidden:true
+                    });
+                }
+                if(ret.index==1){//进入消息框架
+                    api.openFrame({
+                        name: 'info_qty',
+                        url: 'widget://html/message/info_qty.html',
+                        bounces:true,
+                        pageParam: {h1:h1},
+                        rect: {x: 0,y: 0,w: 'auto',h:h1}
+                    });
+                }else{
+                    api.setFrameAttr({
+                        name: 'info_qty',
+                        hidden:true
+                    });
+                }
+                if(ret.index==3){//进入我的框架
+                    api.openFrame({
+                        name: 'me_',
+                        url: 'widget://html/me/me_.html',
+                        bounces:false,
+                        pageParam: {h1:h1},
+                        rect: {x: 0,y: 0,w: 'auto',h: 'auto'}
+                    });
+                }else{
+                    api.setFrameAttr({
+                        name: 'me_',
+                        hidden:true
+                    });
+                }
+                NVTabBar.bringToFront();
+            }
+        });
+    };
+    // 将已经打开的模块置为最上层显示
+    function tap_up(){
+        NVTabBar.bringToFront();
+    }
+    //    设置按钮选中状态
+    function select_nav(idx){
+        NVTabBar.setSelect({
+            index: idx
+        });
+    }
+    // 设置按钮右上角的徽章,badge:若不传则表示清除已显示的徽章，若传空字符串则显示小红点（大小为徽章的1.0/2.0）
+    function set_badge(idx){
+        NVTabBar.setBadge({
+            index: idx,
+            badge: ''
+        });
+    }
+    function back_shouye(n){
+        if(n==0){
+            api.setFrameAttr({  name: 'index',hidden:false});
+            api.setFrameAttr({name: 'document_',hidden:true});
+            api.setFrameAttr({name: 'login',hidden:true});
+            api.setFrameAttr({name: 'me',hidden:true});
+            api.setFrameAttr({name: 'message',hidden:true});
+            api.setFrameGroupAttr({name: 'gongzuo_group',hidden: true});
+            api.setFrameGroupAttr({name: 'shujufenxi_group',hidden: true});
+        }else if(n==1){
+            api.setFrameAttr({name: 'msg',hidden:false});
+            api.setFrameAttr({name: 'index',hidden:true});
+            api.setFrameAttr({name: 'shuju',hidden:true});
+            api.setFrameAttr({name: 'tongxunlu',hidden:true});
+            api.setFrameAttr({name: 'gongzuo',hidden:true});
+            api.setFrameGroupAttr({name: 'gongzuo_group',hidden: true});
+            api.setFrameGroupAttr({name: 'shujufenxi_group',hidden: true});
+            api.setFrameGroupAttr({name: 'xiaoxi_group',hidden: false});
+        }
+    }
+</script>
+</html>

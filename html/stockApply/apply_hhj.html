@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" href="../../css/api.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <style>
+        /*产品详细*/
+
+        html,
+        body {
+            background: #f5f5f5;
+            position: relative;
+        }
+        @font-face {
+            font-family: 'iconfont';
+            src: url('../../modules/icon/iconfont.eot');
+            src: url('../../modules/icon/iconfont.eot?#iefix') format('embedded-opentype'),
+            url('../../modules/icon/iconfont.woff') format('woff'),
+            url('../../modules/icon/iconfont.ttf') format('truetype'),
+            url('../../modules/icon/iconfont.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:0.36rem;font-style:normal;
+            color: #1b8bef;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .header_qty {
+            width: 100%;
+            height: 0.88rem;
+            /*background: #2492f6;*/
+            background: linear-gradient(to right, #268ce9, #64c0ea);
+            text-align: center;
+            font-size: 0.34rem;
+            color: #fff;
+            line-height: 0.88rem;
+            float: left;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 111;
+        }
+
+        .arrow_qty {
+            width: 1.2rem;
+            height: 0.88rem;
+            position: fixed;
+            left: 0rem;
+            top: 0rem;
+            z-index: 99999;
+        }
+
+        .arrowLeft_qty {
+            width: 0.15rem;
+            height: 0.28rem;
+            float: left;
+            background-image: url(../../image/img_qty/arrowLeft_06.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 0.3rem;
+            margin-left: 0.2rem;
+        }
+
+        .navBox {
+            height: 2.24rem;
+            width: 6rem;
+            margin: 0 auto;
+            background: #fff;
+            margin-top: 1.2rem;
+            border-radius: 5px;
+        }
+
+        .min_box {
+            height: 1.12rem;
+            width: 6rem;
+            border-bottom: 0.1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 0.3rem;
+            box-sizing: border-box;
+        }
+
+        .minbox {
+            height: 1.12rem;
+            width: 6rem;
+            line-height: 1.12rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 0.3rem;
+            box-sizing: border-box;
+        }
+
+        .min_img {
+            margin-left: 0.36rem;
+            margin-right: 0.24rem;
+        }
+
+        .xiala {
+            height: 0.28rem;
+            width: 0.17em;
+            display: inline-block;
+        }
+
+        .navBox span {
+            font-size: 0.28rem;
+            color: rgb(38, 38, 38);
+            float: left;
+        }
+        .out_box{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header_qty">进货申请</div>
+    <div class="arrow_qty" onclick="back_main()" tapmode="active">
+        <div class="arrowLeft_qty"></div>
+    </div>
+    <div class="navBox">
+        <div class="min_box" onclick="open_jinhuo_hhj()" tapmode="active">
+            <div class="out_box">
+                <i class="iconfont min_img" style="color:#f3ca4b">&#xe63c;</i>
+                <span>我要进货</span>
+            </div>
+            <img src="../../image/img_qty/arrowRight_14.png" alt="" class="xiala">
+        </div>
+        <div class="minbox" onclick="open_jilu_hhj()" tapmode="active">
+            <div class="out_box">
+                <i class="iconfont min_img" style="color:#6fe7e3">&#xe61b;</i>
+                <span>我的进货记录</span>
+            </div>
+            <img src="../../image/img_qty/arrowRight_14.png" alt="" class="xiala">
+        </div>
+
+    </div>
+
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script src="../../script/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+    // 跳转下一个页面
+
+    function open_jinhuo_hhj() {
+        api.openWin({
+            name: 'productSelect_sxy',
+            url: 'widget://html/stockApply/productSelect_sxy.html',
+            bounces: false,
+            reload:true,
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            },
+            animation:{
+              type:"none",                //动画类型（详见动画类型常量）
+              duration:50
+            }
+        });
+
+    }
+    function open_jilu_hhj(){
+        api.openWin({
+            name: 'record_hhj',
+            url: 'widget://html/stockApply/record_hhj.html',
+            bounces: false,
+            reload:true,
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            },
+            animation:{
+              type:"none",                //动画类型（详见动画类型常量）
+              duration:50
+            }
+        });
+    }
+    /*
+    * 返回主框架
+    */
+   function back_main(){
+     api.closeToWin({
+       name: 'main',
+       animation:{
+         type:"none",                //动画类型（详见动画类型常量）
+         duration:0
+       }
+      });
+   }
+
+</script>
+
+</html>

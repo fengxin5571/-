@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" href="../../css/api.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <style>
+    /*个人信息*/
+        body,html{
+            background: #f6f6f6;
+        }
+        .stock_box_zn{
+            background: linear-gradient(to right, #268ce9,#64c0ea);
+            height:.88rem;
+            width:100%;
+            position:fixed;
+            top:0;
+            left:0;
+        }
+        .stock_zn{
+            color:#fff;
+            font-size: .3rem;
+            height:100%;
+            line-height: .88rem;
+            text-align: center;
+        }
+        .icon_zn{
+            width: 0.29rem;
+            height: 0.43rem;
+            position: absolute;
+            left: 0.15rem;
+            top: 0.25rem;
+            background: url("../../image/product_sxy/return_sxy_03.png") no-repeat;
+            background-size: cover;
+        }
+        .edit_zn{
+            width: 1rem;
+            color:#fff;
+            font-size: .3rem;
+            height:100%;
+            line-height: .88rem;
+            position:absolute;
+            top:0;
+            right:0.2rem;
+            outline: none;
+            letter-spacing:0.03rem;
+        }
+        .man_information_zn{
+            width:5.6rem;
+            height:3.3rem;
+            box-sizing: border-box;
+            border-radius: 0.1rem;
+            background: #fff;
+            margin:0 auto;
+            margin-top:1.16rem;
+            overflow: hidden;
+        }
+        .man_information_zn img{
+            display: block;
+            margin:0 auto;
+            width:1.6rem;
+            height:1.6rem;
+            border-radius: 0.8rem;
+            margin-top:0.3rem;
+            margin-bottom:0.1rem;
+        }
+        .name_man_zn{
+            width:100%;
+            height:0.32rem;
+            line-height:0.32rem;
+            text-align: center;
+            font-size:0.28rem;
+            color:#8a8a8a;
+            letter-spacing: 0.02rem;
+            margin-top:0.2rem;
+            margin-bottom:0.2rem;
+        }
+        .company_name{
+            width:100%;
+            height:0.32rem;
+            line-height:0.32rem;
+            text-align: center;
+            font-size:0.24rem;
+            color:#999;
+            margin-top:0.1rem;
+            letter-spacing: 0.02rem;
+        }
+        .department{
+            width:5.6rem;
+            /*height:0.95rem;*/
+            /*line-height:0.95rem;*/
+            background: #fff;
+            border-radius: 0.1rem;
+            margin:0 auto;
+            margin-top:0.2rem;
+            overflow: hidden;
+        }
+        .span_left{
+            display: block;
+            float:left;
+            font-size:0.28rem;
+            height:0.95rem;
+            line-height:0.95rem;
+            width:1.2rem;
+            margin-left:0.2rem;
+        }
+        .span_right{
+            display: block;
+            margin-left:0.2rem;
+            float:left;
+            font-size:0.28rem;
+            /*height:0.95rem;*/
+            line-height:0.5rem;
+            margin-top:0.22rem;
+            width:3.7rem;
+            color:#8a8a8a;
+        }
+        .left_zn{
+            display: block;
+            float:left;
+            font-size:0.28rem;
+            margin-right:0.4rem;
+            height:0.95rem;
+            line-height:0.95rem;
+            margin-left:0.2rem;
+        }
+        .left_zn_zn{
+            margin-right:0.05rem;
+        }
+        .jindu_yyt{
+            width: 5.6rem;
+            height: 2.2rem;
+            margin: 0 auto;
+            margin-top: 0.2rem;
+            background: #fff;
+            border-radius: 0.1rem;
+        }
+        .jindu_name_yyt{
+            width: 5.2rem;
+            height: auto;
+            overflow: hidden;
+            margin: 0 auto;
+            font-size: 0.26rem;
+            line-height: 0.7rem;
+            color: #2493f7;
+        }
+        .jindu_num_yyt{
+            width: 5.2rem;
+            height: auto;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .num_yyt{
+            width: 1.73rem;
+            height: auto;
+            overflow: hidden;
+            font-size: 0.2rem;
+            line-height: 0.4rem;
+            float: left;
+        }
+        .num_a_yyt{
+            text-align: left;
+        }
+        .num_b_yyt{
+            text-align: center;
+        }
+        .num_c_yyt{
+            float: right;
+            text-align: right;
+        }
+        .img_yyt{
+            width: 5.1rem;
+            height: 0.3rem;
+            margin: 0 auto;
+            display: block;
+            padding: 0.05rem 0;
+        }
+        .result_zn{
+            width: 5.2rem;
+            height: auto;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .result_zn_{
+            width: 1.73rem;
+            height: auto;
+            overflow: hidden;
+            float: left;
+            font-size: 0.26rem;
+            color: #1b8bef;
+            line-height: 0.4rem;
+        }
+        .result_a_zn{
+            text-align: left;
+        }
+        .result_b_zn{
+            text-align: center;
+        }
+        .result_c_zn{
+            text-align: right;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div class="stock_box_zn">
+    <div class="stock_zn">个人信息</div>
+    <div class="icon_zn" onclick="api.closeWin()"></div>
+    <button class="edit_zn" onclick="open_edit()">编辑</button>
+</div>
+<div class="man_information_zn">
+    <img src="../../image/image_zn/man_information_zn.png" alt="">
+    <p class="name_man_zn">
+        <span class="name_man">姓名</span>
+        <span class="sex_man">性别</span>
+    </p>
+    <p class="company_name">山西太常生物科技有限公司</p>
+</div>
+<div class="department">
+    <span class="span_left">所属门店
+    </span>
+    <span class="span_right span_right_zn">待完善
+    </span>
+</div>
+<div class="department">
+    <span class="left_zn">职</span>
+    <span class="left_zn left_zn_zn">位</span>
+    <span class="span_right span_right_yyt">店员
+    </span>
+</div>
+<div class="jindu_yyt">
+    <div class="jindu_name_yyt">审核进度</div>
+    <div class="jindu_num_yyt">
+        <span class="num_yyt num_a_yyt">0%</span>
+        <span class="num_yyt num_b_yyt">50%</span>
+        <span class="num_yyt num_c_yyt">100%</span>
+    </div>
+    <img class="img_yyt" src="../../image/image_zn/none_yyt.png" alt="">
+    <div class="result_zn">
+        <span class="result_zn_ result_a_zn">申请</span>
+        <span class="result_zn_ result_b_zn">审核</span>
+        <span class="result_zn_ result_c_zn">通过</span>
+    </div>
+</div>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script>
+    var uid;
+    function get_data() {
+        apiready=function () {
+            api.setPrefs({
+                key: 'once',
+                value: '1'
+            });
+            uid=api.getPrefs({sync:true,key:'uid'});
+            api.ajax({
+                url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=info',
+                method: 'post',
+                data: {
+                    values:{uid:uid}
+                },
+                dataType:'json'
+            },function(ret,err){
+                if(ret.code == 200){
+                    if((ret.info.head_img==null)||(ret.info.head_img=='null')){
+                        $(".man_information_zn img").attr("src", "../../image/header_picture/tc_log.png");
+                    }else if(ret.info.head_img.slice(0,4)=='http'){
+                        $(".man_information_zn img").attr("src",ret.info.head_img);
+                    }else{
+                        $(".man_information_zn img").attr("src", "../../image/header_picture/" + ret.info.head_img + "");
+                    }
+                    $(".name_man").html(ret.info.name);
+                    if (ret.info.sex == 1 || ret.info.sex == 0){
+                        $(".sex_man").html("男");
+                    }else if (ret.info.sex == 2){
+                        $(".sex_man").html("女");
+                    }else {
+                        $(".sex_man").html("性别");
+                    }
+                    $(".span_right").html(ret.info.mdname);
+                    if (ret.info.roleid == 5){
+                        $(".span_right_yyt").html("店员")
+                    }else if (ret.info.roleid == 3){
+                        $(".span_right_yyt").html("店长")
+                    }else if(ret.info.roleid == 2){
+                        $(".span_right_yyt").html("经销商")
+                    }else if(ret.info.roleid == 4){
+                        $(".span_right_yyt").html("加盟商")
+                    }else if(ret.info.roleid == 1){
+                        $(".span_right_yyt").html("总部人员")
+                    }else if(ret.info.roleid == 6){
+                        $(".span_right_yyt").html("董事长");
+                        $(".span_right_zn").html('太常集团');
+                        $(".jindu_yyt").css('display','none');
+                    }else if(ret.info.roleid == 7){
+                        $(".span_right_yyt").html("总经理")
+                        $(".span_right_zn").html('太常集团');
+                        $(".jindu_yyt").css('display','none');
+                    }
+                    if (ret.status.status == 0){
+                        $(".img_yyt").attr("src",'../../image/image_zn/half_yyt.png');
+                    }else if (ret.status.status == 1){
+                        $(".img_yyt").attr("src",'../../image/image_zn/all_yyt.png');
+                    }else if (ret.status.status == 2){
+                        $(".img_yyt").attr("src",'../../image/image_zn/all_yyt.png');
+                        $('.result_c_zn').html('拒绝');
+                    }
+                }else if(ret.code == 500){
+
+                }
+            });
+        }
+    }
+    get_data()
+
+
+    /*
+    *获取个人用户信息
+    */
+    function updata() {
+        api.ajax({
+            url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=info',
+            method: 'post',
+            data: {
+                values:{uid:uid}
+            },
+            dataType:'json'
+        },function(ret,err){
+            if(ret.code == 200){
+                if((ret.info.head_img==null)||(ret.info.head_img=='null')){
+                    $(".man_information_zn img").attr("src", "../../image/header_picture/tc_log.png");
+                }else if(ret.info.head_img.slice(0,4)=='http'){
+                    $(".man_information_zn img").attr("src",ret.info.head_img);
+                }else{
+                    $(".man_information_zn img").attr("src", "../../image/header_picture/" + ret.info.head_img + "");
+                }
+                $(".name_man").html(ret.info.name);
+                if (ret.info.sex == 1 || ret.info.sex == 0){
+                    $(".sex_man").html("男");
+                }else if (ret.info.sex == 2){
+                    $(".sex_man").html("女");
+                }else {
+                    $(".sex_man").html("性别");
+                }
+                $(".span_right").html(ret.info.mdname);
+                if (ret.info.roleid == 5){
+                    $(".span_right_yyt").html("店员")
+                }else if (ret.info.roleid == 3){
+                    $(".span_right_yyt").html("店长")
+                }else if(ret.info.roleid == 2){
+                    $(".span_right_yyt").html("经销商")
+                }else if(ret.info.roleid == 4){
+                    $(".span_right_yyt").html("加盟商")
+                }else if(ret.info.roleid == 1){
+                    $(".span_right_yyt").html("总部人员")
+                }else if(ret.info.roleid == 6){
+                    $(".span_right_yyt").html("董事长")
+                }else{
+                    $(".span_right_yyt").html("总经理")
+                }
+                if (ret.status.status == 0){
+                    $(".img_yyt").attr("src",'../../image/image_zn/half_yyt.png');
+                }else if (ret.status.status == 1){
+                    $(".img_yyt").attr("src",'../../image/image_zn/all_yyt.png');
+                }else if (ret.status.status == 2){
+                    $(".img_yyt").attr("src",'../../image/image_zn/all_yyt.png');
+                    $('.result_c_zn').html('拒绝');
+                }
+            }else if(ret.code == 500){
+
+            }
+        });
+    }
+    function open_edit() {
+        api.openWin({
+            name: 'personInfo_qty',
+            url: 'widget://html/me/personInfo_qty.html',
+            bounces: false,
+            reload:true,
+            rect: {x: 0,y: 0,w: 'auto',h: "auto"}
+        });
+    }
+
+    $(".edit_zn").on("touchstart",function () {
+        $(this).css("color","#ccc")
+        $(this).on("touchend",function () {
+            $(this).css("color","#fff")
+            $(this).off("touchend")
+        })
+    })
+    function tishi_zn() {
+        api.toast({
+            msg: "修改成功",
+            duration: 3000,
+            location: 'bottom'
+        })
+    }
+</script>
+</body>
+</html>

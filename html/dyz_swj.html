@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/api.css">
+    <script src="../script/jquery.min.js"></script>
+    <script src="../script/rem.js"></script>
+    <style>
+    /*进入独一张*/
+        html,body{
+            width: 100%;
+            height: 100%;
+            background: #2493f7;
+            overflow: hidden;
+        }
+        .dyz_{
+            width: 5.6rem;
+            height: 2.5rem;
+            margin: 0 auto;
+            margin-top: 2rem;
+            background: #fff;
+            border-radius: 10px;
+            position: absolute;
+            left:0;
+            top: 0;
+            right:0;
+            bottom: 0;
+            margin: auto;
+        }
+        .swj_{
+            width: 5.6rem;
+            height: 2.5rem;
+            margin: 0 auto;
+            margin-top: 2rem;
+            background: #fff;
+            border-radius: 10px;
+            position: relative;
+        }
+        .tc_icon{
+            width: 1rem;
+            height: 1rem;
+            position: absolute;
+            left: 50%;
+            top: -0.5rem;
+            margin-left: -0.5rem;
+            background: #fff;
+            border-radius: 50%;
+            overflow: hidden;
+            background: url("../image/tc_icon.png") no-repeat;
+            background-size: 100% 100%;
+        }
+        .swj_icon{
+            width: 1rem;
+            height: 1rem;
+            position: absolute;
+            left: 50%;
+            top: -0.5rem;
+            margin-left: -0.5rem;
+            background: #fff;
+            border-radius: 50%;
+            overflow: hidden;
+            background: url("../image/swj_icon.png") no-repeat;
+            background-size: 100% 100%;
+        }
+        .tc_title{
+            position: absolute;
+            top: 0.6rem;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            text-align: center;
+            color: #2493f7;
+            font-size: 0.32rem;
+        }
+        .tc_title_{
+            position: absolute;
+            top: 0.95rem;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            text-align: center;
+            color: #cccccc;
+            font-size: 0.14rem;
+        }
+        .tc_con{
+            position: absolute;
+            left: 50%;
+            top: 1.3rem;
+            margin-left: -2.2rem;
+            width: 4.4rem;
+            height: auto;
+            overflow: hidden;
+            font-size: 0.20rem;
+            line-height: 0.24rem;
+            color: #ccc;
+            text-align: center;
+        }
+        .dyz_in{
+            width: 3rem;
+            height: 0.5rem;
+            border-radius: 0.25rem;
+            overflow: hidden;
+            background: #4aa9ff;
+            font-size: 0.24rem;
+            color: #fff;
+            line-height: 0.5rem;
+            position: absolute;
+            left: 50%;
+            top: 2.25rem;
+            margin-left: -1.5rem;
+            text-align: center;
+        }
+        .swj_in{
+            width: 3rem;
+            height: 0.5rem;
+            border-radius: 0.25rem;
+            overflow: hidden;
+            background: #4aa9ff;
+            font-size: 0.24rem;
+            color: #fff;
+            line-height: 0.5rem;
+            position: absolute;
+            left: 50%;
+            top: 2.25rem;
+            margin-left: -1.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="dyz_">
+    <span class="tc_icon"></span>
+    <span class="tc_title">独一张</span>
+    <span class="tc_title_">DUYIZHANG</span>
+    <span class="tc_con">山西太常生物科技有限公司是一家专业从事风湿·骨病康复研究的理疗中心。</span>
+    <span class="dyz_in" onclick="open_login_dyz()">进入独一张</span>
+</div>
+<!-- 食维健登录入口隐藏 -->
+<!-- <div class="swj_">
+    <span class="tc_icon swj_icon"></span>
+    <span class="tc_title">食维健</span>
+    <span class="tc_title_">SHIWEIJIAN</span>
+    <span class="tc_con">山西食维健惠康科技有限公司
+依托5A健康管理体系，坚持为大众提供科学的健康管    理方案和安全的健康产品。</span>
+    <span class="swj_in" onclick="open_login_swj()">进入食维健</span>
+</div> -->
+</body>
+<script>
+
+    function open_login_dyz() {
+//        api.closeWin()
+        api.closeFrame({
+            name: 'set_qty'
+        });
+        api.openFrame({
+            name: 'login_qty',
+            url: 'widget://html/login_/login_qty.html',
+            bounces: false,
+            pageParam:{type:0},
+            rect: {x: 0,y: 0,w: 'auto',h: 'auto'}
+        });
+    }
+    function open_login_swj() {
+//
+        api.toast({
+            msg: "正在开发中",
+            duration: 4000,
+            location: 'bottom'
+        });
+
+    }
+</script>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/api.css">
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <style>
+    /*我的*/
+        html,body{
+            /*width: 100%;*/
+            /*height: 100%;*/
+            background: #f5f5f5;
+        }
+        .me_header{
+            width: 100%;
+            height: 0.88rem;
+            background: linear-gradient(to right, #268ce9,#64c0ea);
+            text-align: center;
+            font-size: 0.32rem;
+            color: #fff;
+            line-height: 0.88rem;
+        }
+        .me_card{
+            width: 5.6rem;
+            height: 1.8rem;
+            margin: 0 auto;
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+            background: #fff;
+            border-radius: 0.07rem;
+            overflow: hidden;
+            padding: 0.2rem;
+            box-sizing: border-box;
+        }
+        .card_name{
+            width: 3rem;
+            height: 0.9rem;
+            float: left;
+        }
+        .me_name_{
+            width: auto;
+            height: auto;
+            float: left;
+            padding-right:0.1rem;
+            text-align: center;
+            font-size: 0.28rem;
+            line-height: 0.42rem;
+            text-align: left;
+        }
+        .me_job_{
+            width: auto;
+            height: auto;
+            float: left;
+            padding: 0.03rem 0.1rem;
+            color: #fff;
+            text-align: center;
+            font-size: 0.22rem;
+            line-height: 0.28rem;
+            background: #2493f7;
+            border-radius: 0.15rem;
+            margin-top: 0.035rem;
+        }
+        .me_phone{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            font-size: 0.18rem;
+            line-height: 0.32rem;
+            color: #333;
+        }
+        .me_photo{
+            width: 0.85rem;
+            height: 0.85rem;
+            border-radius: 50%;
+            overflow: hidden;
+            float: right;
+        }
+        .me_photo img{
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 50%;
+        }
+        .belong_to{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        .company_n{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            font-size: 0.24rem;
+            text-align: left;
+            color: #999;
+        }
+        .company_e{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            font-size: 0.12rem;
+            line-height: 0.18rem;
+            text-align: left;
+            color: #999;
+        }
+        .per_msg{
+            width: 100%;
+            height: 0.8rem;
+            background: #fff;
+            border-bottom: 0.01rem solid #eee;
+            padding: 0 0.4rem;
+            box-sizing: border-box;
+        }
+        .msg_icon{
+            width: 0.3rem;
+            height: 0.3rem;
+            float: left;
+            margin-top: 0.25rem;
+        }
+        .per_con{
+            width: auto;
+            height: 100%;
+            float: left;
+            font-size: 0.24rem;
+            line-height: 0.8rem;
+            color: #333;
+            padding-left: 0.2rem;
+        }
+        .arrow_right{
+            width: 0.12rem;
+            height: 0.22rem;
+            margin-top: 0.29rem;
+            float: right;
+        }
+        .per_mannage{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            padding: 0 0.4rem;
+            box-sizing: border-box;
+            background: #fff;
+            margin-top: 0.2rem;
+            border-bottom: 0.01rem solid #eee;
+        }
+        .manage_hea{
+            width: 100%;
+            height: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+<div class="me_header">我的</div>
+<div class="me_card">
+    <div class="card_name">
+        <div class="me_name_">待完善</div>
+        <div class="me_job_">店员</div>
+        <div class="me_phone">待完善</div>
+    </div>
+    <div class="me_photo">
+        <img src="../../image/img_yyt/me_photo.jpg" alt="" onerror="javascript:this.src=../../image/header_picture/tc_log.png">
+    </div>
+    <div class="belong_to">
+        <div class="company_n">山西太常生物科技有限公司</div>
+        <div class="company_e">Shan Xi Tai Chang Biological Technology Co.,Ltd.</div>
+    </div>
+</div>
+<div class="per_msg per_msg_one" onclick="per_msg()">
+    <img class="msg_icon" src="../../image/img_yyt/per_meg.png" alt="">
+    <div class="per_con">个人信息</div>
+    <img src="../../image/img_yyt/arrow_right.png" alt="" class="arrow_right">
+</div>
+<div class="per_msg per_msg_two" onclick="open_revise_password()">
+    <img class="msg_icon" src="../../image/img_yyt/id_safe.png" alt="">
+    <div class="per_con">修改密码</div>
+    <img src="../../image/img_yyt/arrow_right.png" alt="" class="arrow_right">
+</div>
+<div class="per_msg per_msg_three" style="border-bottom: 0" onclick="open_set()">
+    <img class="msg_icon" src="../../image/img_yyt/setting_.png" alt="">
+    <div class="per_con">设置</div>
+    <img src="../../image/img_yyt/arrow_right.png" alt="" class="arrow_right">
+</div>
+<!--<div class="per_mannage">-->
+<!--<div class="manage_hea">-->
+<!--<img class="msg_icon" src="../../image/img_yyt/per_man.png" alt="">-->
+<!--<div class="per_con">人员管理</div>-->
+<!--</div>-->
+<!--<ul class="store_per">-->
+<!--<li class="store_one"></li>-->
+<!--<li class="store_one"></li>-->
+<!--<li class="store_one"></li>-->
+<!--</ul>-->
+<!--</div>-->
+</body>
+<script>
+    function prompt_zn() {
+        api.toast({
+            msg: '修改密码成功',
+            duration: 3000,
+            location: 'bottom'
+        });
+    }
+    var uid;
+    var type;
+    function get_data() {
+        apiready=function () {
+            type = api.getPrefs({
+                sync: true,
+                key: 'type'
+            });
+            uid = api.getPrefs({
+                sync: true,
+                key: 'uid'
+            });
+            api.ajax({
+                url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=userinfo',
+                method: 'post',
+                data: {
+                    values: {uid:uid, type: type}
+                },
+                dataType: 'json'
+            }, function (ret, err) {
+                if((ret.userinfo.head_img==null)||(ret.userinfo.head_img=='null')){
+                    $(".me_photo img").attr("src","../../image/header_picture/tc_log.png");
+                }else if(ret.userinfo.head_img.slice(0,4)=='http'){
+                    $(".me_photo img").attr("src",ret.userinfo.head_img)
+                }else{
+                    $(".me_photo img").attr("src","../../image/header_picture/"+ret.userinfo.head_img+"")
+                }
+                $(".me_name_").html(ret.userinfo.name);
+                if (ret.userinfo.roleid == 5){
+                    $(".me_job_").html("店员");
+                }else if (ret.userinfo.roleid == 3){
+                    $(".me_job_").html("店长");
+                }else if (ret.userinfo.roleid == 2){
+                    $(".me_job_").html("经销商");
+                }else if (ret.userinfo.roleid == 4){
+                    $(".me_job_").html("加盟商");
+                }else if (ret.userinfo.roleid == 1){
+                    $(".me_job_").html("总部人员");
+                }else if (ret.userinfo.roleid == 6){
+                    $(".me_job_").html("董事长");
+                }else if (ret.userinfo.roleid == 7){
+                    $(".me_job_").html("总经理");
+                }
+                $(".me_phone").html(ret.userinfo.mobile);
+            });
+        }
+    }
+    get_data();
+    /*
+    *获取用户信息
+    */
+    function updata() {
+        api.ajax({
+            url: 'http://appapi.duyiwang.cn/index.php?action=member&dir=member&do=userinfo',
+            method: 'post',
+            data: {
+                values: {uid:uid, type: type}
+            },
+            dataType: 'json'
+        }, function (ret, err) {
+            if((ret.userinfo.head_img==null)||(ret.userinfo.head_img=='null')){
+                $(".me_photo img").attr("src","../../image/header_picture/tc_log.png");
+            }else if(ret.userinfo.head_img.slice(0,4)=='http'){
+                $(".me_photo img").attr("src",ret.userinfo.head_img)
+            }else{
+                $(".me_photo img").attr("src","../../image/header_picture/"+ret.userinfo.head_img+"")
+            }
+            $(".me_name_").html(ret.userinfo.name);
+            if (ret.userinfo.roleid == 5){
+                $(".me_job_").html("店员");
+            }else if (ret.userinfo.roleid == 3){
+                $(".me_job_").html("店长");
+            }else if (ret.userinfo.roleid == 2){
+                $(".me_job_").html("经销商");
+            }else if (ret.userinfo.roleid == 4){
+                $(".me_job_").html("加盟商");
+            }else if (ret.userinfo.roleid == 1){
+                $(".me_job_").html("总部人员");
+            }else if (ret.userinfo.roleid == 6){
+                $(".me_job_").html("董事长");
+            }else if (ret.userinfo.roleid == 7){
+                $(".me_job_").html("总经理");
+            }
+            $(".me_phone").html(ret.userinfo.mobile);
+        });
+    }
+
+
+    function per_msg() {
+        api.openWin({
+            name: 'man_information_zn',
+            url: 'widget://html/me/man_information_zn.html',
+            bounces: false,
+            reload:true,
+            rect: {x: 0,y: 0,w: 'auto',h: "auto"}
+        });
+
+    }
+    function open_accont() {
+        api.openWin({
+            name: 'accont_qty_qty',
+            url: 'widget://html/me/accont_qty.html',
+            bounces: false,
+            reload:true,
+            rect: {x: 0,y: 0,w: 'auto',h: "auto"}
+        });
+    }
+    function open_set() {
+        api.openWin({
+            name: 'set_qty',
+            url: 'widget://html/me/set_qty.html',
+            bounces: false,
+            reload:true,
+            type:"none",
+            rect: {x: 0,y: 0,w: 'auto',h: "auto"}
+        });
+    }
+    function open_revise_password() {
+        api.openWin({
+            name: 'revise_password_zn',
+            url: 'widget://html/me/revise_password_zn.html',
+            bounces: false,
+            rect: {x: 0,y: 0,w: 'auto',h: 'auto'}
+        });
+    }
+
+    $(".per_msg_one").on("touchstart",function () {
+        $(this).css("background","#eee")
+        $(this).on("touchend",function () {
+            $(this).css("background","#fff")
+            $(this).off("touchend")
+        })
+    })
+
+    $(".per_msg_three").on("touchstart",function () {
+        $(this).css("background","#eee")
+        $(this).on("touchend",function () {
+            $(this).css("background","#fff")
+            $(this).off("touchend")
+        })
+    })
+    var startPos = 0,endPos = 0,isScrolling = 0;
+    document.addEventListener('touchstart',function(event){
+        var touch = event.targetTouches[0]; //touches数组对象获得屏幕上所有的touch，取第一个touch
+        startPos = {x:touch.pageX,y:touch.pageY,time:+new Date}; //取第一个touch的坐标值
+        isScrolling = 0; //这个参数判断是垂直滚动还是水平滚动
+    }, false);
+
+    //解绑事件 web前端开发
+    document.addEventListener('touchend',function(event){
+        document.removeEventListener('touchmove',this,false);
+        document.removeEventListener('touchend',this,false);
+    }, false);
+
+    document.addEventListener('touchmove',function(event){
+        //当屏幕有多个touch或者页面被缩放过，就不执行move操作
+        if(event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
+        var touch = event.targetTouches[0];
+        endPos = {x:touch.pageX - startPos.x,y:touch.pageY - startPos.y};
+        isScrolling = Math.abs(endPos.x) < Math.abs(endPos.y) ? 1:0; //isScrolling为1时，表示纵向滑动，0为横向滑动
+        if(isScrolling === 0){
+
+            event.preventDefault(); //阻止触摸事件的默认行为，即阻止滚屏
+        }
+    }, false);
+</script>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" href="../../css/api.css">
+
+    <script src="../../script/jquery.min.js"></script>
+    <script src="../../script/rem.js"></script>
+    <style>
+        html,
+        body {
+            background: #f5f5f5;
+        }
+        .header_fixed{
+            width:100%;
+            height: 1.7rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to right, #268ce9, #64c0ea);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .head {
+            width: 100%;
+            height: 0.88rem;
+            text-align: center;
+            color: #fff;
+            line-height: 0.88rem;
+            font-size: 0.34rem;
+            position: relative;
+        }
+
+        .huitui {
+            position:absolute;
+            left: 0.2rem;
+            top: 0.2rem;
+            width: 0.35rem;
+            height: 0.5rem;
+        }
+
+        ul {
+            width: 100%;
+            height: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        li {
+            width: 50%;
+            height: 0.8rem;
+            font-size: 0.28rem;
+            color: #fff;
+            line-height: 0.8rem;
+            text-align: center;
+            box-sizing: border-box;
+            border-bottom: 0.06rem solid rgba(0,0,0,0);
+        }
+
+        .null_box {
+            width: 3.32rem;
+            height: 3.37rem;
+            margin: 0 auto;
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .null_box img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .wwc_box {
+            width: 5.6rem;
+            height: auto;
+            margin: auto;
+            overflow: hidden;
+
+        }
+
+        .wwc_one {
+            width: 100%;
+            height: 2.68rem;
+            background: #fff;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.14rem;
+        }
+
+        .ywc_box {
+            width: 5.6rem;
+            height: auto;
+            margin: auto;
+            overflow: hidden;
+            display: none;
+        }
+
+        .ywc_one {
+            width: 100%;
+            height: 2.68rem;
+            background: #fff;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .ywc_one {
+            width: 100%;
+            height: 2.68rem;
+            background: #fff;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.14rem;
+        }
+
+        .jinhuo {
+            height: 0.6rem;
+            width: 100%;
+            /*border:1px solid green;*/
+            font-size: 0.24rem;
+            color: rgb(48, 48, 48);
+            line-height: 0.6rem;
+            text-align: left;
+            display: flex;
+            justify-content: flex-start;
+            padding-top: 0.2rem;
+        }
+
+        .dianhua {
+            height: 0.6rem;
+            width: 100%;
+            /*border:1px solid green;*/
+            font-size: 0.24rem;
+            color: rgb(48, 48, 48);
+            line-height: 0.6rem;
+            text-align: left;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .zhuangtai {
+            height: 0.6rem;
+            width: 100%;
+            /*border:1px solid green;*/
+            font-size: 0.24rem;
+            color: rgb(48, 48, 48);
+            line-height: 0.6rem;
+            text-align: left;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .shuxian {
+            margin-left: 0.1rem;
+            margin-right: 0.1rem;
+            color: #dddddd;
+        }
+
+        .shuxian1 {
+            margin-left: 0.08rem;
+            margin-right: 0.1rem;
+            color: #dddddd;
+        }
+
+        .nub {
+            color: rgb(91, 91, 91);
+            font-size: 0.24rem;
+        }
+
+        .hong {
+            color: rgb(247, 31, 107);
+        }
+
+        .xiangqing {
+            width: 1.6rem;
+            height: 0.58rem;
+            text-align: center;
+            line-height: 0.58rem;
+            border-radius: 50px;
+            background: rgb(99, 190, 234);
+            font-size: 0.24rem;
+            color: #fff;
+            margin-right: 0.2rem;
+        }
+
+        .yxiangqing {
+            width: 1.6rem;
+            height: 0.58rem;
+            text-align: center;
+            line-height: 0.58rem;
+            border-radius: 50px;
+            background: rgb(99, 190, 234);
+            font-size: 0.24rem;
+            color: #fff;
+            margin-right: 0.2rem;
+        }
+
+        .shijian {
+            font-size: 0.24rem;
+            margin-right: 2.05rem;
+            color: rgb(153, 153, 153);
+            margin-top: 0.2rem;
+        }
+
+        .bott_box {
+            height: 0.6rem;
+            width: 100%;
+            /*border:1px solid green;*/
+            font-size: 0.24rem;
+            line-height: 0.6rem;
+            text-align: left;
+            display: flex;
+            justify-content: flex-end;
+            ;
+        }
+
+        .active {
+            border-bottom: 0.06rem solid #fff;
+        }
+
+        /*.li1 {
+            border-bottom: 0.06rem solid #fff;
+        }*/
+        .margin_{
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header_fixed">
+        <div class="head">
+            <span class="cy">进货记录</span>
+            <img src="../../image/product_sxy/arrow_sxy_03.png" alt="" onclick="return_back()"  class="huitui" tapmode="aaa">
+        </div>
+        <ul>
+            <li class="li1 active">未完成</li>
+            <li class="li2">已完成</li>
+        </ul>
+    </div>
+    <div class="margin_"></div>
+    <div class="null_box">
+        <img src="../../image/apply/meidingdan.png" alt="">
+    </div>
+    <!-- <div class="wwc_box">
+        <div class="wwc_one">
+            <div class="jinhuo">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进&nbsp;&nbsp;货&nbsp;&nbsp;人</span>
+                <span class="shuxian1">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                <span>高彦</span>
+            </div>
+            <div class="dianhua">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系电话</span>
+                <span class="shuxian">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                <span class="nub">13455228888</span>
+            </div>
+            <div class="zhuangtai">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订单状态</span>
+                <span class="shuxian">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                <span class="hong">未完成</span>
+            </div>
+            <div class="bott_box">
+                <span class="shijian">2017/11/23</span>
+                <div class="xiangqing">查看详情</div>
+            </div>
+
+        </div>
+        <div class="wwc_one">
+            <div class="jinhuo">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进&nbsp;&nbsp;货&nbsp;&nbsp;人</span>
+                <span class="shuxian1">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                <span>高彦</span>
+            </div>
+            <div class="dianhua">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系电话</span>
+                <span class="shuxian">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                <span class="nub">13455228888</span>
+            </div>
+            <div class="zhuangtai">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订单状态</span>
+                <span class="shuxian">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                <span class="hong">未完成</span>
+            </div>
+            <div class="bott_box">
+                <span class="shijian">2017/11/23</span>
+                <div class="xiangqing">查看详情</div>
+            </div>
+        </div>
+
+    </div> -->
+    <!-- <div class="ywc_box">
+        <div class="ywc_one">
+            <div class="jinhuo">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进&nbsp;&nbsp;货&nbsp;&nbsp;人</span>
+                <span class="shuxian1">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                <span>测试</span>
+            </div>
+            <div class="dianhua">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系电话</span>
+                <span class="shuxian">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                <span class="nub">13455228888</span>
+            </div>
+            <div class="zhuangtai">
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;订单状态</span>
+                <span class="shuxian">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                <span class="hong">未完成</span>
+            </div>
+            <div class="bott_box">
+                <span class="shijian">2017/11/23</span>
+                <div class="yxiangqing">查看详情</div>
+            </div>
+
+        </div>
+    </div> -->
+
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script src="../../script/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+    var uid;
+    var page = 1;
+    function orders() {
+        apiready = function() {
+            if($('ul .li1').hasClass('active')){
+                $('.ywc_box').hide();
+                $('.wwc_box').show();
+            }else if($('ul .li2').hasClass('active')){
+                $('.wwc_box').hide();
+                $('.ywc_box').show();
+            }
+            api.closeWin({
+                name:'Transfer_hhj'
+            });
+            api.addEventListener({
+                name: 'keyback'
+            }, function(ret, err) {
+                api.closeToWin({
+                  name: 'apply_hhj',
+                  animation:{
+                    type:"none",                //动画类型（详见动画类型常量）
+                    duration:0
+                  }
+                 });
+            })
+            uid = api.getPrefs({
+                sync: true,
+                key: 'uid'
+            });
+            api.showProgress({
+                title: '正在加载中...',
+                text: '请耐心等待',
+                modal: true
+            });
+            api.hideProgress();
+            api.ajax({
+                url: 'http://appapi.duyiwang.cn/index.php?action=order&dir=work&do=record_index',
+                method: 'post',
+                data: {
+                    values: {
+                        uid: uid,
+                        page: page
+                    }
+                },
+                dataType: 'text'
+            }, function(ret, err) {
+                // 写入页面
+                $('body').append(ret);
+                page++;
+                if($('ul .li1').hasClass('active')){
+                    $('.ywc_box').hide();
+                    $('.wwc_box').show();
+                }else if($('ul .li2').hasClass('active')){
+                    $('.wwc_box').hide();
+                    $('.ywc_box').show();
+                }
+            });
+            api.addEventListener({
+                name: 'scrolltobottom',
+                extra: {
+                    threshold: 0 //设置距离底部多少距离时触发，默认值为0，数字类型
+                }
+            }, function(ret, err) {
+                var uid = api.getPrefs({
+                    sync: true,
+                    key: 'uid'
+                });
+                api.ajax({
+                    url: 'http://appapi.duyiwang.cn/index.php?action=order&dir=work&do=record_index',
+                    method: 'post',
+                    data: {
+                        values: {
+                            uid: uid,
+                            page: page
+                        }
+                    },
+                    dataType: 'text'
+                }, function(ret, err) {
+                    $('body').append(ret);
+                    page++;
+                    if($('ul .li1').hasClass('active')){
+                        $('.ywc_box').hide();
+                        $('.wwc_box').show();
+                    }else if($('ul .li2').hasClass('active')){
+                        $('.wwc_box').hide();
+                        $('.ywc_box').show();
+                    }
+                });
+            });
+        }
+    }
+
+    orders();
+    // 点击已完成未完成变色
+    function xuanxiangka() {
+        $('li').click(function(event) {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+    }
+    xuanxiangka();
+    // 显示隐藏已完成未完成
+    $('.li1').click(function() {
+        var count = $('.wwc_one').length;
+        if (count > 0) {
+            $('.null_box').hide();
+        } else {
+            $('.null_box').show();
+        }
+        $('.ywc_box').hide();
+        $('.wwc_box').show();
+    })
+    $('.li2').click(function() {
+        $('.wwc_box').hide();
+        $('.ywc_box').show();
+        var exist = $('.ywc_one').length;
+        if (exist > 0) {
+            $('.null_box').hide();
+        } else {
+            $('.null_box').show();
+        }
+
+    })
+    // 点击查看详情
+    function open_wwc(ooddeer) {
+        api.openWin({
+            name: 'productRecord_sxy',
+            url: 'widget://html/stockApply/productRecord_sxy.html',
+            bounces: false,
+            reload:true,
+            pageParam: {
+                ooddeer: ooddeer,//订单ID
+            },
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            },
+            animation:{
+              type:"none",                //动画类型（详见动画类型常量）
+              duration:50
+            }
+        });
+    }
+    // 成功提交表单后执行
+    function jump(){
+        api.openWin({
+            name: 'record_hhj',
+            url: 'widget://html/stockApply/record_hhj.html',
+            bounces: false,
+            reload:false,
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            },
+            animation:{
+              type:"none",                //动画类型（详见动画类型常量）
+              duration:50
+            }
+        });
+    }
+    /*
+    *返回事件
+    */
+    function return_back(){
+      api.openWin({
+          name: 'apply_hhj',
+          url: 'widget://html/stockApply/apply_hhj.html',
+          bounces: false,
+          reload:true,
+          rect: {
+              x: 0,
+              y: 0,
+              w: 'auto',
+              h: 'auto'
+          },
+          animation:{
+            type:"none",                //动画类型（详见动画类型常量）
+            duration:50
+          }
+      });
+    }
+    // 刷新页面
+    function reload_page(){
+        location.reload();
+    }
+</script>
+
+</html>
